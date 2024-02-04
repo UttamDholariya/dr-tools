@@ -54,13 +54,13 @@
                                 </div>
                             </td>
                             <td data-th="Sub Total" class="item_cost dark-text">₹<span class="item-cost-val">1630.00</span></td>
-                            <td data-th="Action"> <a href="javascript:" class="js_remove_item"><img src="/assets/images/deletecon.svg" alt="Delete" /></a> </td>
+                            <td data-th="Action"> <a href="javascript:" class="js_remove_item"><img src="./assets/images/deletecon.svg" alt="Delete" /></a> </td>
                           </tr>
                           <tr class="item-row">
                             <td data-th="Products Details">
                                 <div class="products-detail-wrap">
                                     <div class="product-image-wrap">
-                                        <img src="/assets/images/images/digi-bp-monitor_2.webp" alt="">
+                                        <img src="./assets/images/images/digi-bp-monitor_2.webp" alt="">
                                     </div>
                                     <div class="product-detail-list">
                                         <p class="p-14-dark">Omron Fully Automatic Digital Blood Pressure Monitoring Machine- Arm Circumference (22-32Cm)</p>
@@ -83,13 +83,13 @@
                                 </div>
                             </td>
                             <td data-th="Sub Total" class="item_cost dark-text">₹<span class="item-cost-val">1630.00</span></td>
-                            <td data-th="Action"> <a href="javascript:" class="js_remove_item"><img src="/assets/images/deletecon.svg" alt="Delete" /></a> </td>
+                            <td data-th="Action"> <a href="javascript:" class="js_remove_item"><img src="./assets/images/deletecon.svg" alt="Delete" /></a> </td>
                           </tr>
                           <tr class="item-row">
                             <td data-th="Products Details">
                                 <div class="products-detail-wrap">
                                     <div class="product-image-wrap">
-                                        <img src="/assets/images/images/digi-bp-monitor_2.webp" alt="">
+                                        <img src="./assets/images/images/digi-bp-monitor_2.webp" alt="">
                                     </div>
                                     <div class="product-detail-list">
                                         <p class="p-14-dark">Omron Fully Automatic Digital Blood Pressure Monitoring Machine- Arm Circumference (22-32Cm)</p>
@@ -111,7 +111,7 @@
                                 </div>
                             </td>
                             <td data-th="Sub Total" class="item_cost dark-text">₹<span class="item-cost-val">1630.00</span></td>
-                            <td data-th="Action"> <a href="javascript:" class="js_remove_item"><img src="/assets/images/deletecon.svg" alt="Delete" /></a> </td>
+                            <td data-th="Action"> <a href="javascript:" class="js_remove_item"><img src="./assets/images/deletecon.svg" alt="Delete" /></a> </td>
                           </tr>
                         </tbody>
                     </table>

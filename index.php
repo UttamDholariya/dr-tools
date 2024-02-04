@@ -2,7 +2,6 @@
 <?php include('./include/bodyheader.php') ?>
     <!-- banner-section -->
     <section class="banner-section home-banner">
-    <div class="container">
         <div class="owl-carousel owl-theme banner-slider">
             <div class="item">
                 <div class="banner-slider-wrap text-center">
@@ -32,7 +31,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </section>
     <!-- our-service-list-section -->
     <!-- <section class="our-service-list-section"> 
