@@ -9,15 +9,15 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb m-0">
                               <li class="breadcrumb-item"><a href="./index.php">Home</a></li>
-                              <li class="breadcrumb-item"><a href="#">My Account</a></li>
+                              <li class="breadcrumb-item"><a href="./my-account.php">My Account</a></li>
                               <li class="breadcrumb-item active" aria-current="page">Checkout</li>
                             </ol>
                         </nav>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
                     <div class="billing-details-main">
                         <h1>Billing Details</h1>
                         <div class="billing-details-wrap">
@@ -109,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-7">
                     <div class="billing-details-main order-summary-wrap">
                         <h2>Order Summary</h2>
                         <div class="billing-details-wrap">

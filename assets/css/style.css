@@ -3168,6 +3168,7 @@ button:focus:not(:focus-visible) {
 
 .proceed-to-checkout {
     width: 40%;
+    margin-left: auto;
 }
 .proceed-total-wrap-main ul li p:first-child {
     text-align: right;

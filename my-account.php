@@ -924,7 +924,7 @@
                         <div class="tab-pane fade Wishlist-wrap" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                             <h2 class="ps-3">Wishlist</h2>
                             <div class="common-form-section cmn-bg-tab change-pass-wrap text-center">
-                                <img src="./assets/images/heart.png" class="heart-image" alt="heart" />
+                                <img src="./assets/images/wishlist-icon.svg" class="heart-image" alt="heart" />
                                 <h2>Your Wishlist is empty</h2>
                                 <p>You don't have any products in the wish list yet. You will get a lot of interesting products on our shop page. </p>
                                 <div class="text-center buttons-wrap submit-btn-wrap justify-content-center">
