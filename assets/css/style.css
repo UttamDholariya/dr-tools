@@ -135,7 +135,7 @@ h2 {
 }
 
 .section-comming-soon {
-    height: 100vh;
+    height: auto;
     display: flex;
     align-items: center;
 }
