@@ -27,12 +27,14 @@
                                 <tr>
                                     <td>1</td>
                                     <td>1</td>
-                                    <td><a href="">edit</a><a href="">delete</a></td>
+                                    <td><a href="javascript:" class="js_remove_item me-3"><img src="../assets/images/images/edit.svg" alt="Edit"/></a>
+                                    <a href="javascript:" class="js_remove_item"><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>2</td>
-                                    <td><a href="">edit</a><a href="">delete</a></td>
+                                    <td><a href="javascript:" class="js_remove_item me-3"><img src="../assets/images/images/edit.svg" alt="Edit"/></a>
+                                    <a href="javascript:" class="js_remove_item"><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>
                         </table>
                     </div>

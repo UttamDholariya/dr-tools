@@ -30,7 +30,7 @@
                                     <label for="product_price">Product Price</label>
                                 </div>
                             </div>
-
+                                
                             <div class="col-12">
                                 <div class="form-floating">
                                     <textarea class="form-control" placeholder="Enter Product Description" id="product_desc" style="height: 100px;"></textarea>
