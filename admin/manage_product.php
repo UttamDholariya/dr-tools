@@ -21,6 +21,10 @@
                                 <tr>
                                     <th>Product Id</th>
                                     <th>Product Name</th>
+                                    <th>Product Price</th>
+                                    <th>Product Description</th>
+                                    <th>Product Quantity</th>
+                                    <th>Product Detail</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -28,12 +32,22 @@
                                 <tr>
                                     <td>1</td>
                                     <td>Product Name</td>
-                                    <td><a href="">edit</a><a href="">delete</a></td>
+                                    <td>1500</td>
+                                    <td></td>
+                                    <td>1</td>
+                                    <td></td>
+                                    <td><a href="javascript:" class="js_remove_item"><img src="../assets/images/images/edit.svg" alt="Edit"/></a>
+                                    <a href="javascript:" class="js_remove_item"><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>Product Name</td>
-                                    <td><a href="">edit</a><a href="">delete</a></td>
+                                    <td>1500</td>
+                                    <td></td>
+                                    <td>1</td>
+                                    <td></td>
+                                    <td><a href="javascript:" class="js_remove_item"><img src="../assets/images/images/edit.svg" alt="Edit"/></a>
+                                    <a href="javascript:" class="js_remove_item"><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>
                             </tbody>
                         </table>

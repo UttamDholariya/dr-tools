@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  <title>Dashboard - Dr-Tools</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="../admin/assets/img/favicon.png" rel="icon">
-  <link href="../admin/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/x-icon" href="../assets/images/images/logo.ico">
+  
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">

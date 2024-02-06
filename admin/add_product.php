@@ -24,10 +24,31 @@
                                 </div>
                             </div>
 
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="product_price" placeholder="Enter Product Price">
+                                    <label for="product_price">Product Price</label>
+                                </div>
+                            </div>
+
                             <div class="col-12">
                                 <div class="form-floating">
                                     <textarea class="form-control" placeholder="Enter Product Description" id="product_desc" style="height: 100px;"></textarea>
                                     <label for="product_desc">Product Description</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="product_quantity" placeholder="Enter Product Quantity">
+                                    <label for="product_quantity">Product Quantity</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Enter Product Details" id="product_details" style="height: 100px;"></textarea>
+                                    <label for="product_details">Product Details</label>
                                 </div>
                             </div>
 
@@ -38,7 +59,7 @@
                             </div>
                 
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Add Category</button>
+                                <button type="submit" class="btn btn-primary">Add Product</button>
                             </div>
                         </form>
                     </div>
