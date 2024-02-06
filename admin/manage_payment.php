@@ -20,6 +20,7 @@
                                 <tr>
                                     <th>Payment Id</th>
                                     <th>Order Id</th>
+                                    <th>Payment Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -27,14 +28,16 @@
                                 <tr>
                                     <td>1</td>
                                     <td>1</td>
-                                    <td><a href="javascript:" class="js_remove_item me-3"><img src="../assets/images/images/edit.svg" alt="Edit"/></a>
-                                    <a href="javascript:" class="js_remove_item"><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
+                                    <td>successful</td>
+                                    <td><a href="javascript:" class="me-3"><img src="../assets/images/images/edit.svg" alt="Edit"/></a>
+                                    <a href="javascript:" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>2</td>
-                                    <td><a href="javascript:" class="js_remove_item me-3"><img src="../assets/images/images/edit.svg" alt="Edit"/></a>
-                                    <a href="javascript:" class="js_remove_item"><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
+                                    <td>unsuccessful</td>
+                                    <td><a href="javascript:" class="me-3"><img src="../assets/images/images/edit.svg" alt="Edit"/></a>
+                                    <a href="javascript:" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>
                         </table>
                     </div>

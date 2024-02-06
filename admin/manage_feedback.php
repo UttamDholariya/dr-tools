@@ -20,6 +20,8 @@
                                 <tr>
                                     <th>User Id</th>
                                     <th>Feedback Id</th>
+                                    <th>Email</th>
+                                    <th>phone Number</th>
                                     <th>Feedback Message</th>
                                     <th>Action</th>
                                 </tr>
@@ -28,16 +30,20 @@
                                 <tr>
                                     <td>1</td>
                                     <td>11</td>
+                                    <td>user@mail.com</td>
+                                    <td>9876543210</td>
                                     <td>Feedback Message</td>
-                                    <td><a href="javascript:" class="js_remove_item me-3"><img src="../assets/images/images/not-found.svg" style="height: 16px;width: 16px;" alt="Edit"/></a>
-                                    <a href="javascript:" class="js_remove_item"><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
+                                    <td><a href="javascript:" class="me-3"><img src="../assets/images/images/view.svg" style="height: 16px;width: 16px;" alt="Edit"/></a>
+                                    <a href="javascript:" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>12</td>
+                                    <td>user@mail.com</td>
+                                    <td>9876543210</td>
                                     <td>Feedback Message</td>
-                                    <td><a href="javascript:" class="js_remove_item me-3"><img src="../assets/images/images/edit.svg" alt="Edit"/></a>
-                                    <a href="javascript:" class="js_remove_item"><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
+                                    <td><a href="javascript:" class="me-3"><img src="../assets/images/images/view.svg" style="height: 16px;width: 16px;" alt="Edit"/></a>
+                                    <a href="javascript:" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>
                             </tbody>
                         </table>
