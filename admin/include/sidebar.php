@@ -66,6 +66,12 @@
       <span>Manage Feedback</span>
     </a>
   </li><!-- End Contact Page Nav -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="manage_user.php">
+      <i class="bi bi-person"></i>
+      <span>Manage User</span>
+    </a>
+  </li><!-- End Profile Page Nav -->
 
   <!-- <li class="nav-item">
     <a class="nav-link collapsed" href="pages-register.html">

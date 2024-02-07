@@ -33,7 +33,7 @@
                                     <td>5000</td>
                                     <td></td>
                                     <td></td>
-                                    <td><a href="javascript:" class="me-3"><img src="../assets/images/images/edit.svg" alt="Edit"/></a>
+                                    <td><a href="../admin/view_order.php" class="me-3"><img src="../assets/images/images/view.svg" alt="view" style="height: 16px;width: 16px;"/></a>
                                     <a href="javascript:" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>
                                 <tr>
@@ -42,7 +42,7 @@
                                     <td>7000</td>
                                     <td></td>
                                     <td></td>
-                                    <td><a href="javascript:" class="js_remove_item me-3"><img src="../assets/images/images/edit.svg" alt="Edit"/></a>
+                                    <td><a href="../admin/view_order.php" class="js_remove_item me-3"><img src="../assets/images/images/view.svg" alt="View" style="height: 16px;width: 16px;"/></a>
                                     <a href="javascript:" class="js_remove_item"><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>
                             </tbody>

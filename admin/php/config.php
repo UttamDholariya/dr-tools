@@ -5,7 +5,7 @@
     $database = "dr-tools";
 
     //create a connection
-    $conn = mysqli_connect($host,$username,$password,$database);
+    $conn = mysqli_connect($host, $username, $password, $database);
 
     //check database connection
     if(!$conn)

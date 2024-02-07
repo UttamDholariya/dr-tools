@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-7">
-                    <form action="">
+                    <form action="../admin/php/authcode.php" method="POST">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-title">
@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-12">
-                                <button class="f-btn">Create</button>
+                                <button class="f-btn" name="create" id="create" type="submit">Create</button>
                             </div>
                             <div class="col-lg-12">
                                 <div class="bottom-link">

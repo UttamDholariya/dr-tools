@@ -36,7 +36,7 @@
                                     <td></td>
                                     <td>1</td>
                                     <td></td>
-                                    <td><a href="edit_product.php" class="me-3"><img src="../assets/images/images/edit.svg" alt="Edit"/></a>
+                                    <td><a href="edit_product.php" class="me-3"><img src="../assets/images/images/edit.svg" alt="Edit" /></a>
                                     <a href="javascript:" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>
                                 <tr>
@@ -46,7 +46,7 @@
                                     <td></td>
                                     <td>1</td>
                                     <td></td>
-                                    <td><a href="edit_product.php" class="me-3"><img src="../assets/images/images/edit.svg" alt="Edit"/></a>
+                                    <td><a href="edit_product.php" class="me-3"><img src="../assets/images/images/edit.svg" alt="Edit" /></a>
                                     <a href="javascript:" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>
                             </tbody>

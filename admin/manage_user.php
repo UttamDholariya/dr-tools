@@ -5,7 +5,7 @@
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                <li class="breadcrumb-item active">Manage Payment</li>
+                <li class="breadcrumb-item active">Manage User</li>
             </ol>
         </nav>
     </div>
@@ -14,31 +14,29 @@
             <div class="col-lg-12">
                 <div class="card shadow">
                     <div class="card-body">
-                        <h5 class="card-title">Manage Payment</h5><hr>
+                        <h5 class="card-title">Manage User</h5><hr>
                         <table id="myTable" class="display">
                             <thead>
                                 <tr>
-                                    <th>Payment Id</th>
-                                    <th>Order Id</th>
-                                    <th>Payment Status</th>
+                                    <th>User Id</th>
+                                    <th>User Name</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>1</td>
-                                    <td>successful</td>
-                                    <td><a href="view_payment.php" class="me-3"><img src="../assets/images/images/view.svg" style="height: 16px;width: 16px;" alt="View"/></a>
+                                    <td>User Name</td>
+                                    <td><a href="" class="me-3"><img src="../assets/images/images/view.svg" alt="View" style="height: 16px;width: 16px;"/></a>
                                     <a href="javascript:" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>2</td>
-                                    <td>unsuccessful</td>
-                                    <td><a href="view_payment.php" class="me-3"><img src="../assets/images/images/view.svg"style="height: 16px;width: 16px;" alt="View"/></a>
+                                    <td>User Name</td>
+                                    <td><a href="" class="me-3"><img src="../assets/images/images/view.svg" alt="View" style="height: 16px;width: 16px;"/></a>
                                     <a href="javascript:" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>

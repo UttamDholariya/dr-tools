@@ -82,6 +82,23 @@
                                                 <input type="text" class="form-control" placeholder="markruffalo@gmail.com" />
                                             </div>
                                         </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="">Gender*</label>
+                                                <select name="gender" id="gender" class="form-control">
+                                                    <option value="" disabled selected>Select Gender</option>
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                    <option value="other">Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="">Date of Birth*</label>
+                                                <input type="date" class="form-control" />
+                                            </div>
+                                        </div>
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label for="">Address (Street/Area)*</label>
@@ -941,7 +958,7 @@
     </section>
 
 
-    <!-- The Edit Address Modal -->
+    <!-- The Edit Address Modal 
     <div class="modal edit-address-model" id="myModal">
         <div class="modal-dialog">
         <div class="modal-content">
@@ -960,6 +977,23 @@
                             <div class="form-group">
                                 <label for="">Email Address*</label>
                                 <input type="text" class="form-control" placeholder="markruffalo@gmail.com" />
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="">Gender*</label>
+                                <select name="gender" id="gender" class="form-control">
+                                    <option value="" disabled selected>Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="">Date of Birth*</label>
+                                <input type="date" class="form-control" />
                             </div>
                         </div>
                         <div class="col-lg-12">
@@ -1017,11 +1051,11 @@
                     </div>
                 </form>
             </div>
-        </div>
-        </div>
+        </div> 
+        </div>-->
     </div>
 
-    <!-- The Deleter Address Modal -->
+    <!-- The Deleter Address Modal
     <div class="modal delete-address-model" id="delete-address">
         <div class="modal-dialog">
         <div class="modal-content">
@@ -1039,7 +1073,7 @@
             </div>
         </div>
         </div>
-    </div>
+    </div>-->
 
     <!-- The Modal -->
     <div class="modal delete-address-model" id="rate-text">
