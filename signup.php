@@ -24,8 +24,14 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <label for="">Name</label>
-                                    <input type="text" class="form-control" placeholder="Enter your name" />
+                                    <label for="">First Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter your first name" />
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="">Last Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter your last name" />
                                 </div>
                             </div>
                             <div class="col-lg-12">

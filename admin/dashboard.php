@@ -315,38 +315,38 @@
                     <tbody>
                       <tr>
                         <th scope="row"><a href="#"><img src="../assets/images/images/digi-bp-monitor_2.webp" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
-                        <td>$64</td>
+                        <td><a href="#" class="text-primary fw-bold">Digital Blood Pressure Monitor </a></td>
+                        <td>₹1630.00</td>
                         <td class="fw-bold">124</td>
-                        <td>$5,828</td>
+                        <td>₹2,02,120</td>
                       </tr>
                       <tr>
                         <th scope="row"><a href="#"><img src="../assets/images/images/spirometer_3.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Exercitationem similique doloremque</a></td>
-                        <td>$46</td>
+                        <td><a href="#" class="text-primary fw-bold">3-Ball Spirometer</a></td>
+                        <td>₹199.00</td>
                         <td class="fw-bold">98</td>
-                        <td>$4,508</td>
+                        <td>₹19,502</td>
                       </tr>
                       <tr>
                         <th scope="row"><a href="#"><img src="../assets/images/images/stethoscope_3.webp" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
-                        <td>$59</td>
+                        <td><a href="#" class="text-primary fw-bold">Stethoscope</a></td>
+                        <td>₹300.00</td>
                         <td class="fw-bold">74</td>
-                        <td>$4,366</td>
+                        <td>₹22,200</td>
                       </tr>
                       <tr>
                         <th scope="row"><a href="#"><img src="../assets/images/images/bp-monitor_3.webp" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
-                        <td>$32</td>
+                        <td><a href="#" class="text-primary fw-bold">Sphygmomanometer (Manual Blood Preasure Monitor)</a></td>
+                        <td>₹688.00</td>
                         <td class="fw-bold">63</td>
-                        <td>$2,016</td>
+                        <td>₹43,344</td>
                       </tr>
                       <tr>
                         <th scope="row"><a href="#"><img src="../assets/images/images/pulse-oximeter_2.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
-                        <td>$79</td>
+                        <td><a href="#" class="text-primary fw-bold">Pulse Oximeter</a></td>
+                        <td>₹389.00</td>
                         <td class="fw-bold">41</td>
-                        <td>$3,239</td>
+                        <td>₹15,949</td>
                       </tr>
                     </tbody>
                   </table>

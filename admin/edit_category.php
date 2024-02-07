@@ -6,7 +6,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                 <li class="breadcrumb-item">Category</li>
-                <li class="breadcrumb-item active">Manage Category</li>
+                <li class="breadcrumb-item active"><a href="manage_category.php">Manage Category</a></li>
                 <li class="breadcrumb-item active">Edit Category</li>
             </ol>
         </nav>
@@ -20,7 +20,7 @@
                         <form class="row g-3">
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="category_name" value="fatched category id" disabled>
+                                    <input type="text" class="form-control" id="category_id" value="fatched category id" disabled>
                                     <label for="category_name">Category Id :</label>
                                 </div>
                             </div>
