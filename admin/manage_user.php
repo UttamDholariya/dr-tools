@@ -27,13 +27,13 @@
                                 <tr>
                                     <td>1</td>
                                     <td>User Name</td>
-                                    <td><a href="" class="me-3"><img src="../assets/images/images/view.svg" alt="View" style="height: 16px;width: 16px;"/></a>
+                                    <td><a href="view_user.php" class="me-3"><img src="../assets/images/images/view.svg" alt="View" style="height: 16px;width: 16px;"/></a>
                                     <a href="javascript:" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>User Name</td>
-                                    <td><a href="" class="me-3"><img src="../assets/images/images/view.svg" alt="View" style="height: 16px;width: 16px;"/></a>
+                                    <td><a href="view_user.php" class="me-3"><img src="../assets/images/images/view.svg" alt="View" style="height: 16px;width: 16px;"/></a>
                                     <a href="javascript:" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>
                             </tbody>

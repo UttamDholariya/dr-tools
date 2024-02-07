@@ -61,7 +61,7 @@
                 <p>Online payment is more secure</p>
             </div>
         </div>
-    </section>
+    </section>-->
     <!-- our-services-section -->
     <section class="our-services-section">
         <div class="container">
