@@ -2,7 +2,7 @@
     $host = "localhost";
     $username = "root";
     $password = "";
-    $database = "dr-tools";
+    $database = "drtools";
 
     //create a connection
     $conn = mysqli_connect($host, $username, $password, $database);
@@ -17,4 +17,5 @@
         echo "Connected Successfully";
     }
 
+    
 ?>

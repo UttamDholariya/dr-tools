@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-7">
-                    <form action="">
+                    <form action="../authcode2.php" method="POST">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-title">
@@ -25,14 +25,14 @@
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label for="">Email Address</label>
-                                    <input type="email" class="form-control" placeholder="Enter your email" />
+                                    <input type="email" class="form-control" placeholder="Enter your email" id="email" name="email"/>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group password-group">
                                     <i class="toggle-password fa fa-fw fa-eye-slash"></i>
                                     <label for="">Password</label>
-                                    <input type="password" placeholder="Password" class="form-control" />
+                                    <input type="password" placeholder="Password" class="form-control" id="password" name="password"/>
                                 </div>
                             </div>
                             <div class="col-lg-12">
@@ -41,7 +41,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-12">
-                                <button class="f-btn">Log In</button>
+                                <button class="f-btn" id="login" name="login">Log In</button>
                             </div>
                             <div class="col-lg-12">
                                 <div class="bottom-link">
