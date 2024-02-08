@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-7">
-                    <form action="../abc.php" method="POST">
+                    <form action="../new.php" method="POST">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-title">
@@ -51,7 +51,7 @@
                                 <div class="form-group password-group">
                                     <i class="toggle-password fa fa-fw fa-eye-slash"></i>
                                     <label for="">Confirm Password</label>
-                                    <input type="password" placeholder="Confirm Password" class="form-control" />
+                                    <input type="password" placeholder="Confirm Password" name="cpassword" id="cpassword" class="form-control" />
                                 </div>
                             </div>
                             <div class="col-lg-12">

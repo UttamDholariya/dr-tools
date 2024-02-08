@@ -22,15 +22,28 @@
                             </li>     
                           </ul>
                         </div>
-                        <div class="header-login-wrap">
-                              <div class="login-wrap">
-                                  <a href="./signin.php"><img src="./assets/images/profile.svg" alt="Profile" />Login</a>
-                              </div>
-                              <div class="link-cart-wrap">
-                                  <a href="./cart.php"><img src="./assets/images/images/Cart.svg" alt="Cart" /></a>
-                                  <a href="./my-account.php"><img src="./assets/images/Like.svg" alt="Like" /></a>
-                              </div>
-                        </div>
+                        <?php
+                            session_start(); 
+                            if(isset($_SESSION['user']) == true) 
+                            { ?>
+                                <h6><?php echo $_SESSION['email']; ?></h6>
+                                <div class="link-cart-wrap">
+                                    <a href="./cart.php"><img src="./assets/images/images/Cart.svg" alt="Cart" /></a>
+                                    <a href="./my-account.php"><img src="./assets/images/Like.svg" alt="Like" /></a>
+                                </div>
+                            <?php } else
+                            { ?>
+                                <div class="header-login-wrap">
+                                    <div class="login-wrap">
+                                        <a href="./signin.php"><img src="./assets/images/profile.svg" alt="Profile" />Login</a>
+                                    </div>
+                                    <div class="link-cart-wrap">
+                                        <a href="./cart.php"><img src="./assets/images/images/Cart.svg" alt="Cart" /></a>
+                                        <a href="./my-account.php"><img src="./assets/images/Like.svg" alt="Like" /></a>
+                                    </div>
+                                </div>
+                            <?php }
+                        ?>
                     </nav>
                 </div>
             </div>

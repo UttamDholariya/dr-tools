@@ -4,12 +4,12 @@
   $lname = $_POST['last_name']; 
   $email = $_POST['email']; 
   $password = $_POST['password']; 
-  $//cpassword = $_POST['cpassword']; 
+  $cpassword = $_POST['cpassword']; 
 
-    $servername = "localhost";
-     $username = "root";
-     $password = "";
-     $dbname = "drtools";
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "drtools";
 
       //Create Connection
       $conn = mysqli_connect($servername,$username,$password,$dbname);
@@ -22,7 +22,7 @@
 
       if($password == $cpassword)
       {
-      $sql = "INSERT INTO users(first_name,last_name,email,password) VALUES('$fname','$lname','$email','$password')";
+      $sql = "INSERT INTO users('first_name','last_name','email','password','cpassword') VALUES('$fname','$lname','$email','$password','$cpassword')";
       $insert_query_run = mysqli_query($conn,$sql);
       if($insert_query_run)
             {
