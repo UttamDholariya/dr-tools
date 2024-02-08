@@ -945,7 +945,7 @@
                                 <h2>Your Wishlist is empty</h2>
                                 <p>You don't have any products in the wish list yet. You will get a lot of interesting products on our shop page. </p>
                                 <div class="text-center buttons-wrap submit-btn-wrap justify-content-center">
-                                    <button type="submit" class="g-btn f-btn mb-0"> <a href="index.php">Continue Shopping</a>
+                                    <button type="submit" class="g-btn f-btn mb-0"> Continue Shopping
                                         
                                     </button>
                                 </div>
