@@ -10,7 +10,7 @@
             </ol>
         </nav>
     </div>
-    <section class="section" action="add_product.php" method="POST">
+    <section class="section" >
         <div class="row">
             <div class="col-lg-12">
                 <div class="card shadow">
@@ -18,14 +18,14 @@
                         <h5 class="card-title">Add Product</h5>
                         <form class="row g-3">
                             <div class="col-md-12">
-                                <div class="form-floating" >
+                                <div class="form-floating" action="../product_add.php" method="POST" >
                                     <input type="text" class="form-control" id="pro_name" name="pro_name" placeholder="Enter Product Name">
                                     <label for="pro_name">Product Name</label>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
-                                <div class="form-floating">
+                                <div class="form-floating" action="../admin/product_add.php" method="POST">
                                     <input type="text" class="form-control" id="pro_price" name="pro_price" placeholder="Enter Product Price">
                                     <label for="pro_price">Product Price</label>
                                 </div>
@@ -69,45 +69,3 @@
     </section>
 </main>
 <?php include('../admin/include/footer.php') ?>
-
-<?php
-if ($_SERVER['pro_submit'] == 'POST') {
-$pro_name = $_POST['pro_name']; 
-$pro_price = $_POST['pro_price']; 
-$pro_desc = $_POST['pro_desc']; 
-$quantity = $_POST['quantity']; 
-$pro_details = $_POST['pro_details'];
-$pro_img = $_POST['pro_img'];
-
-$mysqli = new mysqli('localhost', 'root', '', 'drtools'); 
-
-// Check connection
-if ($mysqli->connect_error) {
-    die("Connection failed: " . $mysqli->connect_error);
-}
-
-// Prepare the SQL statement
-$stmt = $mysqli->prepare("INSERT INTO product (pro_name,pro_price,pro_desc,quantity,pro_details,pro_img) VALUES (?, ?, ?, ?, ?, ?)");
-$stmt->bind_param("sssssi", $pro_name, $pro_price, $pro_desc, $quantity, $pro_details, $pro_img);
-
-
-// Execute the statement
-if($stmt->execute()){
-    ?>
-    <script>alert("Poduct Inserted Successfully") </script>
-    <?php
-} 
-else
-{
-    ?>
-    <script> alert("Poduct Not Inserted ") </script>
-    <?php
-    echo "Error: " . $stmt->error;
-}
-header('Location: add_product.php');
-
-// Close the statement and the connection
-$stmt->close();
-$mysqli->close();
-}
-?>
