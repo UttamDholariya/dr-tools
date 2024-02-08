@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-7">
-                    <form action="../admin/php/authcode.php" method="POST">
+                    <form action="../authcode.php" method="POST">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-title">
@@ -25,33 +25,33 @@
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label for="">First Name</label>
-                                    <input type="text" class="form-control" placeholder="Enter your first name" />
+                                    <input type="text" class="form-control" placeholder="Enter your first name" id="first_name" name="first_name"/>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label for="">Last Name</label>
-                                    <input type="text" class="form-control" placeholder="Enter your last name" />
+                                    <input type="text" class="form-control" placeholder="Enter your last name" id="last_name" name="last_name"/>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label for="">Email Address</label>
-                                    <input type="email" class="form-control" placeholder="Enter email" />
+                                    <input type="email" class="form-control" placeholder="Enter email" id="email" name="email"/>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group password-group">
                                     <i class="toggle-password fa fa-fw fa-eye-slash"></i>
                                     <label for="">Password</label>
-                                    <input type="password" placeholder="Password" class="form-control" />
+                                    <input type="password" placeholder="Password" class="form-control" id="password" name="password"/>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group password-group">
                                     <i class="toggle-password fa fa-fw fa-eye-slash"></i>
                                     <label for="">Confirm Password</label>
-                                    <input type="password" placeholder="Confirm Password" class="form-control" />
+                                    <input type="password" placeholder="Confirm Password" name="cpassword" id="cpassword" class="form-control" />
                                 </div>
                             </div>
                             <div class="col-lg-12">
@@ -68,5 +68,7 @@
             </div>
         </div>
     </section>
+
+    
 
 <?php include('./include/footer.php') ?>

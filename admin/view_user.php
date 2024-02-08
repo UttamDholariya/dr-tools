@@ -16,77 +16,80 @@
                 <div class="card shadow">
                     <div class="card-body">
                         <h5 class="card-title">View User Details</h5>
+                        <?php 
+                          $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
+                          $id = $_GET['id'];  
+                          $sql = "SELECT * FROM users WHERE id = {$id}";
+                            $result = mysqli_query($conn,$sql) or die("Query Feiled");
+                            if(mysqli_num_rows($result) > 0){
+                                while($row = mysqli_fetch_assoc($result)){
+                        ?>
                         <form class="row g-3">
 
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="user_id" value="fatched user id" disabled>
+                                    <input type="text" class="form-control" id="user_id" value="<?php echo $row['id']; ?>" disabled>
                                     <label for="category_name">User Id :</label>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="user_name" value="fatched user name" disabled>
-                                    <label for="category_name">User Name :</label>
+                                    <input type="text" class="form-control" id="first_name" value="<?php echo $row['first_name']; ?>" disabled>
+                                    <label for="category_name">First Name :</label>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="email" value="fatched email" disabled>
+                                    <input type="text" class="form-control" id="last_name" value="<?php echo $row['last_name']; ?>" disabled>
+                                    <label for="category_name">Last Name :</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="email" value="<?php echo $row['email']; ?>" disabled>
                                     <label for="category_name">Email :</label>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="phone_no" value="fatched phone_no" disabled>
+                                    <input type="text" class="form-control" id="phone_no" value="<?php echo $row['phone_no']; ?>" disabled>
                                     <label for="category_name">Phone_No :</label>
                                 </div>
                             </div>
 
-                            <div class="col-md-12">
+                            <!-- <div class="col-md-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="gender" value="fatched gender" disabled>
+                                    <input type="text" class="form-control" id="gender" value="<?php echo $row['gendr']; ?>" disabled>
                                     <label for="category_name">Gender :</label>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="dob" value="fatched dob" disabled>
+                                    <input type="text" class="form-control" id="dob" value="<?php echo $row['dob']; ?>" disabled>
                                     <label for="category_name">Date of Birth :</label>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" id="address" value="fatched user address" disabled ></textarea>
+                                    <textarea class="form-control" id="address" value="<?php echo $row['address']; ?>" disabled ></textarea>
                                     <label for="category_name">User Address :</label>
                                 </div>
                             </div>
 
-                            <div class="col-md-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="city" value="fatched city" disabled>
-                                    <label for="category_name">City :</label>
-                                </div>
-                            </div>
-
-                            <div class="col-md-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="state" value="fatched state" disabled>
-                                    <label for="category_name">State :</label>
-                                </div>
-                            </div>
-
-                           
-                
                             <div class="text-center">
                                 <button type="submit" class="btn" style="background-color: #2aa1a8;">Go Back</button>
                             </div>
                         </form>
+                        <?php
+                                }
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
