@@ -36,7 +36,7 @@
                                     <td><?php echo $row['id']; ?></td>
                                     <td><?php echo $row['first_name'] ." " . $row['last_name']; ?></td>
                                     <td><a href="view_user.php?id=<?php echo $row['id']; ?>" class="me-3"><img src="../assets/images/images/view.svg" alt="View" style="height: 16px;width: 16px;"/></a>
-                                    <a href="javascript:" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
+                                    <a href="delete_user.php?id=<?php echo $row['id']; ?>" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>
                                 <?php } ?>
                             </tbody>

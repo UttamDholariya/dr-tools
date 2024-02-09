@@ -17,7 +17,7 @@
                     <div class="col-lg-12">
                         <div class="common-form-section cmn-bg-tab services-inquiry-wrap">
                             <h1>Get In Touch</h1>
-                            <form>
+                            <form action="feedback.php" method="POST">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
@@ -45,7 +45,7 @@
                                     </div>
                                 </div>
                                 <div class="text-center buttons-wrap">
-                                    <button type="submit" class="g-btn f-btn mb-0 radius-3">Send Message</button>
+                                    <button type="submit" id="feed" name="feed" class="g-btn f-btn mb-0 radius-3">Send Message</button>
                                 </div>
                             </form>
                         </div>

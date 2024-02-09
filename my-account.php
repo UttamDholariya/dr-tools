@@ -68,7 +68,7 @@
                         <div class="tab-pane app-lang-wrap fade show active" id="nav-app-language" role="tabpanel" aria-labelledby="nav-app-language-tab">
                             <h2 class="ps-3">User Profile</h2>
                             <div class="common-form-section cmn-bg-tab">
-                                <form>
+                                <form action="profilesave.php" method="POST">
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
@@ -149,7 +149,7 @@
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" class="g-btn f-btn mb-0">Save</button>
+                                        <button type="submit" class="g-btn f-btn mb-0" name="save" id="save">Save</button>
                                     </div>
                                 </form>
                             </div>
