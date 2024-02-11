@@ -231,7 +231,7 @@
                   <table class="table table-borderless datatable">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">Order Id</th>
                         <th scope="col">Customer</th>
                         <th scope="col">Product</th>
                         <th scope="col">Price</th>
@@ -240,35 +240,35 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <th scope="row"><a href="#">#2457</a></th>
+                        <th scope="row"><a href="#">#V4VS1123456G</a></th>
                         <td>Brandon Jacob</td>
                         <td><a href="#" class="text-primary">Digital Blood Pressure Monitor</a></td>
                         <td>₹1630.00</td>
                         <td><span class="badge bg-success">Approved</span></td>
                       </tr>
                       <tr>
-                        <th scope="row"><a href="#">#2147</a></th>
+                        <th scope="row"><a href="#">#V4VS1123456G</a></th>
                         <td>Bridie Kessler</td>
                         <td><a href="#" class="text-primary">Pulse Oximeter</a></td>
                         <td>₹389.00</td>
                         <td><span class="badge bg-warning">Pending</span></td>
                       </tr>
                       <tr>
-                        <th scope="row"><a href="#">#2049</a></th>
+                        <th scope="row"><a href="#">#V4VS1123456G</a></th>
                         <td>Ashleigh Langosh</td>
                         <td><a href="#" class="text-primary">Syringe With Needle</a></td>
                         <td>₹31.00</td>
                         <td><span class="badge bg-success">Approved</span></td>
                       </tr>
                       <tr>
-                        <th scope="row"><a href="#">#2644</a></th>
+                        <th scope="row"><a href="#">#V4VS1123456G</a></th>
                         <td>Angus Grady</td>
                         <td><a href="#" class="text-primar">Nitrile Powder Free Gloves</a></td>
                         <td>₹17.30</td>
                         <td><span class="badge bg-danger">Rejected</span></td>
                       </tr>
                       <tr>
-                        <th scope="row"><a href="#">#2644</a></th>
+                        <th scope="row"><a href="#">#V4VS1123456G</a></th>
                         <td>Raheem Lehner</td>
                         <td><a href="#" class="text-primary">Digital Blood Glucose Meter</a></td>
                         <td>₹489.00</td>

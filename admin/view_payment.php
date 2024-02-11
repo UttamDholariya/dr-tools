@@ -7,8 +7,8 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="dashboard.php">Admin</a></li>
-          <li class="breadcrumb-item">Manage Payment</li>
-          <li class="breadcrumb-item active">Payment</li>
+          <li class="breadcrumb-item"><a href="manage_payment.php">Manage Payment</a></li>
+          <li class="breadcrumb-item active"> View Payment</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->

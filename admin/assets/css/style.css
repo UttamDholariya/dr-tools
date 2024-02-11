@@ -821,12 +821,12 @@ h6 {
 }
 
 .dashboard .sales-card .card-icon {
-  color: #2aa1a8;
+  color: #4154f1;;
   background: #f6f6fe;
 }
 
 .dashboard .revenue-card .card-icon {
-  color: #68D4B4;
+  color: #2eca6a;
   background: #e0f8e9;
 }
 
@@ -1240,9 +1240,25 @@ h6 {
 }
 
 .product-image-wrap {
-  width: 200px;
+  width: 100px;
+  margin-right: 10px;
 }
 
 .product-image-wrap img {
-  
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.product-detail-list p:last-child {
+  margin-bottom: 0;
+}
+
+.product-detail-list {
+  width: 90%;
 }
