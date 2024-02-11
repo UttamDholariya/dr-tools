@@ -1,6 +1,4 @@
-    <?php  $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error(); 
-          session_start();
-    ?> 
+   
     <header>
         <div class="container">
             <div class="row">
@@ -33,7 +31,7 @@
                             
                                 <div class="header-login-wrap">
                                     <div class="login-wrap">
-                                        <a href="./signin.php"><img src="./assets/images/profile.svg" alt="Profile" /><?php echo $_SESSION['email']; ?> </a>
+                                        <a href="./signin.php"><img src="./assets/images/profile.svg" alt="Profile" /> </a>
                                     </div>
                                     <div class="link-cart-wrap">
                                         <a href="./cart.php"><img src="./assets/images/images/Cart.svg" alt="Cart" /></a>
