@@ -16,16 +16,16 @@
                 <div class="card shadow">
                     <div class="card-body">
                         <h5 class="card-title">Add Product</h5>
-                        <form class="row g-3">
+                        <form class="row g-3" action="product_add.php" method="POST" enctype="multipart/form-data">
                             <div class="col-md-12">
-                                <div class="form-floating" action="product_add.php" method="POST" enctype="multipart/form-data">
+                                <div class="form-floating" >
                                     <input type="text" class="form-control" id="pro_name" name="pro_name" placeholder="Enter Product Name">
                                     <label for="pro_name">Product Name</label>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
-                                <div class="form-floating" action="../admin/product_add.php" method="POST">
+                                <div class="form-floating" >
                                     <input type="text" class="form-control" id="pro_price" name="pro_price" placeholder="Enter Product Price">
                                     <label for="pro_price">Product Price</label>
                                 </div>
@@ -59,21 +59,21 @@
 
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="quantity" name="quentity" placeholder="Enter Product Quantity">
+                                    <input type="text" class="form-control" id="quantity" name="quantity" placeholder="Enter Product Quantity">
                                     <label for="quantity">Product Quantity</label>
                                 </div>
                             </div>
 
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Enter Product Details" id="pro_details" name="pro_detils" style="height: 100px;"></textarea>
+                                    <textarea class="form-control" placeholder="Enter Product Details" id="pro_detail" name="pro_detail" style="height: 100px;"></textarea>
                                     <label for="pro_details">Product Details</label>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input type="file" class="form-control" id="failToUpload" name="failToUpload" required>
+                                    <input type="file" class="form-control" id="pro_img" name="pro_img" required>
                                 </div>
                             </div>
                 

@@ -3,14 +3,14 @@
     {
         $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
         
-        if(isset($_FILES['failToUpload'])){
+        if(isset($_FILES['pro_img'])){
             $errors = array();
 
-            $fail_name = $_FILES['failToUpload']['name'];
-            $fail_size = $_FILES['failToUpload']['size'];
-            $fail_tmp = $_FILES['failToUpload']['tmp_name'];
-            $fail_type = $_FILES['failToUpload']['type'];
-            $fail_ext = end(explode('.',$fail_name));
+            $fail_name = $_FILES['pro_img']['name'];
+            $fail_size = $_FILES['pro_img']['size'];
+            $fail_tmp = $_FILES['pro_img']['tmp_name'];
+            $fail_type = $_FILES['pro_img']['type'];
+            $fail_ext = strtolower(end(explode('.',$fail_name)));
             $extention = array("jpeg","png","jpg","webp");
 
             if(in_array($fail_ext,$extention) === false){
