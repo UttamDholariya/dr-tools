@@ -1,3 +1,6 @@
+    <?php  $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error(); 
+          session_start();
+    ?> 
     <header>
         <div class="container">
             <div class="row">
@@ -22,27 +25,22 @@
                             </li>     
                           </ul>
                         </div>
-                        <?php
-                            session_start(); 
-                            if(isset($_SESSION['user']) == true) 
-                            { ?>
-                                <h6><?php echo $_SESSION['email']; ?></h6>
+                        
                                 <div class="link-cart-wrap">
                                     <a href="./cart.php"><img src="./assets/images/images/Cart.svg" alt="Cart" /></a>
                                     <a href="./my-account.php"><img src="./assets/images/Like.svg" alt="Like" /></a>
                                 </div>
-                            <?php } else
-                            { ?>
+                            
                                 <div class="header-login-wrap">
                                     <div class="login-wrap">
-                                        <a href="./signin.php"><img src="./assets/images/profile.svg" alt="Profile" />Login</a>
+                                        <a href="./signin.php"><img src="./assets/images/profile.svg" alt="Profile" /><?php echo $_SESSION['email']; ?> </a>
                                     </div>
                                     <div class="link-cart-wrap">
                                         <a href="./cart.php"><img src="./assets/images/images/Cart.svg" alt="Cart" /></a>
                                         <a href="./my-account.php"><img src="./assets/images/Like.svg" alt="Like" /></a>
                                     </div>
                                 </div>
-                            <?php }
+                            <?php 
                         ?>
                     </nav>
                 </div>

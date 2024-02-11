@@ -53,7 +53,7 @@
                                     </div>
                                     Wishlist
                                 </button>
-                                <a href="./signin.php" class="nav-link" >
+                                <a href="exit1.php" class="nav-link" >
                                         <div class="my-acc-icon">
                                             <img src="./assets/images/images/Logout.svg" alt="Logout" />
                                         </div>

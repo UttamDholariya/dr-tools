@@ -17,19 +17,23 @@
                     <div class="card-body">
                         <h5 class="card-title">View Feedback</h5>
                         <form class="row g-3">
-                            <div class="col-md-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="user_name" value="fatched user name" disabled>
-                                    <label for="category_name">User Name :</label>
-                                </div>
-                            </div>
-
+                            
                             <div class="col-md-12">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="feedback_id" value="fatched feedback id" disabled>
                                     <label for="category_name">feedback Id :</label>
                                 </div>
                             </div>
+
+                             <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="user_name" value="fatched user name" disabled>
+                                    <label for="category_name">User Name :</label>
+                                </div>
+                            </div>
+
+                            
+
 
                             <div class="col-md-12">
                                 <div class="form-floating">

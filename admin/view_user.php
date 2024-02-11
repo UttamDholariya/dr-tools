@@ -17,9 +17,9 @@
                     <div class="card-body">
                         <h5 class="card-title">View User Details</h5>
                         <?php 
-                          $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
-                          $id = $_GET['id'];  
-                          $sql = "SELECT * FROM users WHERE id = {$id}";
+                            include "confing.php";
+                            $id = $_GET['id'];  
+                            $sql = "SELECT * FROM users WHERE id = {$id}";
                             $result = mysqli_query($conn,$sql) or die("Query Feiled");
                             if(mysqli_num_rows($result) > 0){
                                 while($row = mysqli_fetch_assoc($result)){

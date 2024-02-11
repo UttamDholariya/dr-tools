@@ -18,7 +18,7 @@
                         <h5 class="card-title">Add Product</h5>
                         <form class="row g-3">
                             <div class="col-md-12">
-                                <div class="form-floating" action="../product_add.php" method="POST" >
+                                <div class="form-floating" action="product_add.php" method="POST" enctype="multipart/form-data">
                                     <input type="text" class="form-control" id="pro_name" name="pro_name" placeholder="Enter Product Name">
                                     <label for="pro_name">Product Name</label>
                                 </div>
@@ -37,6 +37,25 @@
                                     <label for="pro_desc">Product Description</label>
                                 </div>
                             </div>
+                            <!-- <div class="col-12">
+                                <div class="form-floating">
+                                    <label for="pro_categories">Categories</label>
+                                    <select name="categories" class="col-4">
+                                        <option disabled>Selected Cetegories</option>
+                                        <?
+                                            // $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
+                                            // $sql = "SELECT * FROM category";
+                                            // $result = mysqli_query($conn,$sql) or die("Query Feiled");
+                                            // if(mysqli_num_rows($result) > 0){
+                                            //     while($row = mysqli_fetch_assoc($result)){
+                                            //         echo "<option value='{$row['id']}'>{$row['cat_name']} </option>"; 
+                                            //     }
+
+                                            // }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div> -->
 
                             <div class="col-md-12">
                                 <div class="form-floating">
@@ -54,7 +73,7 @@
 
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input type="file" class="form-control" id="pro_image" name="pro_img">
+                                    <input type="file" class="form-control" id="failToUpload" name="failToUpload" required>
                                 </div>
                             </div>
                 
