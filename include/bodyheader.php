@@ -33,10 +33,10 @@
                                     <div class="login-wrap">
                                         <a href="./signin.php"><img src="./assets/images/profile.svg" alt="Profile" /> </a>
                                     </div>
-                                    <div class="link-cart-wrap">
+                                    <!-- <div class="link-cart-wrap">
                                         <a href="./cart.php"><img src="./assets/images/images/Cart.svg" alt="Cart" /></a>
                                         <a href="./my-account.php"><img src="./assets/images/Like.svg" alt="Like" /></a>
-                                    </div>
+                                    </div> -->
                                 </div>
                             <?php 
                         ?>
