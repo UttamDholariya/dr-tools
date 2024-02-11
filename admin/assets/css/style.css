@@ -1231,3 +1231,18 @@ h6 {
   font-size: 13px;
   color: #012970;
 }
+
+
+
+.products-detail-wrap {
+  display: flex;
+    align-items: center;
+}
+
+.product-image-wrap {
+  width: 200px;
+}
+
+.product-image-wrap img {
+  
+}

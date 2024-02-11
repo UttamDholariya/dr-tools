@@ -1,6 +1,4 @@
-    <?php  $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error(); 
-          session_start();
-    ?> 
+   
     <header>
         <div class="container">
             <div class="row">
