@@ -24,22 +24,6 @@
                           </ul>
                         </div>
                         
-<<<<<<< HEAD
-                        <div class="link-cart-wrap">
-                            <a href="./cart.php"><img src="./assets/images/images/Cart.svg" alt="Cart" /></a>
-                            <a href="./my-account.php"><img src="./assets/images/Like.svg" alt="Like" /></a>
-                        </div>
-                    
-                        <div class="header-login-wrap">
-                            <div class="login-wrap">
-                                <a href="./signin.php"><img src="./assets/images/profile.svg" alt="Profile" /><?php echo $_SESSION['email']; ?> </a>
-                            </div>
-                            <div class="link-cart-wrap">
-                                <a href="./cart.php"><img src="./assets/images/images/Cart.svg" alt="Cart" /></a>
-                                <a href="./my-account.php"><img src="./assets/images/Like.svg" alt="Like" /></a>
-                            </div>
-                        </div>
-=======
                                 <div class="link-cart-wrap">
                                     <a href="./cart.php"><img src="./assets/images/images/Cart.svg" alt="Cart" /></a>
                                     <a href="./my-account.php"><img src="./assets/images/Like.svg" alt="Like" /></a>
@@ -54,7 +38,6 @@
                                         <a href="./my-account.php"><img src="./assets/images/Like.svg" alt="Like" /></a>
                                     </div> -->
                                 </div>
->>>>>>> 72c124104a3e2438c004cccae0f34a78f5d927ad
                             <?php 
                         ?>
                     </nav>
