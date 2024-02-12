@@ -15,14 +15,8 @@
             <div class="col-lg-12">
                 <div class="card shadow">
                     <div class="card-body">
-<<<<<<< HEAD
-                        <h5 class="card-t
-                        itle">Add Product</h5>
-                        <form class="row g-3">
-=======
                         <h5 class="card-title">Add Product</h5>
                         <form class="row g-3" action="product_add.php" method="POST" enctype="multipart/form-data">
->>>>>>> 72c124104a3e2438c004cccae0f34a78f5d927ad
                             <div class="col-md-12">
                                 <div class="form-floating" >
                                     <input type="text" class="form-control" id="pro_name" name="pro_name" placeholder="Enter Product Name">
@@ -43,25 +37,27 @@
                                     <label for="pro_desc">Product Description</label>
                                 </div>
                             </div>
-                            <!-- <div class="col-12">
-                                <div class="form-floating">
-                                    <label for="pro_categories">Categories</label>
-                                    <select name="categories" class="col-4">
-                                        <option disabled>Selected Cetegories</option>
-                                        <?
-                                            // $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
-                                            // $sql = "SELECT * FROM category";
-                                            // $result = mysqli_query($conn,$sql) or die("Query Feiled");
-                                            // if(mysqli_num_rows($result) > 0){
-                                            //     while($row = mysqli_fetch_assoc($result)){
-                                            //         echo "<option value='{$row['id']}'>{$row['cat_name']} </option>"; 
-                                            //     }
+                            <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <label for="pro_categories">Categories</label>
+                                                <select name="categories" id="categories" class="form-control">
+                                                    <option disabled>Ahmedabad</option>
+                                        <?php
+                                                    $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
+                                             $sql = "SELECT * FROM category";
+                                             $result = mysqli_query($conn,$sql) or die("Query Feiled");
+                                             if(mysqli_num_rows($result) > 0){
+                                                 while($row = mysqli_fetch_assoc($result)){
+                                                    echo "<option value='{$row['id']}'>{$row['cat_name']} </option>"; 
+                                                 }
 
-                                            // }
+                                             }
                                         ?>
+                            
+                                             
                                     </select>
                                 </div>
-                            </div> -->
+                            </div>
 
                             <div class="col-md-12">
                                 <div class="form-floating">
