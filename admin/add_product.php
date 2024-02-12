@@ -6,7 +6,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                 <li class="breadcrumb-item">Product</li>
-                <li class="breadcrumb-item active">Add Product</li>
+                <li class="breadcrumb-item active"><a href="add_product.php">Add Product</a></li>
             </ol>
         </nav>
     </div>
@@ -15,8 +15,14 @@
             <div class="col-lg-12">
                 <div class="card shadow">
                     <div class="card-body">
+<<<<<<< HEAD
+                        <h5 class="card-t
+                        itle">Add Product</h5>
+                        <form class="row g-3">
+=======
                         <h5 class="card-title">Add Product</h5>
                         <form class="row g-3" action="product_add.php" method="POST" enctype="multipart/form-data">
+>>>>>>> 72c124104a3e2438c004cccae0f34a78f5d927ad
                             <div class="col-md-12">
                                 <div class="form-floating" >
                                     <input type="text" class="form-control" id="pro_name" name="pro_name" placeholder="Enter Product Name">

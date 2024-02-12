@@ -6,7 +6,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
                 <li class="breadcrumb-item">Category</li>
-                <li class="breadcrumb-item active">Add Category</li>
+                <li class="breadcrumb-item active"><a href="add_category.php">Add Category</a></li>
             </ol>
         </nav>
     </div>

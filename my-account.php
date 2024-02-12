@@ -72,8 +72,14 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="">Name*</label>
-                                                <input type="text" class="form-control" placeholder="Mark Ruffalo" />
+                                                <label for="">First Name*</label>
+                                                <input type="text" class="form-control" placeholder="Mark" />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="">Last Name*</label>
+                                                <input type="text" class="form-control" placeholder="Ruffalo" />
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
@@ -99,13 +105,19 @@
                                                 <input type="date" class="form-control" />
                                             </div>
                                         </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="">Contact Number*</label>
+                                                <input type="number"  class="form-control" placeholder="98980 98009" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" />
+                                            </div>
+                                        </div>
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label for="">Address (Street/Area)*</label>
                                                 <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="201-203, Rang Royal Residency,"></textarea>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label for="">City/District/Town*</label>
                                                 <select name="" id="" class="form-control">
@@ -113,7 +125,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label for="">State*</label>
                                                 <select name="" id="" class="form-control">
@@ -121,18 +133,13 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label for="">Postal Code*</label>
                                                 <input type="number"  class="form-control" placeholder="380081" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==6) return false;" />
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="">Contact Number*</label>
-                                                <input type="number"  class="form-control" placeholder="98980 98009" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" />
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                     <div class="checkbox-wrap text-center">
                                         <div class="form-group">
