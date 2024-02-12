@@ -38,11 +38,11 @@
         $pro_img = mysqli_real_escape_string($conn,$_POST['pro_img']);
 
         
-        $sql = "INSERT INTO product (pro_name,pro_price,pro_desc,quantity,pro_detail,pro_img) VALUES ('{$pro_name}','{$pro_price}','{$pro_desc}','{$quantity}','{$pro_detail}','{$fail_name}');";
-        $sql .= "UPDATE category SET product_count = product_count + 1 WHERE id = {$category}";
+        $sql = "INSERT INTO product(pro_name,pro_price,pro_desc,quantity,pro_detail,pro_img) VALUES ('{$pro_name}','{$pro_price}','{$pro_desc}','{$quantity}','{$pro_detail}','{$fail_name}')";
+        //$sql .= "UPDATE category SET product_count = product_count + 1 WHERE id = {$category}";
    
-        if(mysqli_multi_query($conn,$sql)){
-            // header("Location: add_product.php");
+        if(mysqli_query($conn,$sql)){
+             header("Location: category_add.php");
         }
         else{
             echo " <div class='alert alert-danger'>Query Failed </div>";
