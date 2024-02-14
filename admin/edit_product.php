@@ -17,53 +17,88 @@
                 <div class="card shadow">
                     <div class="card-body">
                         <h5 class="card-title">Edit Product</h5>
-                        <form class="row g-3">
+                        <?php
+                            include "confing.php";
+                            $id = $_GET['id'];
+
+                            $sql = "SELECT * FROM product WHERE id = {$id}";
+                            $result = mysqli_query($conn,$sql) or die("Query Feiled");
+                            if(mysqli_num_rows($result) > 0){
+                                while($row = mysqli_fetch_assoc($result)){
+                        ?>
+                        <form class="row g-3" action="save_product.php" method="post" enctype="multipart/form-data">
 
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="product_id" value="fatched category id" disabled>
+                                    <input type="text" class="form-control" id="id" name="id" value="<?php echo $row['id']; ?>" disabled>
                                     <label for="category_name">Product Id :</label>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="product_name" value="fatched product_name" placeholder="Enter Product Name">
-                                    <label for="product_name">Product Name</label>
+                                    <input type="text" class="form-control" id="pro_price" name="pro_price" value="<?php echo $row['pro_name']; ?>" placeholder="Enter Product Name">
+                                    <label for="pro_name">Product Name</label>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="product_price" value="fatched product_price" placeholder="Enter Product Price">
-                                    <label for="product_price">Product Price</label>
+                                    <input type="text" class="form-control" id="pro_price" name="pro_price" value="<?php echo $row['pro_price']; ?>" placeholder="Enter Product Price">
+                                    <label for="pro_price">Product Price</label>
                                 </div>
                             </div>
                                 
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Enter Product Description" id="product_desc" value="fatched product_description" style="height: 100px;"></textarea>
-                                    <label for="product_desc">Product Description</label>
+                                    <textarea  class="form-control" placeholder="Enter Product Description" id="pro_desc" name="pro_desc" value="<?php echo $row['pro_desc']; ?>" style="height: 100px;"></textarea>
+                                    <label for="pro_desc">Product Description</label>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="product_quantity" value="fatched product_quantity" placeholder="Enter Product Quantity">
-                                    <label for="product_quantity">Product Quantity</label>
+                                    <input type="text" class="form-control" id="quantity" name="quantity" value="<?php echo $row['quantity']; ?>" placeholder="Enter Product Quantity">
+                                    <label for="pro_quantity">Product Quantity</label>
                                 </div>
                             </div>
 
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Enter Product Details" id="product_details" value="fatched product_details" style="height: 100px;"></textarea>
-                                    <label for="product_details">Product Details</label>
+                                    <textarea class="form-control" placeholder="Enter Product Details" id="pro_detail" name="pro_detail" value="<?php echo $row['pro_detail']; ?>" style="height: 100px;"></textarea>
+                                    <label for="pro_details">Product Details</label>
                                 </div>
                             </div>
+                            
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="category">Categories</label>
+                                        <select class="form-control" name="cat_id" id="cat_id">
+                                        <option disabled></option>
+                                        <?php
+                                             $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
+                                             $sql1 = "SELECT * FROM category";
+                                             $result1 = mysqli_query($conn,$sql1) or die("Query Feiled");
+                                             if(mysqli_num_rows($result1) > 0){
+                                                 while($row1 = mysqli_fetch_assoc($result1)){
+                                                    if($row['cat_id'] == $row1['id']){
+                                                        $selected = "Selected";
+                                                    }else{
+                                                        $selected = "";
+                                                    }
+                                                    echo "<option {$selected} value='{$row1['id']}'>{$row1['cat_name']} </option>"; 
+                                                 }
 
+                                             }
+                                        ?>
+                                        </select>
+                                    </div>
+                                </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input type="file" class="form-control" id="product_image">
+                                    <input type="file" class="form-control" id="pro_img" name="pro_img">
+                                    <img src="Uplode/<?php echo $row['pro_img'] ?>" height="150px">
+                                    <input type="hidden" name="old_image" value="<?php echo $row['pro_img'] ?>">
                                 </div>
                             </div>
                 
@@ -71,6 +106,12 @@
                                 <button type="submit" class="btn" style="background-color: #2aa1a8;">Update Product</button>
                             </div>
                         </form>
+                        <?php
+                                }
+                            }else{
+                                echo "Result Not Found.";
+                            }
+                        ?>
                     </div>
                 </div>
             </div>

@@ -17,40 +17,42 @@
                     <div class="card-body">
                         <h5 class="card-title">Manage Product</h5><hr>
                         <table id="myTable" class="display">
+                        <?php 
+                            $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
+                        
+                            $sql = "SELECT * FROM product ORDER BY id DESC";
+                            $result = mysqli_query($conn,$sql) or die("Query Feiled");
+                            if(mysqli_num_rows($result) > 0){
+                        ?>
                             <thead>
                                 <tr>
                                     <th>Product Id</th>
                                     <th>Product Name</th>
                                     <th>Product Price</th>
                                     <th>Product Description</th>
+                                    <th>Product Categories</th>
                                     <th>Product Quantity</th>
                                     <th>Product Detail</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                            <?php while($row = mysqli_fetch_assoc($result)){ ?>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Product Name</td>
-                                    <td>1500</td>
-                                    <td></td>
-                                    <td>1</td>
-                                    <td></td>
-                                    <td><a href="edit_product.php" class="me-3"><img src="../assets/images/images/edit.svg" alt="Edit" /></a>
-                                    <a href="javascript:" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
+                                    <td><?php echo $row['id']; ?></td>
+                                    <td><?php echo $row['pro_name']; ?></td>
+                                    <td><?php echo $row['pro_price']; ?></td>
+                                    <td><?php echo $row['pro_desc']; ?></td>
+                                    <td><?php echo $row['category_name']; ?></td>
+                                    <td><?php echo $row['quantity']; ?></td>
+                                    <td><?php echo $row['pro_detail']; ?></td>
+                                    <td><a href="edit_product.php?id=<?php echo $row['id']; ?>" class="me-3"><img src="../assets/images/images/edit.svg" alt="Edit" /></a>
+                                    <a href="delete_product.php?id=<?php echo $row['id']; ?>" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Product Name</td>
-                                    <td>1500</td>
-                                    <td></td>
-                                    <td>1</td>
-                                    <td></td>
-                                    <td><a href="edit_product.php" class="me-3"><img src="../assets/images/images/edit.svg" alt="Edit" /></a>
-                                    <a href="javascript:" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
-                                </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

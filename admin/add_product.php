@@ -37,13 +37,13 @@
                                     <label for="pro_desc">Product Description</label>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="pro_categories">Categories</label>
+                                                <label for="categories">Categories</label>
                                                 <select name="categories" id="categories" class="form-control">
-                                                    <option disabled>Ahmedabad</option>
+                                                    <option disabled></option>
                                         <?php
-                                                    $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
+                                             $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
                                              $sql = "SELECT * FROM category";
                                              $result = mysqli_query($conn,$sql) or die("Query Feiled");
                                              if(mysqli_num_rows($result) > 0){
