@@ -66,7 +66,6 @@
         </div>
       </div>
     </section>
-
   </main><!-- End #main -->
   <?php include('../admin/include/footer.php') ?>
 </html>
