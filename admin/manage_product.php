@@ -18,9 +18,9 @@
                         <h5 class="card-title">Manage Product</h5><hr>
                         <table id="myTable" class="display">
                         <?php 
-                            $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
-                        
-                            $sql = "SELECT * FROM product ORDER BY id DESC";
+                            //$conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
+                            include "confing.php";
+                            $sql = "SELECT product.id,product.pro_name,product.category_name,category.cat_name FROM product LEFT JOIN category ON product.category_name = category.id ORDER BY product.id DESC";
                             $result = mysqli_query($conn,$sql) or die("Query Feiled");
                             if(mysqli_num_rows($result) > 0){
                         ?>
@@ -28,11 +28,11 @@
                                 <tr>
                                     <th>Product Id</th>
                                     <th>Product Name</th>
-                                    <th>Product Price</th>
-                                    <th>Product Description</th>
+                                    <!-- <th>Product Price</th>
+                                    <th>Product Description</th> -->
                                     <th>Product Categories</th>
-                                    <th>Product Quantity</th>
-                                    <th>Product Detail</th>
+                                    <!-- <th>Product Quantity</th>
+                                    <th>Product Detail</th> -->
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -41,11 +41,9 @@
                                 <tr>
                                     <td><?php echo $row['id']; ?></td>
                                     <td><?php echo $row['pro_name']; ?></td>
-                                    <td><?php echo $row['pro_price']; ?></td>
-                                    <td><?php echo $row['pro_desc']; ?></td>
-                                    <td><?php echo $row['category_name']; ?></td>
-                                    <td><?php echo $row['quantity']; ?></td>
-                                    <td><?php echo $row['pro_detail']; ?></td>
+                                    
+                                    <td><?php echo $row['cat_name']; ?></td>
+                                    
                                     <td><a href="edit_product.php?id=<?php echo $row['id']; ?>" class="me-3"><img src="../assets/images/images/edit.svg" alt="Edit" /></a>
                                     <a href="delete_product.php?id=<?php echo $row['id']; ?>" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>

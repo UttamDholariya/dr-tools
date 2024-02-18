@@ -40,7 +40,7 @@
                             <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="categories">Categories</label>
-                                                <select name="categories" id="categories" class="form-control">
+                                                <select name="category_name" id="category_name" class="form-control">
                                                     <option disabled></option>
                                         <?php
                                              $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();

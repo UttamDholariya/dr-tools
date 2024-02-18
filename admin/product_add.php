@@ -29,9 +29,19 @@
                 die();
             }
         }   
-        
-        $sql = "INSERT INTO product(pro_name,pro_price,pro_desc,category_name,quantity,pro_detail,pro_img) VALUES ('{$pro_name}','{$pro_price}','{$pro_desc}',{$category},'{$quantity}','{$pro_detail}','{$file_name}');";
-        $sql .= "UPDATE category SET product_count = product_count + 1 WHERE id = {$category}";
+        $pro_name = mysqli_real_escape_string($conn, $_POST['pro_name']); 
+        $pro_price = mysqli_real_escape_string($conn,$_POST['pro_price']);
+        $pro_desc = mysqli_real_escape_string($conn,$_POST['pro_desc']);
+        $category_name = mysqli_real_escape_string($conn,$_POST['category_name']);
+        $quantity = mysqli_real_escape_string($conn,$_POST['quantity']);
+        $pro_detail = mysqli_real_escape_string($conn,$_POST['pro_detail']);
+        $pro_img = mysqli_real_escape_string($conn,$_POST['pro_img']);
+
+        $product_count = mysqli_real_escape_string($conn,$_POST['product_count']);
+
+
+        $sql = "INSERT INTO product(pro_name,pro_price,pro_desc,category_name,quantity,pro_detail,pro_img) VALUES ('{$pro_name}','{$pro_price}','{$pro_desc}',{$category_name},'{$quantity}','{$pro_detail}','{$file_name}');";
+        $sql .= "UPDATE category SET product_count = product_count + 1 WHERE id = {$category_name}";
    
         if(mysqli_multi_query($conn,$sql)){
              header("Location: add_product.php");

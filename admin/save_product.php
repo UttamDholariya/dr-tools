@@ -29,7 +29,7 @@
                 die();
             }
     }
-    $id = mysqli_real_escape_string($conn,$_POST['id']);
+    
     $pro_name = mysqli_real_escape_string($conn, $_POST['pro_name']); 
     $pro_price = mysqli_real_escape_string($conn,$_POST['pro_price']); 
     $pro_desc = mysqli_real_escape_string($conn,$_POST['pro_desc']);

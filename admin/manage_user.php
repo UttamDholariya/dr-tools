@@ -16,8 +16,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Manage User</h5><hr>
                         <?php 
-                            $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
-                        
+                            //$conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
+                            include "confing.php";
                             $sql = "SELECT * FROM users ORDER BY id DESC";
                             $result = mysqli_query($conn,$sql) or die("Query Feiled");
                             if(mysqli_num_rows($result) > 0){

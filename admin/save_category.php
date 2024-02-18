@@ -31,6 +31,7 @@
 
         }
     
+        
     echo $sql = "UPDATE category SET cat_name='{$_POST["cat_name"]}',cat_icon='{$file_name}' WHERE id = {$_POST["id"]}";
     $result = mysqli_query($conn,$sql);
     if($result){
