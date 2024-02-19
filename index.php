@@ -164,9 +164,17 @@
 
                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-4">
                     <div class="products-wrap">
+                    <?php
+                        include "confing.php";
+                    
+                        $sql = "SELECT product.id,product.pro_name,product.pro_price,product.pro_desc,product.quantity,product.pro_detail,product.category_name,product.pro_img,category.cat_name FROM product LEFT JOIN category ON product.category_name = category.id ";
+                            $result = mysqli_query($conn,$sql) or die("Query Feiled");
+                            if(mysqli_num_rows($result) > 0){
+                                while($row = mysqli_fetch_assoc($result)){
+                    ?>
                         <div class="products-wrap-img position-relative">
                             <a href="./product-detail.php">
-                                <img src="./assets/images/images/stethoscope_3.webp" alt="Product" />
+                                <img src="admin/Uplode/<?php echo $row['pro_img'] ?>" alt="Product" />
                             </a>
                             <div class="product-like-cart">
                                 <a href="#" class="product-btn"><img src="./assets/images/like-white.svg" alt="Like" /></a>
@@ -175,10 +183,10 @@
                         </div>
                         <div class="products-detail">
                             <a href="./product-detail.php">
-                                <h3>Stethoscope</h3>
+                                <h3><?php echo $row['pro_name'] ?></h3>
                             </a>
                             <div class="products-price-rating">
-                                <p>₹300.00</p>
+                                <p><?php echo "₹". $row['pro_price'] .".00" ?></p>
                                 <div class="rating-wrap">
                                     <a href="#">
                                         <img src="./assets/images/star.svg" alt="Star" />
@@ -191,8 +199,15 @@
                             </div>
                         </div>
                     </div>
+                    <?php
+                        }
+                    }
+                    else{
+                        echo "<h2>NO Record Found.</h2>";
+                    }
+                ?>
                 </div>
-                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-4">
+                <!-- <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-4">
                     <div class="products-wrap">
                         <div class="products-wrap-img position-relative">
                             <a href="./product-detail.php">
@@ -524,7 +539,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

@@ -11,7 +11,7 @@
             $file_tmp = $_FILES['pro_img']['tmp_name'];
             $file_type = $_FILES['pro_img']['type'];
             $file_ext = end(explode('.',$file_name));
-            $extention = array("jpeg","png","jpg","webp");
+            $extention = array("jpeg","png","jpg","webp","svg");
 
             if(in_array($file_ext,$extention) === false){
                 $errors[] = "This Extention fail not allowed, Pleas choose a PNG and JPG";
