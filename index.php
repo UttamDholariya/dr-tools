@@ -173,7 +173,7 @@
                                 while($row = mysqli_fetch_assoc($result)){
                     ?>
                         <div class="products-wrap-img position-relative">
-                            <a href="./product-detail.php">
+                            <a href="./product-detail.php?id=<?php echo $row['id'] ?>">
                                 <img src="admin/Uplode/<?php echo $row['pro_img'] ?>" alt="Product" />
                             </a>
                             <div class="product-like-cart">
@@ -182,7 +182,7 @@
                             </div>
                         </div>
                         <div class="products-detail">
-                            <a href="./product-detail.php">
+                            <a href="./product-detail.php?id=<?php echo $row['id'] ?>">
                                 <h3><?php echo $row['pro_name'] ?></h3>
                             </a>
                             <div class="products-price-rating">

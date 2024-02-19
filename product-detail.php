@@ -16,20 +16,28 @@
                 </div>
             </div>
             <div class="product-inner">
+            <?php
+                        include "confing.php";
+                        $id = $_GET['id'];
+                        $sql = "SELECT product.id,product.pro_name,product.pro_price,product.pro_desc,product.quantity,product.pro_detail,product.category_name,product.pro_img,category.cat_name FROM product LEFT JOIN category ON product.category_name = category.id WHERE product.id={$id} ";
+                            $result = mysqli_query($conn,$sql) or die("Query Feiled");
+                            if(mysqli_num_rows($result) > 0){
+                                while($row = mysqli_fetch_assoc($result)){
+                    ?>
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="product-detail-slider-main">
                             <div id="sync1" class="owl-carousel owl-theme">
                                 <div class="item">
-                                  <img src="./assets/images/images/digi-bp-monitor_2.webp" alt="Image" />
+                                  <img src="admin/Uplode/<?php echo $row['pro_img'] ?>" alt="Image" />
                                 </div>
                               </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="product-detail-wrapper">
-                            <h2>Omron Fully Automatic Digital Blood Pressure Monitoring Machine- Arm Circumference (22-32Cm)</h2>
-                            <p class="p-reg-16">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                            <h2><?php echo $row['pro_name'] ?></h2>
+                            <p class="p-reg-16"><?php echo $row['pro_desc'] ?></p>
                             <div class="rating-wrapper-main rating-main-sec">
                                 <div class="rating__stars">
                                     <input id="rating-1" class="rating__input rating__input-1" type="radio" name="rating" value="1">
@@ -85,7 +93,7 @@
                                 </div>
                             </div>
                             <div class="product-prices-wrapper">
-                                <p class="p-primary-24">₹1630.00</p>
+                                <p class="p-primary-24"><?php echo "₹". $row['pro_price'] .".00" ?></p>
                                 <!--<p class="p-light-24">₹4,999.00</p> -->
                                <!-- <p class="p-green-24">68% off</p> -->
                             </div>
@@ -101,7 +109,8 @@
                         </div>
                         <div class="products-details-lists">
                             <h2>Products Details</h2>
-                            <ul>
+                            <?php echo  $row['pro_detail'] ?>
+                            <!-- <ul>
                                 <li>
                                     <p>Size</p>
                                     <p>: Free size</p>
@@ -138,15 +147,19 @@
                                     <p>Display Type</p>
                                     <p>: LCD</p>
                                 </li>
-                                <!--<li>
-                                    <p>Water Resistant</p>
-                                    <p>: No</p>
-                                </li>-->
-                            </ul>
+                                
+                            </ul> -->
                         </div>
                     </div>
-                </div>
+                </div>   
             </div>
+            <?php
+                        }
+                    }
+                    else{
+                        echo "<h2>NO Record Found.</h2>";
+                    }
+            ?>
         </div>
     </section>
 
