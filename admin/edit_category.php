@@ -30,9 +30,9 @@
                         <form class="row g-3" action="save_category.php" method="post" enctype="multipart/form-data">
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="id" value="<?php echo $row['id']; ?>" disabled>
-                                    <input type="hidden" name="id " value="<?php echo $row['id']; ?>">
-                                    <label for="category_name">Category Id :</label>
+                                    <input type="text" class="form-control" id="id" value="<?php echo $row['id']; ?>" disabled >
+                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>" >
+                                    <label for="cat_id">Category Id :</label>
                                 </div>
                             </div>
 
