@@ -35,7 +35,7 @@
     $sql = "UPDATE product SET pro_name='{$_POST["pro_name"]}',pro_price='{$_POST["pro_price"]}',pro_desc='{$_POST["pro_desc"]}',category_name={$_POST["category_name"]},quantity='{$_POST["quantity"]}',pro_detail='{$_POST["pro_detail"]}',pro_img='{$file_name}' WHERE id = {$_POST["id"]} ";
     $result = mysqli_query($conn, $sql);
     if($result){
-        header("Location: edit_product.php");
+        header("Location: edit_product.php?id=".$_POST['id']);
     }else{
         echo "Query Failed.";
     }

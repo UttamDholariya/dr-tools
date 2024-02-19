@@ -35,7 +35,7 @@
     $sql = "UPDATE category SET cat_name='{$_POST["cat_name"]}',cat_icon='{$file_name}' WHERE id = {$_POST["id"]}";
     $result = mysqli_query($conn,$sql);
     if($result){
-        header("Location: edit_category.php");
+        header("Location: edit_category.php?id=".$_POST['id']);
     }else{
         echo "Query Failed.";
     }
