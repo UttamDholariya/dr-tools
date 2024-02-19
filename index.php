@@ -71,9 +71,11 @@
                 </div>
             </div>
         </div>
+        
         <div class="owl-carousel owl-theme our-services-slider">
-            <div class="item">
-                <div class="our-services-wrap text-center">
+            <!-- <div class="item"> -->
+            
+                <!-- <div class="our-services-wrap text-center">
                     <div class="our-services-img">
                         <img src="./assets/images/images/syringes.png" alt="syringes" />
                     </div>
@@ -119,16 +121,33 @@
                     </div>
                     <p>Laboratory</p>
                 </div>
-            </div>
+            </div> -->
             <div class="item">
+            <?php
+                    include "confing.php";
+                    
+                    $sql = "SELECT * FROM category ORDER BY id DESC";
+                            $result = mysqli_query($conn,$sql) or die("Query Feiled");
+                            if(mysqli_num_rows($result) > 0){
+                                while($row = mysqli_fetch_assoc($result)){
+                ?>
                 <div class="our-services-wrap text-center">
                     <div class="our-services-img">
-                        <img src="./assets/images/images/surgical.svg" alt="Surgical" />
+                        <img src="admin/Uplode/<?php echo $row['cat_icon'] ?>" alt="" />
                     </div>
-                    <p>Surgical</p>
+                    <p><?php echo $row['cat_name'] ?></p>
                 </div>
+                <?php
+                        }
+                    }
+                    else{
+                        echo "<h2>NO Record Found.</h2>";
+                    }
+                ?>
             </div>
+            
         </div>
+        
     </section>
     <!-- top-products-section -->
     <section class="top-products-section popular-products-section">

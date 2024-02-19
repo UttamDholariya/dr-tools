@@ -21,23 +21,24 @@
                             include "confing.php";
                             $id = $_GET['id'];
 
-                            $sql = "SELECT * FROM product WHERE id = {$id}";
+                            $sql = "SELECT product.id,product.pro_name,product.pro_price,product.pro_desc,product.quantity,product.pro_detail,product.category_name,product.pro_img,category.cat_name FROM product LEFT JOIN category ON product.category_name = category.id WHERE product.id = {$id}";
+
                             $result = mysqli_query($conn,$sql) or die("Query Feiled");
                             if(mysqli_num_rows($result) > 0){
                                 while($row = mysqli_fetch_assoc($result)){
                         ?>
-                        <form class="row g-3" action="save_product.php" method="post" enctype="multipart/form-data">
+                        <form class="row g-3" action="save_product.php" method="POST" enctype="multipart/form-data">
 
                             <div class="col-md-12">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="id" name="id" value="<?php echo $row['id']; ?>" disabled>
-                                    <label for="category_name">Product Id :</label>
+                                    <label for="pro_id">Product Id :</label>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="pro_price" name="pro_price" value="<?php echo $row['pro_name']; ?>" placeholder="Enter Product Name">
+                                    <input type="text" class="form-control" id="pro_name" name="pro_name" value="<?php echo $row['pro_name']; ?>" placeholder="Enter Product Name">
                                     <label for="pro_name">Product Name</label>
                                 </div>
                             </div>
@@ -73,7 +74,7 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="category">Categories</label>
-                                        <select class="form-control" name="cat_id" id="cat_id">
+                                        <select class="form-control" name="category_name" id="category_name">
                                         <option disabled></option>
                                         <?php
                                              $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
@@ -81,7 +82,7 @@
                                              $result1 = mysqli_query($conn,$sql1) or die("Query Feiled");
                                              if(mysqli_num_rows($result1) > 0){
                                                  while($row1 = mysqli_fetch_assoc($result1)){
-                                                    if($row['cat_id'] == $row1['id']){
+                                                    if($row['category_name'] == $row1['id']){
                                                         $selected = "Selected";
                                                     }else{
                                                         $selected = "";
