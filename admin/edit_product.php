@@ -52,7 +52,7 @@
                                 
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea  class="form-control" placeholder="Enter Product Description" id="pro_desc" name="pro_desc" value="<?php echo $row['pro_desc']; ?>" style="height: 100px;"></textarea>
+                                    <textarea  class="form-control" placeholder="Enter Product Description" id="pro_desc" name="pro_desc" style="height: 100px;"><?php echo $row['pro_desc']; ?></textarea>
                                     <label for="pro_desc">Product Description</label>
                                 </div>
                             </div>
@@ -66,14 +66,13 @@
 
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Enter Product Details" id="pro_detail" name="pro_detail" value="<?php echo $row['pro_detail']; ?>" style="height: 100px;"></textarea>
+                                    <textarea class="form-control" placeholder="Enter Product Details" id="pro_detail" name="pro_detail"  style="height: 100px;"><?php echo $row['pro_detail']; ?></textarea>
                                     <label for="pro_details">Product Details</label>
                                 </div>
                             </div>
                             
                             <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="category">Categories</label>
+                                <div class="form-floating">
                                         <select class="form-control" name="category_name" id="category_name">
                                         <option disabled></option>
                                         <?php
@@ -93,6 +92,7 @@
                                              }
                                         ?>
                                         </select>
+                                        <label for="category_name">Categories</label>
                                     </div>
                                 </div>
                             <div class="col-md-12">
