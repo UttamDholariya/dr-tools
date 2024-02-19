@@ -10,7 +10,7 @@
             $file_size = $_FILES['pro_img']['size'];
             $file_tmp = $_FILES['pro_img']['tmp_name'];
             $file_type = $_FILES['pro_img']['type'];
-            $file_ext = strtolower(end(explode('.', $file_name)));
+            $file_ext = end(explode('.', $file_name));
             $extention = array("jpeg","png","jpg","webp","svg");
 
             if(in_array($file_ext,$extention) === false){
@@ -32,8 +32,9 @@
     
     
 
-    $sql = "UPDATE product SET pro_name='{$_POST["pro_name"]}',pro_price='{$_POST["pro_price"]}',pro_desc='{$_POST["pro_desc"]}',category_name={$_POST["category_name"]},quantity='{$_POST["quantity"]}',pro_detail='{$_POST["pro_detail"]}',pro_img='{$file_name}' WHERE id = {$_POST["id"]} ";
+   $sql = "UPDATE product SET id='{$_POST["id"]}', pro_name='{$_POST["pro_name"]}',pro_price='{$_POST["pro_price"]}',pro_desc='{$_POST["pro_desc"]}',category_name={$_POST["category_name"]},quantity='{$_POST["quantity"]}',pro_detail='{$_POST["pro_detail"]}',pro_img='{$file_name}' WHERE id = {$_POST["id"]} ";
     $result = mysqli_query($conn, $sql);
+
     if($result){
         header("Location: edit_product.php");
     }else{
