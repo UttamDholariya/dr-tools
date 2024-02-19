@@ -31,7 +31,8 @@
 
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="id" name="id" value="<?php echo $row['id']; ?>" >
+                                    <input type="text" class="form-control" id="id" value="<?php echo $row['id']; ?>" disabled >
+                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>" >
                                     <label for="pro_id">Product Id :</label>
                                 </div>
                             </div>

@@ -130,7 +130,7 @@
                             $result = mysqli_query($conn,$sql) or die("Query Feiled");
                             if(mysqli_num_rows($result) > 0){
                                 while($row = mysqli_fetch_assoc($result)){
-                ?>
+            ?>
                 <div class="our-services-wrap text-center">
                     <div class="our-services-img">
                         <img src="admin/Uplode/<?php echo $row['cat_icon'] ?>" alt="" />

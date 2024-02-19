@@ -36,7 +36,7 @@
     $result = mysqli_query($conn, $sql);
 
     if($result){
-        header("Location: edit_product.php");
+        header("Location: edit_product.php?id=".$_POST['id']);
     }else{
         echo "Query Failed.";
     }
