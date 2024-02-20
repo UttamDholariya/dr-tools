@@ -78,7 +78,7 @@
                             if(mysqli_num_rows($result) > 0){
                                 while($row = mysqli_fetch_assoc($result)){
                                     ?>
-                                    <form action="profilesave.php" method="POST">
+                                    <form action="profile_save.php" method="POST" >
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
@@ -124,7 +124,7 @@
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label for="">Address (Street/Area)*</label>
-                                                <textarea name="" id="" cols="30" rows="2" name="address" id="address" class="form-control" placeholder="201-203, Rang Royal Residency,"></textarea>
+                                                <textarea cols="30" rows="2" name="address" id="address" class="form-control" placeholder="201-203, Rang Royal Residency,"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
@@ -151,7 +151,7 @@
                                         </div>
                                         
                                     </div>
-                                    <div class="checkbox-wrap text-center">
+                                    <!-- <div class="checkbox-wrap text-center">
                                         <div class="form-group">
                                             <input type="checkbox" id="default" name="default" value="default" checked>
                                             <label for="default">default</label>
@@ -164,7 +164,7 @@
                                             <input type="radio" id="work" name="radio-group">
                                             <label for="work">Work</label>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="text-center">
                                         <button type="submit" class="g-btn f-btn mb-0" name="save" id="save">Save</button>
                                     </div>
