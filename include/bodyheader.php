@@ -1,4 +1,4 @@
-   
+   <?php session_start(); ?>
     <header>
         <div class="container">
             <div class="row">
@@ -25,18 +25,29 @@
                         </div>
                         
                         <div class="header-login-wrap">
-                                    <div class="login-wrap">
-                                        <a href="./signin.php"><img src="./assets/images/profile.svg" alt="Profile" /> Login </a>
-                                    </div>
-                                    <!-- <div class="link-cart-wrap">
-                                        <a href="./cart.php"><img src="./assets/images/images/Cart.svg" alt="Cart" /></a>
-                                        <a href="./my-account.php"><img src="./assets/images/Like.svg" alt="Like" /></a>
-                                    </div> -->
+                            <?php 
+                                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) 
+                                {
+                            ?>
+                                <div class="login-wrap">
+                                    <a href="./my-account.php"><img src="./assets/images/profile.svg" alt="Profile" /> <?php echo $_SESSION['first_name']; ?> </a>
+                                </div>
+                            <?php 
+                                } 
+                                else 
+                                {
+                            ?>
+                                <div class="login-wrap">
+                                    <a href="./signin.php"><img src="./assets/images/profile.svg" alt="Profile" /> Login </a>
+                                </div><?php
+                                }
+                            ?>
+                                    
                                 
 
                                 <div class="link-cart-wrap">
                                     <a href="./cart.php"><img src="./assets/images/images/Cart.svg" alt="Cart" /></a>
-                                    <a href="./my-account.php"><img src="./assets/images/Like.svg" alt="Like" /></a>
+                                    <a href=""><img src="./assets/images/Like.svg" alt="Like" /></a>
                                 </div>
                             
                         </div>       

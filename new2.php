@@ -57,14 +57,16 @@
         $username = mysqli_real_escape_string($conn,$_POST['email']);
         $password = md5($_POST['password']);
 
-        $sql = "SELECT id ,email FROM users WHERE email = '{$username}' AND password = '{$password}'";
+        $sql = "SELECT id ,email, first_name FROM users WHERE email = '{$username}' AND password = '{$password}'";
         $result = mysqli_query($conn,$sql);
 
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
 
                 session_start();
+                $_SESSION['loggedin'] = true;
                 $_SESSION['email'] = $row['email'];
+                $_SESSION['first_name'] =$row['first_name'];
                 $_SESSION['id'] = $row['id'];
 
                 header("Location: index.php");

@@ -68,24 +68,34 @@
                         <div class="tab-pane app-lang-wrap fade show active" id="nav-app-language" role="tabpanel" aria-labelledby="nav-app-language-tab">
                             <h2 class="ps-3">User Profile</h2>
                             <div class="common-form-section cmn-bg-tab">
-                                <form action="profilesave.php" method="POST">
+                                <?php
+                            include "confing.php";
+                            $id = $_SESSION['id'];
+                            
+                            $sql = "SELECT * FROM users  WHERE id = {$id}";
+                            
+                            $result = mysqli_query($conn,$sql) or die("Query Feiled");
+                            if(mysqli_num_rows($result) > 0){
+                                while($row = mysqli_fetch_assoc($result)){
+                                    ?>
+                                    <form action="profilesave.php" method="POST">
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="">First Name*</label>
-                                                <input type="text" class="form-control" placeholder="Mark" />
+                                                <input type="text" name="first_name" id="first_name" class="form-control" placeholder="Mark" value="<?php echo $row['first_name']; ?>" />
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="">Last Name*</label>
-                                                <input type="text" class="form-control" placeholder="Ruffalo" />
+                                                <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Ruffalo"  value="<?php echo $row['last_name']; ?>"/>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="">Email Address*</label>
-                                                <input type="text" class="form-control" placeholder="markruffalo@gmail.com" />
+                                                <input type="text" name="email" id="email" class="form-control" placeholder="markruffalo@gmail.com" value="<?php echo $row['email']; ?>"/>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
@@ -102,19 +112,19 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="">Date of Birth*</label>
-                                                <input type="date" class="form-control" />
+                                                <input type="date" class="form-control" name="dob" id="dob" />
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="">Contact Number*</label>
-                                                <input type="number"  class="form-control" placeholder="98980 98009" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" />
+                                                <input type="number"  class="form-control" name="phone_no" id="phone_no" placeholder="98980 98009" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" />
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label for="">Address (Street/Area)*</label>
-                                                <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="201-203, Rang Royal Residency,"></textarea>
+                                                <textarea name="" id="" cols="30" rows="2" name="address" id="address" class="form-control" placeholder="201-203, Rang Royal Residency,"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
@@ -136,7 +146,7 @@
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label for="">Postal Code*</label>
-                                                <input type="number"  class="form-control" placeholder="380081" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==6) return false;" />
+                                                <input type="number" name="postal_code" id="postal_code" class="form-control" placeholder="380081" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==6) return false;" />
                                             </div>
                                         </div>
                                         
@@ -159,6 +169,12 @@
                                         <button type="submit" class="g-btn f-btn mb-0" name="save" id="save">Save</button>
                                     </div>
                                 </form>
+                            <?php
+                                    }
+                                }else{
+                                    echo "Result Not Found.";
+                                }
+                            ?>
                             </div>
                         </div>
                         <!-- 
