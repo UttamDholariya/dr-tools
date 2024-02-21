@@ -6,11 +6,9 @@
             $email = mysqli_real_escape_string($conn,$_POST['email']); 
             $phone = mysqli_real_escape_string($conn,md5($_POST['phone'])); 
             $message = mysqli_real_escape_string($conn,md5($_POST['message']));
-            // var_dump($_POST);
-            // die;
-            $sql = "INSERT INTO contactus (full_name,email, phone,message) VALUES ('{$full_name}','{$email}','{$phone}','{$message})";
-            $result = mysqli_query($conn, $sql);
-            if($result)
+            
+            echo $sql = "INSERT INTO contactus (full_name,email, phone,message) VALUES ('{$full_name}','{$email}','{$phone}','{$message})";
+            if(mysqli_query($conn,$sql))
             {
                 header('Location: contact-us.php');   
             }
