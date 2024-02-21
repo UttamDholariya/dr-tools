@@ -61,9 +61,9 @@
   </li><!-- End F.A.Q Page Nav -->
 
   <li class="nav-item">
-    <a class="nav-link collapsed" href="manage_feedback.php">
+    <a class="nav-link collapsed" href="manage_contact_us.php">
       <i class="bi bi-envelope"></i>
-      <span>Manage Feedback</span>
+      <span>Manage Contct Us</span>
     </a>
   </li><!-- End Contact Page Nav -->
   <li class="nav-item">

@@ -5,8 +5,8 @@
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                <li class="breadcrumb-item active"><a href="manage_feedback.php">Manage Feedback</a></li>
-                <li class="breadcrumb-item active">View Feddback</li>
+                <li class="breadcrumb-item active"><a href="manage_contact_us.php">Manage Contact Us</a></li>
+                <li class="breadcrumb-item active">View Message</li>
             </ol>
         </nav>
     </div>
@@ -15,13 +15,13 @@
             <div class="col-lg-12">
                 <div class="card shadow">
                     <div class="card-body">
-                        <h5 class="card-title">View Feedback</h5>
+                        <h5 class="card-title">View Message</h5>
                         <form class="row g-3">
                             
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="feedback_id" value="fatched feedback id" disabled>
-                                    <label for="category_name">feedback Id :</label>
+                                    <input type="text" class="form-control" id="message_id" value="fatched message id" disabled>
+                                    <label for="category_name">Message Id :</label>
                                 </div>
                             </div>
 
@@ -51,8 +51,8 @@
 
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" id="feedback_massege" value="fatched feedback massege" disabled ></textarea>
-                                    <label for="category_name">feedback Massege :</label>
+                                    <textarea class="form-control" id="massege" value="fatched massege" disabled ></textarea>
+                                    <label for="category_name">Massege :</label>
                                 </div>
                             </div>
                 
