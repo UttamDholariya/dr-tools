@@ -32,7 +32,7 @@
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label for="">Full Name*</label>
-                                            <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" value="<?php echo $row['first_name'] . $row['last_name']; ?>">
+                                            <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" value="<?php echo $row['first_name'] ." ". $row['last_name']; ?>">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
