@@ -1,28 +1,20 @@
 <?php
         if(isset($_POST['feed']))
         {
-            $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
+           // $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
+            include "confing.php";
             
-            $name = mysqli_real_escape_string($conn,$_POST['name']);  
-            $email = mysqli_real_escape_string($conn,$_POST['email']); 
-            $number = mysqli_real_escape_string($conn,$_POST['number']);
-            $message = mysqli_real_escape_string($conn,md5($_POST['message'])); 
-            
-            $sql = "INSERT INTO feedback (name, email, number, message) VALUES ('{$name}','{$email}','{$number}','{$message}')";
-            $result = mysqli_query($conn,$sql) or die("Query Failed.");
-
-            if(mysqli_num_rows($result) == 0)
+            session_start(); 
+            $id = $_SESSION['id']; 
+            $message = mysqli_real_escape_string($conn,$_POST['message']);  
+        
+            $sql = "UPDATE feedback SET name='{$_POST["name"]}',email='{$_POST["email"]}',phone='{$_POST["phone"]}',message='{$_POST["message"]}' WHERE feedback_id = {$feedback_id}";
+            if(mysqli_query($conn,$sql))
             {
-                $sql1 = 
+                header("Location: contact-us.php");   
+            }else{
+                echo "Query Failed.";
+            }
 
-                if(mysqli_query($conn,$sql1))
-                {
-                    header('Location: index.php');   
-                }
-            }
-            else
-            {
-                echo "<p style='color:red;text-align:center;margin: 10px 0;'>Email Already Exists. </p>";
-            }
         }
 ?>
