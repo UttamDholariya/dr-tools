@@ -28,9 +28,9 @@
             $postal_code = mysqli_real_escape_string($conn,md5($_POST['postal_code'])); 
             
             
-            $sql = "INSERT INTO users (gender, dob, phone_no, address,postal_code) VALUES ('{$gender}','{$dob}','{$address}','{phone_no}','{$postal_code}') WHERE id = {$id};";
-            $sql .= "UPDATE users SET first_name='{$_POST["first_name"]}',last_name='{$_POST["last_name"]}',email='{$_POST["email"]}',gender={$gender},dob='{$_POST["dob"]}',phone_no='{$_POST["phone_no"]}',address='{$_POST["address"]}',postal_code='{$_POST["postal_code"]}' WHERE id = {$id}";
-            if(mysqli_multi_query($conn,$sql))
+            // $sql = "INSERT INTO users (gender, dob, phone_no, address,postal_code) VALUES ('{$gender}','{$dob}','{$address}','{phone_no}','{$postal_code}') WHERE id = {$id};";
+            $sql = "UPDATE users SET first_name='{$_POST["first_name"]}',last_name='{$_POST["last_name"]}',email='{$_POST["email"]}',gender='{$gender}',dob='{$_POST["dob"]}',phone_no='{$_POST["phone_no"]}',address='{$_POST["address"]}',postal_code='{$_POST["postal_code"]}' WHERE id = {$id}";
+            if(mysqli_query($conn,$sql))
             {
                 header("Location: my-account.php");   
             }else{

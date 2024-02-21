@@ -103,28 +103,28 @@
                                                 <label for="">Gender*</label>
                                                 <select name="gender" id="gender" class="form-control">
                                                     <option value="" disabled selected>Select Gender</option>
-                                                    <option value="male">Male</option>
-                                                    <option value="female">Female</option>
-                                                    <option value="other">Other</option>
+                                                    <option <?php if($row['gender'] == 'male'){ ?> selected <?php } ?> value="male">Male</option>
+                                                    <option <?php if($row['gender'] == 'female'){ ?> selected <?php } ?> value="female">Female</option>
+                                                    <option <?php if($row['gender'] == 'other'){ ?> selected <?php } ?> value="other">Other</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="">Date of Birth*</label>
-                                                <input type="date" class="form-control" name="dob" id="dob" />
+                                                <input type="date" class="form-control" name="dob" id="dob" value="<?php echo $row['dob']; ?>" />
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="">Contact Number*</label>
-                                                <input type="number"  class="form-control" name="phone_no" id="phone_no" placeholder="98980 98009" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" />
+                                                <input type="number"  class="form-control" name="phone_no" id="phone_no" value="<?php echo $row['phone_no']; ?>" placeholder="98980 98009" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" />
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label for="">Address (Street/Area)*</label>
-                                                <textarea cols="30" rows="2" name="address" id="address" class="form-control" placeholder="201-203, Rang Royal Residency,"></textarea>
+                                                <textarea cols="30" rows="2" name="address" id="address"  class="form-control" placeholder="201-203, Rang Royal Residency,"><?php echo $row['address']; ?></textarea>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
@@ -146,7 +146,7 @@
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label for="">Postal Code*</label>
-                                                <input type="number" name="postal_code" id="postal_code" class="form-control" placeholder="380081" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==6) return false;" />
+                                                <input type="number" name="postal_code" id="postal_code" value="<?php echo $row['postal_code']; ?>" class="form-control" placeholder="380081" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==6) return false;" />
                                             </div>
                                         </div>
                                         
