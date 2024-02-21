@@ -36,15 +36,6 @@
                                     <td><a href="view_feedback.php" class="me-3"><img src="../assets/images/images/view.svg" style="height: 16px;width: 16px;" alt="Edit"/></a>
                                     <a href="javascript:" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>12</td>
-                                    <td>user@mail.com</td>
-                                    <td>9876543210</td>
-                                    <td>Feedback Message</td>
-                                    <td><a href="view_feedback.php" class="me-3"><img src="../assets/images/images/view.svg" style="height: 16px;width: 16px;" alt="Edit"/></a>
-                                    <a href="javascript:" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
