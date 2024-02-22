@@ -104,7 +104,7 @@
                             </div>
                             <div class="free-main-text">
                                 <p>Free delivery if you order today <span class="star">*</span></p>
-                                <p>Category: <span class="b-text-category">Monitoring Devices</span> </p>
+                                <p>Category: <span class="b-text-category"><a href="listing-page.php?cid=<?php echo  $row['category_name'] ?>"><?php echo  $row['cat_name'] ?> </a></span> </p>
                             </div>
                         </div>
                         <div class="products-details-lists">

@@ -133,7 +133,7 @@
             ?>
                 <div class="our-services-wrap text-center">
                     <div class="our-services-img">
-                        <img src="admin/Uplode/<?php echo $row['cat_icon'] ?>" alt="" />
+                    <a href="listing-page.php?cid=<?php echo  $row['id'] ?>"><img src="admin/Uplode/<?php echo $row['cat_icon'] ?>" alt="" /></a>
                     </div>
                     <p><?php echo $row['cat_name'] ?></p>
                 </div>
