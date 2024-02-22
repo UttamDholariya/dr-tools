@@ -162,10 +162,13 @@
                 <?php
                         include "confing.php";
 
+                        
+                        $sql = "SELECT product.id,product.pro_name,product.pro_price,product.pro_desc,product.quantity,product.pro_detail,product.category_name,product.pro_img,category.cat_name FROM product LEFT JOIN category ON product.category_name = category.id";
                         if(isset($_GET['cid'])){
                             $cat_id = $_GET['cid'];
+                            $sql .= " WHERE product.category_name = '{$cat_id}'";
                         }
-                        $sql = "SELECT product.id,product.pro_name,product.pro_price,product.pro_desc,product.quantity,product.pro_detail,product.category_name,product.pro_img,category.cat_name FROM product LEFT JOIN category ON product.category_name = category.id WHERE product.category_name = {$cat_id} ";
+                        
                             $result = mysqli_query($conn,$sql) or die("Query Feiled");
                             if(mysqli_num_rows($result) > 0){
                                 while($row = mysqli_fetch_assoc($result)){
