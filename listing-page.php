@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl-3 col-lg-4 col-md-4 sidebar" id="mySidenav">
+                <!-- <div class="col-xl-3 col-lg-4 col-md-4 sidebar" id="mySidenav">
                     <div class="accordion" id="accordionPanelsStayOpenExample">
                         <div class="button-main close-btn" id="btn"> 
                             <div class="bar top"></div>
@@ -156,9 +156,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>-->
+                        </div>
                     </div>
-                </div>
+                </div> -->
                 <?php
                         include "confing.php";
 
