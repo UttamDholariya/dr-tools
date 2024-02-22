@@ -159,7 +159,56 @@
                         </div>-->
                     </div>
                 </div>
-                <div class="col-xl-9 col-lg-8 col-md-12 sidebar-menu">
+                <?php
+                        include "confing.php";
+
+                        if(isset($_GET['cid'])){
+                            $cat_id = $_GET['cid'];
+                        }
+                        $sql = "SELECT product.id,product.pro_name,product.pro_price,product.pro_desc,product.quantity,product.pro_detail,product.category_name,product.pro_img,category.cat_name FROM product LEFT JOIN category ON product.category_name = category.id WHERE product.category_name = {$cat_id} ";
+                            $result = mysqli_query($conn,$sql) or die("Query Feiled");
+                            if(mysqli_num_rows($result) > 0){
+                                while($row = mysqli_fetch_assoc($result)){
+                    ?>
+                    <div class="products-wrap">
+                    
+                        <div class="products-wrap-img position-relative">
+                            <a href="./product-detail.php?id=<?php echo $row['id'] ?>">
+                                <img src="admin/Uplode/<?php echo $row['pro_img'] ?>" alt="Product" />
+                            </a>
+                            <div class="product-like-cart">
+                                <a href="#" class="product-btn"><img src="./assets/images/like-white.svg" alt="Like" /></a>
+                                <a href="#" class="product-btn"><img src="./assets/images/cart-white.svg" alt="Cart" /></a>
+                            </div>
+                        </div>
+                        <div class="products-detail">
+                            <a href="./product-detail.php?id=<?php echo $row['id'] ?>">
+                                <h3><?php echo $row['pro_name'] ?></h3>
+                            </a>
+                            <div class="products-price-rating">
+                                <p><?php echo "₹". $row['pro_price'] .".00" ?></p>
+                                <div class="rating-wrap">
+                                    <a href="#">
+                                        <img src="./assets/images/star.svg" alt="Star" />
+                                        <img src="./assets/images/star.svg" alt="Star" />
+                                        <img src="./assets/images/star.svg" alt="Star" />
+                                        <img src="./assets/images/star.svg" alt="Star" />
+                                        <img src="./assets/images/star.svg" alt="Star" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <?php
+                        }
+                    }
+                    else{
+                        echo "<h2>NO Record Found.</h2>";
+                    }
+                ?>
+                <!-- <div class="col-xl-9 col-lg-8 col-md-12 sidebar-menu">
                     <div class="row">
                         <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
                         <div class="products-wrap">
@@ -523,7 +572,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

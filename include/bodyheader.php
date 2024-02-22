@@ -67,16 +67,40 @@
                     <div class="search-category-wrap">
                         <div class="dropdown all-category">
                             <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">All Category</button>
+                            <?php 
+                                include "confing.php";
+                                
+                                if(isset($_GET['cid'])){
+                                    $cat_id = $_GET['cid'];
+                                }
+                                
+
+                                $sql = "SELECT * FROM category ";
+                                $result = mysqli_query($conn,$sql) or die("Query Feiled : Category");
+                                if(mysqli_num_rows($result) > 0){
+                                    $active = "";
+                                   
+                            ?>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li class="nav-item dropdown">
+                                <?php  while($row = mysqli_fetch_assoc($result)){ 
+                                    if(isset($_GET['cid'])){
+                                        if($row['id'] == $cat_id){
+                                            $active = "active";
+                                        }else{
+                                            $active = "";
+                                        }
+                                    }
+                                echo "<li class='{$active}' class='nav-item dropdown'><a class='dropdown-item nav-link dropdown-toggle' href='listing-page.php?cid={$row['id']}'>{$row['cat_name']} </a> </li>";
+                                } ?>
+                                <!-- <li class="nav-item dropdown">
                                     <a class="dropdown-item nav-link dropdown-toggle" data-bs-toggle="dropdown" href="./about.php">
                                         <div class="icon-wrap">
                                             <img src="./assets/images/images/syringes.png" alt="Consumable & Disposable" />
                                         </div> 
                                         Consumable & Disposable
                                     </a>
-                                </li>
-                                <li class="nav-item">
+                                </li> -->
+                                <!-- <li class="nav-item">
                                     <a class="dropdown-item" href="#">
                                         <div class="icon-wrap">
                                             <img src=".\assets\images\images\Surgical.png" alt="Monitoring Devices" /> 
@@ -123,8 +147,9 @@
                                         </div>
                                         Surgical
                                     </a>
-                                </li>
+                                </li> -->
                             </ul>
+                            <?php } ?>
                         </div>
                         <div class="search-wrap">
                             
