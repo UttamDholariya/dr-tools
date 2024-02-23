@@ -77,7 +77,7 @@
 
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" id="address" value="" disabled ><?php echo $row['address']; ?></textarea>
+                                    <textarea class="form-control" id="address"  disabled ><?php echo $row['address']; ?></textarea>
                                     <label for="category_name">User Address :</label>
                                 </div>
                             </div>
