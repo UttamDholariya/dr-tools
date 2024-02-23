@@ -19,15 +19,15 @@
             <div class="billing-details-wrap">
                 <div class="table-wrap">
                 <?php 
+                            
                             include "confing.php";
-                            $order_id = $_GET['order_id'];  
-                            $sql = "SELECT * FROM order WHERE order_id = {$order_id}";
+                            $order_id = $_GET['order_id'];
+                            $sql = "SELECT * FROM 'order' WHERE order_id = {'$order_id'}";
                             $result = mysqli_query($conn,$sql) or die("Query Feiled");
                             if(mysqli_num_rows($result) > 0){
-                                while($row = mysqli_fetch_assoc($result)){
                         ?>
                     <table class="table mb-0">
-                        <tbody>
+                        <thead>
                             <tr>
                                 <th>Order No</th>
                                 <th>Product Details</th>
@@ -37,15 +37,18 @@
                                 <th>Delivery Date</th>
                                 <th>Status</th>
                             </tr>
+                        </thead>
+                        <tbody>
+                        <?php while($row = mysqli_fetch_assoc($result)){ ?>
                             <tr>
-                                <td> <p>#V4VS1123456G</p> </td>
+                                <td> <p><?php echo $row['order_id']; ?></p> </td>
                                 <td>
                                     <div class="products-detail-wrap">
                                         <div class="product-image-wrap">
-                                            <img src="../assets/images/images/digi-bp-monitor_2.webp" alt="">
+                                            <img  src="../assets/images/images/digi-bp-monitor_2.webp" alt="">
                                         </div>
                                         <div class="product-detail-list">
-                                            <p class="p-14-dark">Omron Fully Automatic Digital Blood Pressure Monitoring Machine- Arm Circumference (22-32Cm)</p>
+                                            <p class="p-14-dark"><?php echo $row['']; ?></p>
                                             <p class="p-14-dark"> <span class="span-title">Color:</span> <span>White</span></p>
                                         </div>
                                     </div>
@@ -66,10 +69,13 @@
                                     <p>Pending</p>
                                 </td>
                             </tr>
+                            <?php
+                        }
+                            ?>
                         </tbody>    
                     </table>
                     <?php
-                                }
+                                
                             }
                         ?>
                 </div>
