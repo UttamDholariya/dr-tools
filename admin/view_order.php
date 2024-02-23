@@ -18,6 +18,14 @@
         <div class="billing-details-main order-summary-wrap">
             <div class="billing-details-wrap">
                 <div class="table-wrap">
+                <?php 
+                            include "confing.php";
+                            $order_id = $_GET['order_id'];  
+                            $sql = "SELECT * FROM order WHERE order_id = {$order_id}";
+                            $result = mysqli_query($conn,$sql) or die("Query Feiled");
+                            if(mysqli_num_rows($result) > 0){
+                                while($row = mysqli_fetch_assoc($result)){
+                        ?>
                     <table class="table mb-0">
                         <tbody>
                             <tr>
@@ -30,7 +38,7 @@
                                 <th>Status</th>
                             </tr>
                             <tr>
-                                <td><p>#V4VS1123456G</p> </td>
+                                <td> <p>#V4VS1123456G</p> </td>
                                 <td>
                                     <div class="products-detail-wrap">
                                         <div class="product-image-wrap">
@@ -58,9 +66,12 @@
                                     <p>Pending</p>
                                 </td>
                             </tr>
-                           
                         </tbody>    
                     </table>
+                    <?php
+                                }
+                            }
+                        ?>
                 </div>
             </div>
         </div>

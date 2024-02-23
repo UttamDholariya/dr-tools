@@ -16,9 +16,9 @@
                     <div class="card-body">
                         <h5 class="card-title">Manage Order</h5><hr>
                         <?php 
-                            //$conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
+                            $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
                             include "confing.php";
-                            $sql = "SELECT order.order_id, order.cart_id, order.sub_total, order.order_status, order.created_at FROM order JOIN cart ON order.order_id = cart.cart_id ";
+                            $sql = "SELECT order.order_id, order.cart_id, order.sub_total, order.order_status, order.created_at, cart.cart_id FROM order JOIN cart ON order.order_id = cart.cart_id ";
                             $result = mysqli_query($conn,$sql) or die("Query Feiled");
                             if(mysqli_num_rows($result) > 0){
                         ?>
@@ -35,22 +35,14 @@
                             </thead>
                             <tbody>
                             <?php while($row = mysqli_fetch_assoc($result)){ ?>
-                                    <!-- <tr>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>5000</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td><a href="../admin/view_order.php" class="me-3"><img src="../assets/images/images/view.svg" alt="view" style="height: 16px;width: 16px;"/></a>
-                                        <a href="javascript:" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
-                                    </tr> -->
+
                                 <tr>
                                     <td><?php echo $row['order_id']; ?></td>
                                     <td><?php echo $row['cart_id']; ?></td>
                                     <td><?php echo $row['sub_total']; ?></td>
                                     <td><?php echo $row['order_status']; ?></td>
                                     <td><?php echo $row['created_at']; ?></td>
-                                    <td><a href="../admin/view_order.php?order_id=<?php echo $row['order_id']; ?>" class="js_remove_item me-3"><img src="../assets/images/images/view.svg" alt="View" style="height: 16px;width: 16px;"/></a>
+                                    <td><a href="../admin/view_order.php?order_id= <?php echo $row['order_id']; ?>" class="js_remove_item me-3"><img src="../assets/images/images/view.svg" alt="View" style="height: 16px;width: 16px;"/></a>
                                     <a href="delete_order.php?order_id=<?php echo $row['order_id']; ?>" class="js_remove_item"><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>
                                 <?php } ?>
