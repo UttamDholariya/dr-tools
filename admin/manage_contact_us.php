@@ -44,8 +44,8 @@
                                     <td><?php echo $row['email']; ?></td>
                                     <td><?php echo $row['phone']; ?></td>
                                     <td><?php echo $row['message']; ?></td>
-                                    <td><a href="view_message.php" class="me-3"><img src="../assets/images/images/view.svg" style="height: 16px;width: 16px;" alt="Edit"/></a>
-                                    <a href="javascript:" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
+                                    <td><a href="view_message.php?message_id=<?php echo $row['message_id']; ?>" class="me-3"><img src="../assets/images/images/view.svg" style="height: 16px;width: 16px;" alt="Edit"/></a>
+                                    <a href="delete_message.php?message_id=<?php echo $row['message_id']; ?>" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
                                 </tr>
                                 <?php } ?>
                             </tbody>

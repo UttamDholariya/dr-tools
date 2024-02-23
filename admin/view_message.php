@@ -20,7 +20,7 @@
                         <?php 
                             include "confing.php";
                             $id = $_GET['message_id'];  
-                            $sql = "SELECT * FROM contactus WHERE id = {$id}";
+                            $sql = "SELECT * FROM contactus WHERE message_id = {$id}";
                             $result = mysqli_query($conn,$sql) or die("Query Feiled");
                             if(mysqli_num_rows($result) > 0){
                                 while($row = mysqli_fetch_assoc($result)){
@@ -29,6 +29,7 @@
                             
                             <div class="col-md-12">
                                 <div class="form-floating">
+                                    <input type="hidden" class="form-control" id="message_id" value="<?php echo $row['message_id']; ?>">
                                     <input type="text" class="form-control" id="message_id" value="<?php echo $row['message_id']; ?>" disabled>
                                     <label for="category_name">Message Id :</label>
                                 </div>
@@ -60,7 +61,7 @@
 
                             <div class="col-md-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" id="massege" value="<?php echo $row['message']; ?>" disabled ></textarea>
+                                    <textarea class="form-control" id="massege" value="" disabled ><?php echo $row['message']; ?></textarea>
                                     <label for="category_name">Massege :</label>
                                 </div>
                             </div>
