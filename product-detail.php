@@ -99,7 +99,7 @@
                             </div>
                             </div>
                             <div class="text-center buttons-wrap submit-btn-wrap">
-                                <a href="./cart.php" style="text-decoration-line:none" type="submit" class="g-btn f-btn border-btn mb-0">Add To Cart</a>
+                                <a href="./cart.php?id=<?php echo $row['id']; ?>" style="text-decoration-line:none" type="submit" class="g-btn f-btn border-btn mb-0">Add To Cart</a>
                                 <a href="./checkout.php" style="text-decoration-line:none" type="submit" class="g-btn f-btn mb-0">Check Out</a>
                             </div>
                             <div class="free-main-text">
