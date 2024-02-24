@@ -99,7 +99,7 @@
                             </div>
                             </div>
                             <div class="text-center buttons-wrap submit-btn-wrap">
-                                <a href="./cart.php?id=<?php echo $row['id']; ?>" style="text-decoration-line:none" type="submit" class="g-btn f-btn border-btn mb-0">Add To Cart</a>
+                                <a href="./cart2.php?id=<?php echo $row['id']; ?>" style="text-decoration-line:none" type="submit" class="g-btn f-btn border-btn mb-0">Add To Cart</a>
                                 <a href="./checkout.php" style="text-decoration-line:none" type="submit" class="g-btn f-btn mb-0">Check Out</a>
                             </div>
                             <div class="free-main-text">
@@ -110,45 +110,6 @@
                         <div class="products-details-lists">
                             <h2>Products Details</h2>
                             <?php echo  $row['pro_detail'] ?>
-                            <!-- <ul>
-                                <li>
-                                    <p>Size</p>
-                                    <p>: Free size</p>
-                                </li>
-                                <li>
-                                    <p>Color</p>
-                                    <p>: White</p>
-                                </li>
-                                <li>
-                                    <p>Style Name</p>
-                                    <p>: HEM 7120 Fully Automatic Digital Blood Pressure Monitor</p>
-                                </li>
-                                <li>
-                                    <p>Pattern Name</p>
-                                    <p>: BP Monitor</p>
-                                </li>
-                                <li>
-                                    <p>Brand</p>
-                                    <p>: Omron </p>
-                                </li>
-                                <li>
-                                    <p>Included Components</p>
-                                    <p>: Device, Cuff, 4 Batteries, User Manual</p>
-                                </li>
-                                <li>
-                                    <p>Power Source</p>
-                                    <p>: Battery Powered</p>
-                                </li>
-                                <li>
-                                    <p>Use for</p>
-                                    <p>: Whole Body</p>
-                                </li>
-                                <li>
-                                    <p>Display Type</p>
-                                    <p>: LCD</p>
-                                </li>
-                                
-                            </ul> -->
                         </div>
                     </div>
                 </div>   

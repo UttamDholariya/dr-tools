@@ -19,11 +19,12 @@
                 <div class="col-lg-12">
                 <?php 
                         include "confing.php";
-
-                        if(isset( $_GET['id']) && $_GET['id'] == true)
+                        $user_id = isset($_SESSION['id']) ? $_SESSION['id'] : '';
+                        if(!empty($user_id))
                         {
-                            $id = $_GET['id'];
-                        $sql = "SELECT * FROM product WHERE id ={$id}";
+                        $sql = "SELECT * FROM `cart` inner join product on product.id = cart.pro_id WHERE cart.user_id = '$user_id';";
+                        
+         
                         $result = mysqli_query($conn,$sql) or die("Query Feiled");
                             if(mysqli_num_rows($result) > 0){
                         ?>
@@ -74,24 +75,6 @@
                 }else
                 
                  ?>
-                   <!--  
-                    <div class="main-grand-total-main">
-                        <div class="dis-code-wrap">
-                            <p class="med-16-black mb-0">Discount Code:</p>
-                            <p class="med-16-gray">Enter your coupon code if you have</p>
-                            <div class="copy-button">
-                                <input id="copyvalue" type="text" readonly class="form-control" placeholder="#AACLPKK12345650">
-                                <button onclick="copyIt()" class="copybtn mt-0">Apply Coupon</button>
-                            </div>
-                            <div class="cards-main">
-                                <img src="/assets/images/payment.svg" alt="Payment">
-                                <img src="/assets/images/payment-1.svg" alt="Payment">
-                                <img src="/assets/images/payment-2.svg" alt="Payment">
-                                <img src="/assets/images/payment-3.svg" alt="Payment">
-                                <img src="/assets/images/payment-4.svg" alt="Payment">
-                            </div>
-                        </div>
-                        -->
                         <div class="proceed-to-checkout">
                             <div class="products-details-lists mt-0 proceed-total-wrap-main">
                                 <ul>

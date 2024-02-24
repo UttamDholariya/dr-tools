@@ -48,25 +48,25 @@
                                             <img  src="../assets/images/images/digi-bp-monitor_2.webp" alt="">
                                         </div>
                                         <div class="product-detail-list">
-                                            <p class="p-14-dark"><?php echo $row['']; ?></p>
-                                            <p class="p-14-dark"> <span class="span-title">Color:</span> <span>White</span></p>
+                                            <p class="p-14-dark"><?php echo $row['pro_name']; ?></p>
+                                            
                                         </div>
                                     </div>
                                 </td>
                                 <td>
-                                    <p class="dark-text">₹1630.00</p>
+                                    <p class="dark-text"><?php echo $row['sub_total']; ?></p>
                                 </td>
                                 <td>
                                     <p>1</p>
                                 </td>
                                 <td>
-                                    <p>01/01/2024</p>
+                                    <p><?php echo $row['created_at']; ?></p>
                                 </td>
                                 <td>
                                     <p>03/01/2024</p>
                                 </td>
                                 <td>
-                                    <p>Pending</p>
+                                    <p><?php echo $row['order_status']; ?></p>
                                 </td>
                             </tr>
                             <?php
