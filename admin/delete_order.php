@@ -4,7 +4,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Fa
 
 $order_id = $_GET['order_id'];
 
-$sql = "DELETE FROM order WHERE order_id = {$order_id}";
+$sql = "DELETE FROM orders WHERE order_id = {$order_id}";
 
 if(mysqli_query($conn,$sql))
 {

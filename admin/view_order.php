@@ -22,7 +22,7 @@
                             
                             include "confing.php";
                             $order_id = $_GET['order_id'];
-                            $sql = "SELECT * FROM 'order' WHERE order_id = {'$order_id'}";
+                            $sql = "SELECT * FROM orders WHERE order_id = {$order_id}";
                             $result = mysqli_query($conn,$sql) or die("Query Feiled");
                             if(mysqli_num_rows($result) > 0){
                         ?>

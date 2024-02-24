@@ -18,7 +18,7 @@
                         <?php 
                            // $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
                             include "confing.php";
-                            $sql = "SELECT o.order_id, o.cart_id, o.sub_total, o.order_status, o.created_at, cart.cart_id FROM `order` as o inner JOIN cart ON o.cart_id = cart.cart_id";
+                            $sql = "SELECT o.order_id, o.cart_id, o.sub_total, o.order_status, o.created_at, cart.cart_id FROM `orders` as o inner JOIN cart ON o.cart_id = cart.cart_id";
                             $result = mysqli_query($conn,$sql) or die("Query Feiled");
                             if(mysqli_num_rows($result) > 0){
                         ?>
