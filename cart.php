@@ -21,7 +21,7 @@
                         <thead>
                           <tr class="table_cart--heading">
                             <th data-th="Products Details">Products Details</th>
-                            <th data-th="Price">Prices</th>
+                            <th data-th="Price">Price</th>
                             <th data-th="Quantity">Quantity</th>
                             <th data-th="Sub Total">Sub Total</th>
                             <th data-th="Action">Action</th>
