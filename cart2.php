@@ -23,8 +23,6 @@
                         if(!empty($user_id))
                         {
                         $sql = "SELECT * FROM `cart` inner join product on product.id = cart.pro_id WHERE cart.user_id = '$user_id';";
-                        
-         
                         $result = mysqli_query($conn,$sql) or die("Query Feiled");
                             if(mysqli_num_rows($result) > 0){
                         ?>
