@@ -57,7 +57,7 @@
                             <td data-th="Quantity">
                                 <div class="qty-wrap-main">
                                     <span class="remove_qty">-</span>
-                                    <input type="number" id="quantity" class="input_qty" min="1" name="quantity" value="<?php echo $row['quantity'] ?>">
+                                    <input type="number" id="c_quantity" class="input_qty" min="1" name="c_quantity" value="<?php echo $row['c_quantity'] ?>">
                                     <span class="add_qty">+</span>
                                 </div>
                             </td>
@@ -117,8 +117,8 @@
             <script>
                             $(document).ready(function(){
                                 var pro_price = $('#pro_price') .val();
-                                var quantity = $('#quantity') .val();
-                                var add = quantity * pro_price ;
+                                var c_quantity = $('#c_quantity') .val();
+                                var add = c_quantity * pro_price ;
                                     $('pro_price') .val(add);
                                 var val = pro_price * tex / 100;
                                     $('gst') .val(val);
@@ -126,9 +126,9 @@
                                     $('total') .val(total);
                                     $('g_total') .html(total);
 
-                            $('#quantity') .change(function(){
-                                var quantity = $(this).val();
-                                var add = quantity + pro_price;
+                            $('#c_quantity') .change(function(){
+                                var c_quantity = $(this).val();
+                                var add = c_quantity + pro_price;
                                 $('#pro_price') .val(add);
 
                                 var val = ('#pro_price') .val() * tex / 100;
