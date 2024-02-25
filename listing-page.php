@@ -173,6 +173,7 @@
                             if(mysqli_num_rows($result) > 0){
                                 while($row = mysqli_fetch_assoc($result)){
                     ?>
+                    <div class="col-xl-3 col-lg-4 col-md-4 sidebar" id="mySidenav">
                     <div class="products-wrap">
                     
                         <div class="products-wrap-img position-relative">

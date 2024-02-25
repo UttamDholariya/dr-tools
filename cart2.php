@@ -61,7 +61,10 @@
                                     <span class="add_qty">+</span>
                                 </div>
                             </td>
-                            <td data-th="Sub Total" id="total" class="item_cost dark-text" ><span class="item-cost-val"  disabled><?php echo "₹". $row['total'] .".00" ?></span></td>
+                            <td data-th="Sub Total" id="total" class="item_cost dark-text" >
+                                <!-- <span class="item-cost-val"  disabled></span> -->
+                                <input type="text" name="" class="item-cost-val" value="<?php echo "₹". $row['total'] .".00" ?>" id="total" />
+                            </td>
                             <td data-th="Action"> <a href="javascript:" class="js_remove_item"><img src="./assets/images/deletecon.svg" alt="Delete" /></a> </td>
                           </tr>
                           <?php } ?>

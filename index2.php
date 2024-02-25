@@ -86,6 +86,8 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-4">
                 <?php
                         include "confing.php";
                     
@@ -94,8 +96,6 @@
                             if(mysqli_num_rows($result) > 0){
                                 while($row = mysqli_fetch_assoc($result)){
                     ?>
-                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-4">
-             
                     <div class="products-wrap">
                     
                         <div class="products-wrap-img position-relative">
@@ -106,7 +106,7 @@
                                 <a href="#" class="product-btn"><img src="./assets/images/like-white.svg" alt="Like" /></a>
                                 <a href="#" class="product-btn"><img src="./assets/images/cart-white.svg" alt="Cart" /></a>
                             </div>
-                        </div>  
+                        </div>
                         <div class="products-detail">
                             <a href="./product-detail.php?id=<?php echo $row['id'] ?>">
                                 <h3><?php echo $row['pro_name'] ?></h3>
@@ -124,8 +124,12 @@
                                 </div>
                             </div>
                         </div>
-                    </div>    
+                    </div>
+                    
                 </div>
+                <!-- <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-4">
+                   
+                </div> -->
                 <?php
                         }
                     }

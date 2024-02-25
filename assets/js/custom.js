@@ -81,7 +81,7 @@ $('.our-services-slider').owlCarousel({
   nav:false,
   autoplay:true,
   dots: false,
-  autoplayTimeout:5000,
+  autoplayTimeout: 3000,
   autoplayHoverPause:true,
   responsive:{
       0:{

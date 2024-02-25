@@ -3881,7 +3881,13 @@ button:focus:not(:focus-visible) {
     bottom: 6px;
 }
 
-
+#total {
+    text-align: center;
+    border: none;
+   
+    color: var(--primary-color);
+    font-weight: 600;
+}
 .conditioner-service-wrapper {
     height: 485px;
     background: url('../images/service-detail.png') center center no-repeat;
