@@ -1,5 +1,6 @@
 <?php include('./include/header.php') ?>
 <?php include('./include/bodyheader.php') ?>
+
     <!-- cart section -->
     <section class="cart-section">
         <div class="container">
@@ -19,12 +20,37 @@
                 <div class="col-lg-12">
                 <?php 
                         include "confing.php";
+                        $product_id = $_GET['id'];
                         $user_id = isset($_SESSION['id']) ? $_SESSION['id'] : '';
-                        if(!empty($user_id))
+
+                        $product = "SELECT * FROM product WHERE id = {$product_id}";
+                        $pro_result = mysqli_query($conn,$product) or die("Query Feiled");
+                        $pro_row = mysqli_fetch_assoc($pro_result);
+                        
+                        $sql2 = "SELECT user_id , pro_id FROM cart WHERE user_id = '$user_id' AND pro_id = '$product_id';";
+                        $result2 = mysqli_query($conn,$sql2) or die("Query Feiled");
+                        
+                        $row1 = null;
+                        if ($result2) {
+                            $row1 = mysqli_fetch_assoc($result2);
+                        }
+                        
+                        if($row1 && $row1['user_id'] == $user_id && $row1['pro_id'] == $product_id)
+                        {   
+                            
+                        }
+                        else
                         {
-                        $sql = "SELECT * FROM `cart` inner join product on product.id = cart.pro_id WHERE cart.user_id = '$user_id';";
+                            $sql1 = "INSERT INTO cart (pro_id,user_id,c_quantity,total) VALUES('$product_id','$user_id','1',{$pro_row['pro_price']})";
+                            $result1 = mysqli_query($conn,$sql1) or die("Query Feiled");
+                        }
+                        
+                        $sql = "SELECT * FROM cart WHERE user_id = '$user_id';";
                         $result = mysqli_query($conn,$sql) or die("Query Feiled");
-                            if(mysqli_num_rows($result) > 0){
+
+                        if(mysqli_num_rows($result) > 0){
+                            while($row = mysqli_fetch_assoc($result)){
+                        
                         ?>
                     <table class="table_cart product_detail_table">
                         <thead>
@@ -63,7 +89,7 @@
                             </td>
                             <td data-th="Sub Total" id="total" class="item_cost dark-text" >
                                 <!-- <span class="item-cost-val"  disabled></span> -->
-                                <input type="text" name="" class="item-cost-val" value="<?php echo "₹". $row['total'] .".00" ?>" id="total" />
+                                <input type="text" name="" class="item-cost-val" value="<?php echo "₹". $row['total'] .".00" ?>" id="total"  disabled/>
                             </td>
                             <td data-th="Action"> <a href="javascript:" class="js_remove_item"><img src="./assets/images/deletecon.svg" alt="Delete" /></a> </td>
                           </tr>
@@ -72,7 +98,7 @@
                           
                         </tbody>
                     </table>
-                    <?php }
+                    <?php   }
                 }else
                 
                  ?>
@@ -121,6 +147,7 @@
                             $(document).ready(function(){
                                 var pro_price = $('#pro_price') .val();
                                 var c_quantity = $('#c_quantity') .val();
+                                
                                 var add = c_quantity * pro_price ;
                                     $('pro_price') .val(add);
                                 var val = pro_price * tex / 100;
@@ -205,3 +232,5 @@
                             <td data-th="Sub Total" class="item_cost dark-text">₹<span class="item-cost-val">1630.00</span></td>
                             <td data-th="Action"> <a href="javascript:" class="js_remove_item"><img src="./assets/images/deletecon.svg" alt="Delete" /></a> </td>
                           </tr> -->
+
+                          

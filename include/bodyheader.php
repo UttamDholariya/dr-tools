@@ -32,6 +32,23 @@
                                 <div class="login-wrap">
                                     <a href="./my-account.php"><img src="./assets/images/profile.svg" alt="Profile" /> <?php echo $_SESSION['first_name']; ?> </a>
                                 </div>
+
+                                <?php
+                                    include "confing.php";
+                                    $sql = "SELECT user_type FROM users WHERE id = {$_SESSION['id']}";
+                                    $result = mysqli_query($conn,$sql);
+                                    $row = mysqli_fetch_assoc($result);
+                                    if($row['user_type'] == '0')
+                                    {
+                                ?>
+                                        <div class="login-wrap ms-2">
+                                            <a href="../admin/dashboard.php">Admin</a>
+                                        </div>
+                                <?php
+                                    }
+                                ?>
+
+                                
                             <?php 
                                 } 
                                 else 

@@ -171,7 +171,7 @@
                         </div>
                 </div>
             </div>
-            <div class="item">
+            <!-- <div class="item">
                 <div class="products-wrap">
                         <div class="products-wrap-img position-relative">
                             <a href="./product-detail.php">
@@ -200,8 +200,8 @@
                             </div>
                         </div>
                     </div>
-            </div>
-            <div class="item">
+            </div> -->
+            <!-- <div class="item">
                 <div class="products-wrap">
                         <div class="products-wrap-img position-relative">
                             <a href="./product-detail.php">
@@ -290,7 +290,7 @@
                                 </div>
                             </div>
                         </div>
-                </div>
+                </div> -->
             </div>
     </section>
 

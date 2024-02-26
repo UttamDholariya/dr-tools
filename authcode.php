@@ -69,7 +69,7 @@
             }
             else
             {
-                $sql1 = "INSERT INTO users (first_name, last_name, email, password) VALUES ('{$fname}','{$lname}','{$email}','{$password}')";
+                $sql1 = "INSERT INTO users (first_name, last_name, email, password,user_type) VALUES ('{$fname}','{$lname}','{$email}','{$password}','1')";
 
                 if(mysqli_query($conn,$sql1))
                 {
