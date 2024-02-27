@@ -88,8 +88,8 @@
                 </div>
                 <?php
                     include "confing.php";
-                    $sql = "SELECT product.id,product.pro_name,product.pro_price,product.pro_desc,product.quantity,product.pro_detail,product.category_name,product.pro_img,category.cat_name FROM product LEFT JOIN category ON product.category_name = category.id ";
-                    $result = mysqli_query($conn,$sql) or die("Query Feiled");
+                    $sql = "SELECT product.id,product.pro_name,product.pro_price,product.pro_desc,product.quantity,product.pro_detail,product.category_name,product.pro_img,category.cat_name FROM product LEFT JOIN category ON product.category_name = category.id LIMIT 8 ";
+                    $result = mysqli_query($conn,$sql) or die("Query Failed");
                     if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)){
                 ?>
