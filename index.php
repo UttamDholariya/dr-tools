@@ -87,13 +87,12 @@
                     </div>
                 </div>
                 <?php
-                        include "confing.php";
-                    
-                        $sql = "SELECT product.id,product.pro_name,product.pro_price,product.pro_desc,product.quantity,product.pro_detail,product.category_name,product.pro_img,category.cat_name FROM product LEFT JOIN category ON product.category_name = category.id ";
-                            $result = mysqli_query($conn,$sql) or die("Query Feiled");
-                            if(mysqli_num_rows($result) > 0){
-                                while($row = mysqli_fetch_assoc($result)){
-                    ?>
+                    include "confing.php";
+                    $sql = "SELECT product.id,product.pro_name,product.pro_price,product.pro_desc,product.quantity,product.pro_detail,product.category_name,product.pro_img,category.cat_name FROM product LEFT JOIN category ON product.category_name = category.id ";
+                    $result = mysqli_query($conn,$sql) or die("Query Feiled");
+                    if(mysqli_num_rows($result) > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                ?>
                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-4">
              
                     <div class="products-wrap">

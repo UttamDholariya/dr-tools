@@ -17,13 +17,13 @@
             </div>
             <div class="product-inner">
             <?php
-                        include "confing.php";
-                        $id = $_GET['id'];
-                        $sql = "SELECT product.id,product.pro_name,product.pro_price,product.pro_desc,product.quantity,product.pro_detail,product.category_name,product.pro_img,category.cat_name FROM product LEFT JOIN category ON product.category_name = category.id WHERE product.id={$id} ";
-                            $result = mysqli_query($conn,$sql) or die("Query Feiled");
-                            if(mysqli_num_rows($result) > 0){
-                                while($row = mysqli_fetch_assoc($result)){
-                    ?>
+                include "confing.php";
+                $id = $_GET['id'];
+                $sql = "SELECT product.id,product.pro_name,product.pro_price,product.pro_desc,product.quantity,product.pro_detail,product.category_name,product.pro_img,category.cat_name FROM product LEFT JOIN category ON product.category_name = category.id WHERE product.id={$id} ";
+                $result = mysqli_query($conn,$sql) or die("Query Feiled");
+                if(mysqli_num_rows($result) > 0){
+                    while($row = mysqli_fetch_assoc($result)){
+            ?>
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="product-detail-slider-main">
@@ -140,12 +140,25 @@
                 </div>
             </div>
         </div>
-        <div class="owl-carousel owl-theme similar-products-slider">
-            <div class="item">
-                <div class="products-wrap">
+            <div class="owl-carousel owl-theme similar-products-slider">
+            <?php
+                include "confing.php";
+                $product_id = $_GET['id'];
+                $sql1 = "SELECT category_name FROM product WHERE id='$product_id' ";
+                $result1 = mysqli_query($conn,$sql1) or die("Query Feiled");
+                $row1 = mysqli_fetch_assoc($result1);
+
+                $sql2 = "SELECT id,pro_name,pro_price,pro_img FROM product WHERE category_name={$row1['category_name']} ";
+                $result2 = mysqli_query($conn,$sql2) or die("Query Feiled");
+
+                if(mysqli_num_rows($result2) > 0){
+                    while($row2 = mysqli_fetch_assoc($result2)){
+            ?>
+                <div class="item">
+                    <div class="products-wrap">
                         <div class="products-wrap-img position-relative">
                             <a href="./product-detail.php">
-                                <img src="./assets/images/images/bp-monitor_3.webp" alt="Product" />
+                                <img src="admin/Uplode/<?php echo $row2['pro_img'] ?>" alt="Product" />
                             </a>
                             <div class="product-like-cart">
                                 <a href="#" class="product-btn"><img src="./assets/images/like-white.svg" alt="Like" /></a>
@@ -169,8 +182,17 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
+            <?php
+                    }
+                }
+                else{
+                    echo "<h2>NO Record Found.</h2>";
+                }
+            ?>
             </div>
+        
             <!-- <div class="item">
                 <div class="products-wrap">
                         <div class="products-wrap-img position-relative">

@@ -42,7 +42,7 @@
                                     {
                                 ?>
                                         <div class="login-wrap ms-2">
-                                            <a href="../admin/dashboard.php">Admin</a>
+                                            <a href="./admin/dashboard.php">Admin</a>
                                         </div>
                                 <?php
                                     }
