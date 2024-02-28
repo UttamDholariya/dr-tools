@@ -36,8 +36,6 @@
                                     </div>
                                     <div class="product-detail-list">
                                         <p class="p-14-dark">Omron Fully Automatic Digital Blood Pressure Monitoring Machine- Arm Circumference (22-32Cm)</p>
-                                        <p class="p-14-dark"> <span class="span-title">Color:</span> <span>White</span></p>
-                                        <p class="p-14-dark"> <span class="span-title">Size:</span> <span>Free</span></p>
                                     </div>
                                 </div>
                             </td>
@@ -64,8 +62,6 @@
                                     </div>
                                     <div class="product-detail-list">
                                         <p class="p-14-dark">Omron Fully Automatic Digital Blood Pressure Monitoring Machine- Arm Circumference (22-32Cm)</p>
-                                        <p class="p-14-dark"> <span class="span-title">Color:</span> <span>White</span></p>
-                                        <p class="p-14-dark"> <span class="span-title">Size:</span> <span>Free</span></p>
                                     </div>
                                 </div>
                             </td>
@@ -93,8 +89,6 @@
                                     </div>
                                     <div class="product-detail-list">
                                         <p class="p-14-dark">Omron Fully Automatic Digital Blood Pressure Monitoring Machine- Arm Circumference (22-32Cm)</p>
-                                        <p class="p-14-dark"> <span class="span-title">Color:</span> <span>White</span></p>
-                                        <p class="p-14-dark"> <span class="span-title">Size:</span> <span>Free</span></p>
                                     </div>
                                 </div>
                             </td>
