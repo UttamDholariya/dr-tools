@@ -48,7 +48,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <i class="bi bi-list toggle-sidebar-btn me-3"></i>
-      <a href="../dr-tools-20240131T064150Z-001/dr-tools/index.php" class="logo d-flex align-items-center">
+      <a href="../index.php" class="logo d-flex align-items-center">
         <img src="../assets/images/images/logo.svg" style="max-height: 50px;" alt="">
         <!-- <span class="d-none d-lg-block">Dr-Tools</span> -->
       </a>
@@ -209,17 +209,17 @@
           </ul>
         </li> -->
         <!-- End Messages Nav -->
-        <div class="login-wrap ms-2">
+        <!-- <div class="login-wrap ms-2">
             <a href="../dr-tools/index.php">Home Page</a>
-          </div>
+          </div> -->
 
         <li class="nav-item dropdown pe-3">
-
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2" >Home Pae</span>
+          <div  class="btn" style="background-color:#7dc6ba;" >
+          <a class="login-wrap ms-2" style="color:white;" href="../index.php" >
+            <!-- <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle"> -->
+            <span  >Home Page </span>
           </a>
-          
+          </div >
           <!-- <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
               <h6>admin fullname</h6>
