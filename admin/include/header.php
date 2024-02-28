@@ -48,7 +48,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <i class="bi bi-list toggle-sidebar-btn me-3"></i>
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="../dr-tools-20240131T064150Z-001/dr-tools/index.php" class="logo d-flex align-items-center">
         <img src="../assets/images/images/logo.svg" style="max-height: 50px;" alt="">
         <!-- <span class="d-none d-lg-block">Dr-Tools</span> -->
       </a>
@@ -70,13 +70,12 @@
           </a>
         </li><!-- End Search Icon-->
 
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
 
           <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
             <i class="bi bi-bell"></i>
             <span class="badge badge-number" style="background-color: #2aa1a8;">4</span>
-          </a><!-- End Notification Icon -->
-
+          </a>
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
             <li class="dropdown-header">
               You have 4 new notifications
@@ -141,17 +140,17 @@
               <a href="#">Show all notifications</a>
             </li>
 
-          </ul><!-- End Notification Dropdown Items -->
+          </ul>
 
-        </li><!-- End Notification Nav -->
+        </li>   -->
+         <!-- End Notification Nav -->
 
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
 
           <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
             <i class="bi bi-chat-left-text"></i>
             <span class="badge badge-number" style="background-color: #68D4B4;">3</span>
-          </a><!-- End Messages Icon -->
-
+          </a>
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
             <li class="dropdown-header">
               You have 3 new messages
@@ -207,18 +206,21 @@
               <a href="#">Show all messages</a>
             </li>
 
-          </ul><!-- End Messages Dropdown Items -->
-
-        </li><!-- End Messages Nav -->
+          </ul>
+        </li> -->
+        <!-- End Messages Nav -->
+        <div class="login-wrap ms-2">
+            <a href="../dr-tools/index.php">Home Page</a>
+          </div>
 
         <li class="nav-item dropdown pe-3">
 
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="" data-bs-toggle="dropdown">
             <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">username</span>
-          </a><!-- End Profile Iamge Icon -->
-
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <span class="d-none d-md-block dropdown-toggle ps-2" >Home Pae</span>
+          </a>
+          
+          <!-- <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
               <h6>admin fullname</h6>
             </li>
@@ -247,7 +249,7 @@
               </a>
             </li>
 
-          </ul><!-- End Profile Dropdown Items -->
+          </ul> -->
         </li><!-- End Profile Nav -->
 
       </ul>
