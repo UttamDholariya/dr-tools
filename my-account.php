@@ -83,7 +83,7 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="">First Name*</label>
-                                                <input type="text" name="first_name" id="first_name" class="form-control" placeholder="Mark" value="<?php echo $row['first_name']; ?>" />
+                                                <input type="text"  name="first_name" id="first_name" class="form-control" placeholder="Mark" value="<?php echo $row['first_name']; ?>" />
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
@@ -118,7 +118,7 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="">Contact Number*</label>
-                                                <input type="number"  class="form-control" name="phone_no" id="phone_no" value="<?php echo $row['phone_no']; ?>" placeholder="98980 98009" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" />
+                                                <input type="number" min="9" max="10" class="form-control" name="phone_no" id="phone_no" value="<?php echo $row['phone_no']; ?>" placeholder="98980 98009" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" />
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
@@ -146,7 +146,7 @@
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label for="">Postal Code*</label>
-                                                <input type="number" name="postal_code" id="postal_code" value="<?php echo $row['postal_code']; ?>" class="form-control" placeholder="380081" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==6) return false;" />
+                                                <input type="number" name="postal_code" min="5" max="6" id="postal_code" value="<?php echo $row['postal_code']; ?>" class="form-control" placeholder="380081" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==6) return false;" />
                                             </div>
                                         </div>
                                         
