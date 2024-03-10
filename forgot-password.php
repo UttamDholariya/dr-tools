@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-7">
-                    <form action="">
+                    <form action="password_change.php" method="POST">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-title">
@@ -24,11 +24,11 @@
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label for="">Email Address</label>
-                                    <input type="email" class="form-control" placeholder="Enter your email" />
+                                    <input type="email"  name="email" class="form-control" placeholder="Enter your email" />
                                 </div>
                             </div>
                             <div class="col-lg-12">
-                                <button class="f-btn">Send</button>
+                                <button class="f-btn" name="forgot">Send</button>
                             </div>
                             <div class="col-lg-12">
                                 <div class="bottom-link">

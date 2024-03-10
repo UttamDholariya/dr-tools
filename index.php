@@ -45,7 +45,6 @@
         <div class="owl-carousel owl-theme our-services-slider">
             <!-- <div class="item"> -->
             
-             
             <?php
                     include "confing.php";
                     

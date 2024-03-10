@@ -211,7 +211,7 @@
             <!-- End Reports -->
 
             <!-- Recent Sales -->
-            <!-- <div class="col-12">
+            <div class="col-12">
               <div class="card recent-sales overflow-auto">
 
                 <div class="filter">
@@ -282,7 +282,7 @@
                 </div>
 
               </div>
-            </div> -->
+            </div>
             <!-- End Recent Sales -->
 
             <!-- Top Selling -->

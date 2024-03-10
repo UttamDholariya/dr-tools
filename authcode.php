@@ -1,56 +1,5 @@
 <?php
-    
-    // $host = "localhost";
-    // $username = "root";
-    // $password = "";
-    // $database = "drtools";
-
-    // //create a connection
-    // $conn = mysqli_connect($host, $username, $password, $database);
-
-    // //check database connection
-    // if(!$conn)
-    // {
-    //     die("Connection failed: " . mysqli_connect_error());
-    // }
-    // else
-    // {
-    //     echo "Connected Successfully";
-    // }
-
-    // session_start();
-    // if(isset($_POST['create']))
-    // {
-    //     $fname = mysqli_real_escape_string($conn,$_POST['first_name']); 
-    //     $lname = mysqli_real_escape_string($conn,$_POST['last_name']); 
-    //     $email = mysqli_real_escape_string($conn,$_POST['email']); 
-    //     $password = mysqli_real_escape_string($conn,$_POST['password']); 
-    //     $cpassword = mysqli_real_escape_string($conn,$_POST['cpassword']); 
-     
-    //     if($password == $cpassword)
-    //     {
-    //         $insert_query = "INSERT INTO users(first_name,last_name,email,password) VALUES('$fname','$lname','$email','$password')";
-    //         $insert_query_run = mysqli_query($conn,$insert_query);
-    //         if($insert_query_run)
-    //         {
-    //             $_SESSION['massage'] = "Registration Successfully";
-    //             header('Location: ./signin.php');
-    //         }
-    //         else
-    //         {
-    //             $_SESSION['massage'] = "Somthing Worng";
-    //             header('Location: ./signup.php');
-    //         }
-    //     }
-    //     else
-    //     {
-    //         $_SESSION['message'] = "Password do not match";
-    //         header('Location: signup.php');
-    //     }
-    // }
-
-?>
-<?php
+        include "smtp/PHPMailerAutoload.php";
         if(isset($_POST['create']))
         {
             $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
@@ -65,7 +14,7 @@
 
             if(mysqli_num_rows($result) > 0)
             {
-                echo "<p style='color:red;text-align:center;margin: 10px 0;'>Email Already Exists. </p>";
+                echo "<p style='color:red;text-align:center;margin: 10px 0;font-size: 30px;'>Email Already Exists. </p>";
             }
             else
             {
@@ -73,8 +22,40 @@
 
                 if(mysqli_query($conn,$sql1))
                 {
-                    header('Location: signin.php');   
+                       // Email
+                    $subject = "Register Successfull";
+                    $message = "Thank you for registering! Your account has been created.";
+                    $to = $email;
+
+                    $mail = new PHPMailer(); 
+                    $mail->isSMTP(); 
+                    $mail->SMTPAuth = true; 
+                    $mail->SMTPSecure = 'tls';
+                    $mail->SMTPAutoTLS = true;
+                    $mail->Host = "smtp.gmail.com";
+                    $mail->Port = 587; 
+                    $mail->IsHTML(true);
+                    $mail->CharSet = 'UTF-8';
+                    //$mail->SMTPDebug = 2; 
+                    $mail->Username = "uttamdholariya1@gmail.com";
+                    $mail->Password = "rgfk nyor jiiq jpob";
+                    $mail->SetFrom("uttamdholariya1@gmail.com");
+                    $mail->Subject = $subject;
+                    $mail->Body =$message;
+                    $mail->AddAddress($to);
+                    $mail->SMTPOptions=array('ssl'=>array(
+                        'verify_peer'=>false,
+                        'verify_peer_name'=>false,
+                        'allow_self_signed'=>false
+                    ));
+
+                    if(!$mail->Send()){
+                        echo $mail->ErrorInfo;
+                    }
+                    else {
+                        header('Location: signin.php');
+                    }
                 }
             }
         }
-    ?>
+?>

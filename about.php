@@ -15,9 +15,8 @@
                 <div class="col-lg-6">
                     <div class="our-story-wrap">
                         <h1>Our Story</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p> Welcome to Dr.Tools, your trusted destination for high-quality doctor devices and instruments.We provide different types of healthcare instruments that help people in their difficult time to better their condition.</p>
+                        <p>we prioritize customer satisfaction and strive to be your go-to source for all your medical equipment needs. Discover innovation, reliability, and convenience with Dr.Tools. Your journey towards superior healthcare starts here.</p>
                     </div>
                 </div>
                 <div class="col-lg-6">

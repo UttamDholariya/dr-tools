@@ -109,62 +109,6 @@
                                     }
                                 echo "<li class='{$active}' class='nav-item dropdown'><a class='dropdown-item nav-link dropdown-toggle' href='listing-page.php?cid={$row['id']}'>{$row['cat_name']} </a> </li>";
                                 } ?>
-                                <!-- <li class="nav-item dropdown">
-                                    <a class="dropdown-item nav-link dropdown-toggle" data-bs-toggle="dropdown" href="./about.php">
-                                        <div class="icon-wrap">
-                                            <img src="./assets/images/images/syringes.png" alt="Consumable & Disposable" />
-                                        </div> 
-                                        Consumable & Disposable
-                                    </a>
-                                </li> -->
-                                <!-- <li class="nav-item">
-                                    <a class="dropdown-item" href="#">
-                                        <div class="icon-wrap">
-                                            <img src=".\assets\images\images\Surgical.png" alt="Monitoring Devices" /> 
-                                        </div>
-                                        Monitoring Devices
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="dropdown-item" href="#">
-                                        <div class="icon-wrap">
-                                            <img src="./assets/images/images/Diagnosis.svg" alt="Diagnosis" />
-                                        </div>
-                                         Diagnosis
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="dropdown-item" href="#">
-                                        <div class="icon-wrap">
-                                            <img src=".\assets\images\images\dental.svg" alt="Dental" /> 
-                                        </div>
-                                        Dental
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="dropdown-item" href="#">
-                                        <div class="icon-wrap">
-                                            <img src=".\assets\images\images\emergency.svg" alt="Emergency" /> 
-                                        </div>
-                                        Emergency
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="dropdown-item" href="#">
-                                        <div class="icon-wrap">
-                                            <img src=".\assets\images\images\laboratory.svg" alt=" Laboratory" />
-                                        </div>
-                                        Laboratory
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="dropdown-item" href="#">
-                                        <div class="icon-wrap">
-                                            <img src=".\assets\images\images\surgical.svg" alt="Surgical" /> 
-                                        </div>
-                                        Surgical
-                                    </a>
-                                </li> -->
                             </ul>
                             <?php } ?>
                         </div>

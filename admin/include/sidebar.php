@@ -63,7 +63,7 @@
   <li class="nav-item">
     <a class="nav-link collapsed" href="manage_contact_us.php">
       <i class="bi bi-envelope"></i>
-      <span>Manage Contct Us</span>
+      <span>Manage Contact Us</span>
     </a>
   </li><!-- End Contact Page Nav -->
   <li class="nav-item">

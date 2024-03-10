@@ -47,7 +47,7 @@
                             <td data-th="Quantity">
                                 <div class="qty-wrap-main">
                                     <span class="remove_qty">-</span>
-                                    <input class="input_qty" name="quantity" value="0">
+                                    <input class="input_qty" name="quantity" value="1">
                                     <span class="add_qty">+</span>
                                 </div>
                             </td>
@@ -74,7 +74,7 @@
                             <td data-th="Quantity">
                                 <div class="qty-wrap-main">
                                     <span class="remove_qty">-</span>
-                                    <input class="input_qty" name="quantity" value="0">
+                                    <input class="input_qty" name="quantity" value="1">
                                     <span class="add_qty">+</span>
                                 </div>
                             </td>
@@ -100,7 +100,7 @@
                             <td data-th="Quantity">
                                 <div class="qty-wrap-main">
                                     <span class="remove_qty">-</span>
-                                    <input class="input_qty" name="quantity" value="0">
+                                    <input class="input_qty" name="quantity" value="1">
                                     <span class="add_qty">+</span>
                                 </div>
                             </td>
