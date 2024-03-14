@@ -7,7 +7,7 @@
                 <div class="banner-slider-wrap text-center">
                     <img src="./assets/images/images/slider-1_1.jpg" alt="Banne" />
                     <div class="banner-slider-content">
-                        <h3>Quality First</h3>
+                        <h3>QualityFirst</h3>
                         <h2>Medical Safety Gears</h2>
                     </div>
                 </div>
