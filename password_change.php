@@ -1,60 +1,72 @@
 <?php
     session_start();
-    include "confing.php";
     
-    // use PHPMailer\PHPMailer\PHPMailer;
-    // use PHPMailer\PHPMailer\SMTP;
-    // use PHPMailer\PHPMailer\Exception;
+    include "smtp/PHPMailerAutoload.php";
 
-    require '../PHPMailer-master/srs/Exception.php';
-    require '../PHPMailer-master/srs/PHPMailer.php';
-    require '../PHPMailer-master/srs/SMTP.php';
-
-    //Load Composer's autoloader
-    require 'vendor/autoload.php';
-    send_password_reset($get_name,$get_email)
+    function send_password_reset($name, $email)
     {
-        $mail = new PHPMailer(true);                   //Enable verbose debug output
-        $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'uttamdholariya1@gmail.com';                     //SMTP username
-        $mail->Password   = 'secret';                               //SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $otp = rand(999999, 111111);
 
-        //Recipients
-        $mail->setFrom('uttamdholariya1@gmail.com', $get_name);
-        $mail->addAddress($get_mail);     //Add a recipient
-        
+        $subject = "Email Verification OTP";
+        $message = "Your verification OTP is $otp";
+        $to = $email;
+
+        $mail = new PHPMailer(); 
+        $mail->isSMTP(); 
+        $mail->SMTPAuth = true; 
+        $mail->SMTPSecure = 'tls';
+        $mail->SMTPAutoTLS = true;
+        $mail->Host = "smtp.gmail.com";
+        $mail->Port = 587; 
         $mail->IsHTML(true);
-        $mail->Subject = "Reset Password Notification";
+        $mail->CharSet = 'UTF-8';
+        //$mail->SMTPDebug = 2; 
+        $mail->Username = "uttamdholariya1@gmail.com";
+        $mail->Password = "rgfk nyor jiiq jpob";
+        $mail->SetFrom("uttamdholariya1@gmail.com");
+        $mail->Subject = $subject;
+        $mail->Body =$message;
+        $mail->AddAddress($to);
+        $mail->SMTPOptions=array('ssl'=>array(
+            'verify_peer'=>false,
+            'verify_peer_name'=>false,
+            'allow_self_signed'=>false
+        ));
 
-        $email_templet = "
-            <h2> Hello </h2>
-            <h3> You are  receving this email because we received a password reset for your account.</h3>
-            <br/><br/>
-            <a href="http:/localhost:3000/reset-password.php/?email=$get_email">Click me</a>
-        ";
+        if(!$mail->Send()){
+            echo $mail->ErrorInfo;
+        }
+        else {
+            $_SESSION['status'] = "We've sent a verification code to your email";
+            $_SESSION['otp_email'] = $email;
+
+            include "confing.php";
+            $insert_otp = "UPDATE users SET otp = $otp WHERE email = '$email'";
+            $run_query =  mysqli_query($conn, $insert_otp);
+
+            header("Location: forgot-password.php");
+            exit();
+        }
     }
+
     if(isset($_POST['forgot']))
     {
+        include "confing.php";
         $email = mysqli_real_escape_string($conn,$_POST['email']);
-        // $token = md5(rand());
 
-        $check_email = "SELECT email FROM users WHERE email = '$email' LIMIT 1";
-        $check_email_run = mysqli_query($conn,$check_email);
+        $reset_otp = "UPDATE users SET otp = '0' WHERE email = '$email'";
+        $run_reset_query =  mysqli_query($conn, $reset_otp);
+
+        $check_email = "SELECT email,first_name,last_name FROM users WHERE email = '$email'";
+        $check_email_run = mysqli_query($conn, $check_email);
 
         if(mysqli_num_rows($check_email_run) > 0)
         {
             $row = mysqli_fetch_array($check_email_run);
-            $get_name = $row['first_name'] . " " . $row['last_name'];
-            $get_email = $row['email'];
+            $name = $row['first_name'] . " " . $row['last_name'];
+            $email = $row['email'];
 
-            send_password_reset($get_name,$get_email);
-            $_SESSION['status'] = "We e-mailed you a password reset link";
-            header("Location: forgot-passwoed.php");
-            exit(0);
+            send_password_reset($name,$email);
 
             // $update_token = "UPDATE users SET verify_token = '$token' WHERE email = '{$get_email}' LIMIT 1";
             // $update_token_run = mysqli_query($conn,$update_token);

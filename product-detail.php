@@ -159,7 +159,7 @@
                                 <img src="admin/Uplode/<?php echo $row2['pro_img'] ?>" alt="Product" />
                             </a>
                             <div class="product-like-cart">
-                                <a href="#" class="product-btn"><img src="./assets/images/like-white.svg" alt="Like" /></a>
+                                <!-- <a href="#" class="product-btn"><img src="./assets/images/like-white.svg" alt="Like" /></a> -->
                                 <a href="#" class="product-btn"><img src="./assets/images/cart-white.svg" alt="Cart" /></a>
                             </div>
                         </div>

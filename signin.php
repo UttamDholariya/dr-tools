@@ -37,7 +37,7 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="text-end">
-                                    <a href="./forgot-password.php" class="fp-link">Forgot Password?</a>
+                                    <a href="./forgot-password-page.php" class="fp-link">Forgot Password?</a>
                                 </div>
                             </div>
                             <div class="col-lg-12">
