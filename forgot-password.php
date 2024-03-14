@@ -15,6 +15,17 @@
                 <div class="col-xl-5 col-lg-7">
                     <form action="password_change.php" method="POST">
                         <div class="row">
+                            <?php 
+                                if(isset($_SESSION['status']))
+                                {
+                                    ?>
+                                    <div class="alert alert-success">
+                                        <h5><?= $_SESSION['status']; ?></h5>
+                                    </div>
+                                    <?php
+                                    unset($_SESSION['status']);
+                                }
+                            ?>
                             <div class="col-lg-12">
                                 <div class="form-title">
                                     <h1>Forgot Password</h1>

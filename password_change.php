@@ -2,9 +2,14 @@
     session_start();
     include "confing.php";
     
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\SMTP;
-    use PHPMailer\PHPMailer\Exception;
+    // use PHPMailer\PHPMailer\PHPMailer;
+    // use PHPMailer\PHPMailer\SMTP;
+    // use PHPMailer\PHPMailer\Exception;
+
+    require '../PHPMailer-master/srs/Exception.php';
+    require '../PHPMailer-master/srs/PHPMailer.php';
+    require '../PHPMailer-master/srs/SMTP.php';
+
     //Load Composer's autoloader
     require 'vendor/autoload.php';
     send_password_reset($get_name,$get_email)
@@ -34,10 +39,10 @@
     }
     if(isset($_POST['forgot']))
     {
-        $email = mysqli_escape_string($conn,$_POST['email']);
-        //$token = md5(rand());
+        $email = mysqli_real_escape_string($conn,$_POST['email']);
+        // $token = md5(rand());
 
-        $check_email = "SELECT email FROM users WHERE email = '{$email}' LIMIT 1";
+        $check_email = "SELECT email FROM users WHERE email = '$email' LIMIT 1";
         $check_email_run = mysqli_query($conn,$check_email);
 
         if(mysqli_num_rows($check_email_run) > 0)
@@ -45,6 +50,11 @@
             $row = mysqli_fetch_array($check_email_run);
             $get_name = $row['first_name'] . " " . $row['last_name'];
             $get_email = $row['email'];
+
+            send_password_reset($get_name,$get_email);
+            $_SESSION['status'] = "We e-mailed you a password reset link";
+            header("Location: forgot-passwoed.php");
+            exit(0);
 
             // $update_token = "UPDATE users SET verify_token = '$token' WHERE email = '{$get_email}' LIMIT 1";
             // $update_token_run = mysqli_query($conn,$update_token);
