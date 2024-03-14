@@ -1,6 +1,5 @@
 <?php include('./include/header.php') ?>
 <?php include('./include/bodyheader.php') ?>
-
     <!-- cart section -->
     <section class="cart-section">
         <div class="container">
@@ -18,40 +17,6 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                <?php 
-                        include "confing.php";
-                        $product_id = $_GET['id'];
-                        $user_id = isset($_SESSION['id']) ? $_SESSION['id'] : '';
-
-                        $product = "SELECT * FROM product WHERE id = {$product_id}";
-                        $pro_result = mysqli_query($conn,$product) or die("Query Feiled");
-                        $pro_row = mysqli_fetch_assoc($pro_result);
-                        
-                        $sql2 = "SELECT user_id , pro_id FROM cart WHERE user_id = '$user_id' AND pro_id = '$product_id';";
-                        $result2 = mysqli_query($conn,$sql2) or die("Query Feiled");
-                        
-                        $row1 = null;
-                        if ($result2) {
-                            $row1 = mysqli_fetch_assoc($result2);
-                        }
-                        
-                        if($row1 && $row1['user_id'] == $user_id && $row1['pro_id'] == $product_id)
-                        {   
-                            
-                        }
-                        else
-                        {
-                            $sql1 = "INSERT INTO cart (pro_id,user_id,c_quantity,total) VALUES('$product_id','$user_id','1',{$pro_row['pro_price']})";
-                            $result1 = mysqli_query($conn,$sql1) or die("Query Feiled");
-                        }
-                        
-                        $sql = "SELECT * FROM cart WHERE user_id = '$user_id';";
-                        $result = mysqli_query($conn,$sql) or die("Query Feiled");
-
-                        if(mysqli_num_rows($result) > 0){
-                            while($row = mysqli_fetch_assoc($result)){
-                        
-                        ?>
                     <table class="table_cart product_detail_table">
                         <thead>
                           <tr class="table_cart--heading">
@@ -63,51 +28,111 @@
                           </tr>
                         </thead>
                         <tbody>
-                        <?php while($row = mysqli_fetch_assoc($result)){ ?>
                           <tr class="item-row">
                             <td data-th="Products Details">
                                 <div class="products-detail-wrap">
                                     <div class="product-image-wrap">
-                                    <img src="admin/Uplode/<?php echo $row['pro_img'] ?>" alt="Image"/>
+                                        <img src="./assets/images/images/digi-bp-monitor_2.webp" alt="">
                                     </div>
                                     <div class="product-detail-list">
-                                        <p class="p-14-dark" disabled="true"><?php echo $row['pro_name'] ?></p>
+                                        <p class="p-14-dark">Omron Fully Automatic Digital Blood Pressure Monitoring Machine- Arm Circumference (22-32Cm)</p>
                                     </div>
                                 </div>
                             </td>
                             <td data-th="Price">
                                 <div class="text-start">
-                                    <span id="pro_price" class="item_price d-block p-med-18" disabled><?php echo "₹". $row['pro_price'] .".00" ?></span>
+                                    <span class="item_price d-block p-med-18">₹1630.00</span>
                                 </div>
                             </td>
                             <td data-th="Quantity">
                                 <div class="qty-wrap-main">
                                     <span class="remove_qty">-</span>
-                                    <input type="number" id="c_quantity" class="input_qty" min="1" name="c_quantity" value="<?php echo $row['c_quantity'] ?>">
+                                    <input class="input_qty" name="quantity" value="1">
                                     <span class="add_qty">+</span>
                                 </div>
                             </td>
-                            <td data-th="Sub Total" id="total" class="item_cost dark-text" >
-                                <!-- <span class="item-cost-val"  disabled></span> -->
-                                <input type="text" name="" class="item-cost-val" value="<?php echo "₹". $row['total'] .".00" ?>" id="total"  disabled/>
-                            </td>
+                            <td data-th="Sub Total" class="item_cost dark-text">₹<span class="item-cost-val">1630.00</span></td>
                             <td data-th="Action"> <a href="javascript:" class="js_remove_item"><img src="./assets/images/deletecon.svg" alt="Delete" /></a> </td>
                           </tr>
-                          <?php } ?>
-                          
-                          
+                          <tr class="item-row">
+                            <td data-th="Products Details">
+                                <div class="products-detail-wrap">
+                                    <div class="product-image-wrap">
+                                        <img src="./assets/images/images/digi-bp-monitor_2.webp" alt="">
+                                    </div>
+                                    <div class="product-detail-list">
+                                        <p class="p-14-dark">Omron Fully Automatic Digital Blood Pressure Monitoring Machine- Arm Circumference (22-32Cm)</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td data-th="Price">
+                                <div class="text-start">
+                                    <span class="item_price d-block p-med-18">₹1630.00</span>
+                                   
+                                </div>
+                            </td>
+                            <td data-th="Quantity">
+                                <div class="qty-wrap-main">
+                                    <span class="remove_qty">-</span>
+                                    <input class="input_qty" name="quantity" value="1">
+                                    <span class="add_qty">+</span>
+                                </div>
+                            </td>
+                            <td data-th="Sub Total" class="item_cost dark-text">₹<span class="item-cost-val">1630.00</span></td>
+                            <td data-th="Action"> <a href="javascript:" class="js_remove_item"><img src="./assets/images/deletecon.svg" alt="Delete" /></a> </td>
+                          </tr>
+                          <tr class="item-row">
+                            <td data-th="Products Details">
+                                <div class="products-detail-wrap">
+                                    <div class="product-image-wrap">
+                                        <img src="./assets/images/images/digi-bp-monitor_2.webp" alt="">
+                                    </div>
+                                    <div class="product-detail-list">
+                                        <p class="p-14-dark">Omron Fully Automatic Digital Blood Pressure Monitoring Machine- Arm Circumference (22-32Cm)</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td data-th="Price">
+                                <div class="text-start">
+                                    <span class="item_price d-block p-med-18">₹1630.00</span>
+                                </div>
+                            </td>
+                            <td data-th="Quantity">
+                                <div class="qty-wrap-main">
+                                    <span class="remove_qty">-</span>
+                                    <input class="input_qty" name="quantity" value="1">
+                                    <span class="add_qty">+</span>
+                                </div>
+                            </td>
+                            <td data-th="Sub Total" class="item_cost dark-text">₹<span class="item-cost-val">1630.00</span></td>
+                            <td data-th="Action"> <a href="javascript:" class="js_remove_item"><img src="./assets/images/deletecon.svg" alt="Delete" /></a> </td>
+                          </tr>
                         </tbody>
                     </table>
-                    <?php   }
-                }else
-                
-                 ?>
+                   <!--  
+                    <div class="main-grand-total-main">
+                        <div class="dis-code-wrap">
+                            <p class="med-16-black mb-0">Discount Code:</p>
+                            <p class="med-16-gray">Enter your coupon code if you have</p>
+                            <div class="copy-button">
+                                <input id="copyvalue" type="text" readonly class="form-control" placeholder="#AACLPKK12345650">
+                                <button onclick="copyIt()" class="copybtn mt-0">Apply Coupon</button>
+                            </div>
+                            <div class="cards-main">
+                                <img src="/assets/images/payment.svg" alt="Payment">
+                                <img src="/assets/images/payment-1.svg" alt="Payment">
+                                <img src="/assets/images/payment-2.svg" alt="Payment">
+                                <img src="/assets/images/payment-3.svg" alt="Payment">
+                                <img src="/assets/images/payment-4.svg" alt="Payment">
+                            </div>
+                        </div>
+                        -->
                         <div class="proceed-to-checkout">
                             <div class="products-details-lists mt-0 proceed-total-wrap-main">
                                 <ul>
                                     <li>
                                         <p>Sub Total :</p>
-                                        <p class="primary-med-18" id="sub_total" disabled></p>
+                                        <p class="primary-med-18">₹4890.00</p>
                                     </li>
                                     <!-- <li>
                                         <p>Discount :</p>
@@ -115,11 +140,7 @@
                                     </li> -->
                                     <li>
                                         <p>Tax :</p>
-                                        <p class="red-med-18" id="tex" disabled>3.4</p>
-                                    </li>
-                                    <li>
-                                        <p>GST :</p>
-                                        <p class="red-med-18" id="gst" disabled>3.4</p>
+                                        <p class="red-med-18">+ ₹293.40</p>
                                     </li>
                                     <!-- <li>
                                         <p>Shipping Charge:</p>
@@ -127,7 +148,7 @@
                                     </li> -->
                                     <li>
                                         <p>Grand Total :</p>
-                                        <p class="primary-med-18" id="g_total" disabled> </p>
+                                        <p class="primary-med-18">₹5183.40</p>
                                     </li>
                                     <li>
                                         <div class="proceed-to-checkout-btn-wrap w-100">
@@ -143,94 +164,7 @@
                     </div>
                 </div>
             </div>
-            <script>
-                            $(document).ready(function(){
-                                var pro_price = $('#pro_price') .val();
-                                var c_quantity = $('#c_quantity') .val();
-                                
-                                var add = c_quantity * pro_price ;
-                                    $('pro_price') .val(add);
-                                var val = pro_price * tex / 100;
-                                    $('gst') .val(val);
-                                var total = parseInt(add) + parseInt(val);
-                                    $('total') .val(total);
-                                    $('g_total') .html(total);
-
-                            $('#c_quantity') .change(function(){
-                                var c_quantity = $(this).val();
-                                var add = c_quantity + pro_price;
-                                $('#pro_price') .val(add);
-
-                                var val = ('#pro_price') .val() * tex / 100;
-                                    $('#gst') .val(val);
-                                var total = parseInt(add) + parseInt(val);
-                                    $('total') .val(total);
-                                    $('g_total') .html(total);
-                            });
-                            });
-
-                            </script>
         </div>
     </section>
 <?php include('./include/bodyfooter.php') ?>
 <?php include('./include/footer.php') ?>
-
-<!-- <tr class="item-row">
-                            <td data-th="Products Details">
-                                <div class="products-detail-wrap">
-                                    <div class="product-image-wrap">
-                                        <img src="./assets/images/images/digi-bp-monitor_2.webp" alt="">
-                                    </div>
-                                    <div class="product-detail-list">
-                                        <p class="p-14-dark">Omron Fully Automatic Digital Blood Pressure Monitoring Machine- Arm Circumference (22-32Cm)</p>
-                                        <p class="p-14-dark"> <span class="span-title">Color:</span> <span>White</span></p>
-                                        <p class="p-14-dark"> <span class="span-title">Size:</span> <span>Free</span></p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td data-th="Price">
-                                <div class="text-start">
-                                    <span class="item_price d-block p-med-18">₹1630.00</span>
-                                   
-                                </div>
-                            </td>
-                            <td data-th="Quantity">
-                                <div class="qty-wrap-main">
-                                    <span class="remove_qty">-</span>
-                                    <input class="input_qty" name="quantity" value="0">
-                                    <span class="add_qty">+</span>
-                                </div>
-                            </td>
-                            <td data-th="Sub Total" class="item_cost dark-text">₹<span class="item-cost-val">1630.00</span></td>
-                            <td data-th="Action"> <a href="javascript:" class="js_remove_item"><img src="./assets/images/deletecon.svg" alt="Delete" /></a> </td>
-                          </tr>
-                          <tr class="item-row">
-                            <td data-th="Products Details">
-                                <div class="products-detail-wrap">
-                                    <div class="product-image-wrap">
-                                        <img src="./assets/images/images/digi-bp-monitor_2.webp" alt="">
-                                    </div>
-                                    <div class="product-detail-list">
-                                        <p class="p-14-dark">Omron Fully Automatic Digital Blood Pressure Monitoring Machine- Arm Circumference (22-32Cm)</p>
-                                        <p class="p-14-dark"> <span class="span-title">Color:</span> <span>White</span></p>
-                                        <p class="p-14-dark"> <span class="span-title">Size:</span> <span>Free</span></p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td data-th="Price">
-                                <div class="text-start">
-                                    <span class="item_price d-block p-med-18">₹1630.00</span>
-                                </div>
-                            </td>
-                            <td data-th="Quantity">
-                                <div class="qty-wrap-main">
-                                    <span class="remove_qty">-</span>
-                                    <input class="input_qty" name="quantity" value="0">
-                                    <span class="add_qty">+</span>
-                                </div>
-                            </td>
-                            <td data-th="Sub Total" class="item_cost dark-text">₹<span class="item-cost-val">1630.00</span></td>
-                            <td data-th="Action"> <a href="javascript:" class="js_remove_item"><img src="./assets/images/deletecon.svg" alt="Delete" /></a> </td>
-                          </tr> -->
-
-                          
