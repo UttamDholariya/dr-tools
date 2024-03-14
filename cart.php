@@ -99,7 +99,7 @@
                                         <!-- <span class="item-cost-val"  disabled></span> -->
                                         <input type="text" name="" class="item-cost-val" value="<?php echo "₹". $total .".00" ?>" id="total"  disabled/>
                                     </td>
-                                    <td data-th="Action"> <a href="javascript:" class="js_remove_item"><img src="./assets/images/deletecon.svg" alt="Delete" /></a> </td>
+                                    <td data-th="Action"> <a href="cart-remove.php?id=<?php echo $row1['cart_detail_id'] ?>" class="js_remove_item"><img src="./assets/images/deletecon.svg" alt="Delete" /></a> </td>
                                 </tr>
                             <?php 
                                 } 
