@@ -160,7 +160,7 @@
                             </a>
                             <div class="product-like-cart">
                                 <!-- <a href="#" class="product-btn"><img src="./assets/images/like-white.svg" alt="Like" /></a> -->
-                                <a href="#" class="product-btn"><img src="./assets/images/cart-white.svg" alt="Cart" /></a>
+                                <a href="./add-to-cart.php?id=<?php echo $row2['id']; ?>" class="product-btn"><img src="./assets/images/cart-white.svg" alt="Cart" /></a>
                             </div>
                         </div>
                         <div class="products-detail">

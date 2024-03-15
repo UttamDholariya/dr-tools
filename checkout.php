@@ -1,5 +1,6 @@
 <?php include('./include/header.php') ?>
 <?php include('./include/bodyheader.php') ?>
+<?php include "confing.php" ?>
     <!-- cart section -->
     <section class="cart-section checkout-section">
         <div class="container">
@@ -9,7 +10,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb m-0">
                               <li class="breadcrumb-item"><a href="./index.php">Home</a></li>
-                              <li class="breadcrumb-item"><a href="./my-account.php">My Account</a></li>
+                              <li class="breadcrumb-item"><a href="./cart.php">Cart</a></li>
                               <li class="breadcrumb-item active" aria-current="page">Checkout</li>
                             </ol>
                         </nav>
@@ -21,16 +22,23 @@
                     <div class="billing-details-main">
                         <h1>Billing Details</h1>
                         <div class="billing-details-wrap">
-                            
-                                <div class="change-wrap">
-                                    <span>DEFAULT</span>
+                            <div class="change-wrap">
+                                <span>DEFAULT</span>
+                                <p class="deliver-text">Deliver to: <span><?php echo $_SESSION['first_name'];?> <?php echo $_SESSION['last_name'];?></span> </p>
+                                <?php 
+                                    $id = $_SESSION['id'];
                                     
-                                    <p class="deliver-text">Deliver to: <span>Mark Ruffalo</span> </p>
-                                    <p class="reg-14-gray">
-                                        3rd Floor, Sun Complex, S.G. Highway Road,
-                                        Ahmedabad, Gujarat-380050.
-                                    </p>
-                                </div>
+                                    $sql = "SELECT address,postal_code FROM users WHERE id={$id} ";
+                                    $result = mysqli_query($conn,$sql) or die("Query Feiled");
+                                    if(mysqli_num_rows($result) > 0){
+                                        while($row = mysqli_fetch_assoc($result)){
+                                ?> 
+                                            <p class="reg-14-gray"><?php echo $row['address']?>-<?php echo $row['postal_code']?></p>
+                                <?php 
+                                        }
+                                    }        
+                                ?>
+                            </div>
                                 <!-- <div class="checkout-change-btn-wrap"> 
                                     <a href="#" class="change-btn g-btn f-btn mb-0 d-inline-block">Change</a>
                                 </div> -->
@@ -116,93 +124,49 @@
                             <div class="table-wrap">
                                 <table class="table mb-0">
                                     <tbody>
-                                        <tr class="alert" role="alert">
-                                            <td>
-                                                <div class="products-detail-wrap">
-                                                    <div class="product-image-wrap">
-                                                        <img src="./assets/images/images/digi-bp-monitor_2.webp" alt="">
-                                                    </div>
-                                                    <div class="product-detail-list">
-                                                        <p class="p-14-dark">Omron Fully Automatic Digital Blood Pressure Monitoring Machine- Arm Circumference (22-32Cm)</p>
-                                                        <p class="p-14-dark"> <span class="span-title">Color:</span> <span>White</span></p>
-                                                    </div>
-                                                </div>
-                                            
-                                            </td>
-                                            <td>
-                                                <div class="product-price-wrap text-end qty-wrap">
-                                                    <p class="dark-text">₹1630.00</p>
-                                                    <p class="p-14-dark"> <span class="span-title">Qty : </span>  <span> 1 </span></p>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="alert" role="alert">
-                                            <td>
-                                                <div class="products-detail-wrap">
-                                                    <div class="product-image-wrap">
-                                                        <img src="./assets/images/images/digi-bp-monitor_2.webp" alt="">
-                                                    </div>
-                                                    <div class="product-detail-list">
-                                                        <p class="p-14-dark">Omron Fully Automatic Digital Blood Pressure Monitoring Machine- Arm Circumference (22-32Cm)</p>
-                                                        <p class="p-14-dark"> <span class="span-title">Color:</span> <span>White</span></p>
-                                                    </div>
-                                                </div>
-                                            
-                                            </td>
-                                            <td>
-                                                <div class="product-price-wrap text-end qty-wrap">
-                                                    <p class="dark-text">₹1630.00</p>
-                                                    <p class="p-14-dark"> <span class="span-title">Qty : </span>  <span> 1 </span></p>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="alert" role="alert">
-                                            <td>
-                                                <div class="products-detail-wrap">
-                                                    <div class="product-image-wrap">
-                                                        <img src="./assets/images/images/digi-bp-monitor_2.webp" alt="">
-                                                    </div>
-                                                    <div class="product-detail-list">
-                                                        <p class="p-14-dark">Omron Fully Automatic Digital Blood Pressure Monitoring Machine- Arm Circumference (22-32Cm)</p>
-                                                        <p class="p-14-dark"> <span class="span-title">Color:</span> <span>White</span></p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="product-price-wrap text-end qty-wrap">
-                                                    <p class="dark-text">₹1630.00</p>
-                                                    <p class="p-14-dark"> <span class="span-title">Qty : </span>  <span> 1 </span></p>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <!--
-                                        <tr class="alert" role="alert">
-                                            <td>
-                                                <div class="main-dis">
-                                                    <p class="light-text">Sub Total :</p>
-                                                    <p class="light-text">Saving :</p>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="main-dis main-dis-2">
-                                                    <p class="dark-text">₹5,050.50</p>
-                                                    <p class="green-text">₹6,897.00</p>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                         
-                                        <tr class="alert" role="alert">
-                                            <td>
-                                                <div class="main-dis">
-                                                    <p class="light-text">Shipping :</p>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="main-dis main-dis-2">
-                                                    <p class="dark-text">₹00.00</p>
-                                                </div>
-                                            </td>
-                                        </tr>  -->
+                                        <?php 
+                                            $id = $_SESSION['id'];
+                                    
+                                            $cart_sql = "SELECT * FROM cart WHERE user_id={$id} ";
+                                            $cart_result = mysqli_query($conn,$cart_sql) or die("Query Feiled");
+                                            $cart_row = mysqli_fetch_assoc($cart_result);
+
+                                            $cart_detail_sql = "SELECT * FROM cart_detail WHERE cart_id = {$cart_row['cart_id']} ";
+                                            $cart_detail_result = mysqli_query($conn,$cart_detail_sql) or die("Query Feiled");
+                                            if(mysqli_num_rows($cart_detail_result) > 0)
+                                            {
+                                                while($cart_detail_row = mysqli_fetch_assoc($cart_detail_result))
+                                                {
+                                                    $product = "SELECT * FROM product WHERE id = {$cart_detail_row['pro_id']}";
+                                                    $pro_result = mysqli_query($conn,$product) or die("Query Feiled");
+                                                    $pro_row = mysqli_fetch_assoc($pro_result);
+                                                    $total = $cart_detail_row["c_quantity"]*$pro_row['pro_price'];
+                                        ?>
+                                                <tr class="alert" role="alert">
+                                                    <td>
+                                                        <div class="products-detail-wrap">
+                                                            <div class="product-image-wrap">
+                                                                <img src="admin/Uplode/<?php echo $pro_row['pro_img'] ?>" alt="">
+                                                            </div>
+                                                            <div class="product-detail-list">
+                                                                <p class="p-14-dark"><?php echo $pro_row['pro_name'] ?></p>
+                                                                <!-- <p class="p-14-dark"> <span class="span-title">Color:</span> <span>White</span></p> -->
+                                                            </div>
+                                                        </div>
+                                                    
+                                                    </td>
+                                                    <td>
+                                                        <div class="product-price-wrap text-end qty-wrap">
+                                                            <p class="dark-text">₹<?php echo $cart_detail_row['price']?>/item</p>
+                                                            <p class="p-14-dark"> <span class="span-title">Qty : </span>  <span> <?php echo $cart_detail_row['c_quantity']?> </span></p>
+                                                            <p class="dark-text mt-2">₹<?php echo $total; ?></p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                        <?php 
+                                                }
+                                            }
+                                        ?>
                                         <tr class="alert" role="alert">
                                             <td>
                                                 <div class="main-dis">
@@ -211,7 +175,7 @@
                                             </td>
                                             <td>
                                                 <div class="main-dis main-dis-2">
-                                                    <p class="dark-text">₹5,050.50</p>
+                                                    <p class="dark-text text-success">₹<?php echo $cart_row['cart_total']?>.00</p>
                                                 </div>
                                             </td>
                                         </tr>
@@ -243,7 +207,10 @@
                                                         </div>
                                                          -->
                                                         <div class="text-center buttons-wrap w-100">
-                                                            <button type="submit" class="g-btn f-btn mb-0 w-100">Place Order</button>
+                                                            <form action="place_order.php" method="POST">
+                                                                <input type="text" name="cart_id" value="<?php echo $cart_row['cart_id']?>" hidden>
+                                                                <button type="submit" name="place_order" class="g-btn f-btn mb-0 w-100">Place Order</button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>

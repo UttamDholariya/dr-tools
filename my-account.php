@@ -146,7 +146,7 @@
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <label for="">Postal Code*</label>
-                                                <input type="number" name="postal_code" min="5" max="6" id="postal_code" value="<?php echo $row['postal_code']; ?>" class="form-control" placeholder="380081" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==6) return false;" />
+                                                <input type="number" name="postal_code" id="postal_code" value="<?php echo $row['postal_code']; ?>" class="form-control" placeholder="380081" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==6) return false;" />
                                             </div>
                                         </div>
                                         
