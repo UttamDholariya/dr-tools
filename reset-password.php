@@ -10,7 +10,7 @@
         
         include "confing.php";
         
-        $update = "UPDATE users SET password = $new_password WHERE email = '$email'";
+        $update = "UPDATE users SET password = '$new_password' WHERE email = '$email'";
         $update_query =  mysqli_query($conn, $update);
 
         header("Location: signin.php");
