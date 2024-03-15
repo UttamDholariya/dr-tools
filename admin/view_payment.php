@@ -18,36 +18,52 @@
         <div class="billing-details-main order-summary-wrap">
             <div class="billing-details-wrap">
                 <div class="table-wrap">
-                    <table class="table mb-0">
-                        <tbody>
-                            <tr>
-                                <th>Payment Id</th>
-                                <th>Order Id</th>
-                                <th>Total Amount</th>
-                                <th>Payment Status</th>
-                            </tr>
-                            <tr>
-                            <td><p>1</p> </td>
-                                <td><p>#V4VS1123456G</p> </td>
-                                <td>
-                                    <p class="dark-text">₹4030.00</p>
-                                </td>
-                                <td>
-                                    <p>Successful</p>
-                                </td>
-                            </tr>
-                            <tr>
-                            <td><p>2</p> </td>
-                                <td><p>#V4VS1123456G</p> </td>
-                                <td>
-                                    <p class="dark-text">₹4030.00</p>
-                                </td>
-                                <td>
-                                    <p>Pending</p>
-                                </td>
-                            </tr>
-                        </tbody>    
-                    </table>
+                    <?php  
+                        include "confing.php";
+                        $payment_id = $_GET['id'];
+                        $sql = "SELECT * FROM payment WHERE payment_id = {$payment_id}";
+                        $result = mysqli_query($conn,$sql) or die("Query Feiled");
+                        if(mysqli_num_rows($result) > 0)
+                        {
+                    ?>
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Payment Id</th>
+                                        <th>Payment Method</th>
+                                        <th>Order Id</th>
+                                        <th>Total Payment Amount</th>
+                                        <th>Payment Status</th>
+                                        <th>Payment Date</th>
+                                        <th>User Id</th>
+                                        <th>Payment Status</th>
+                                    </tr>
+                                </thead>
+                                <?php 
+                                    while($row = mysqli_fetch_assoc($result))
+                                    { 
+                                    ?>
+                                        <tbody>
+                                            <tr>
+                                                <td><p><?php echo $row['payment_id']; ?></p></td>
+                                                <td><p><?php echo $row['payment_method']; ?></p></td>
+                                                <td><p><?php echo $row['order_id']; ?></p></td>
+                                                <td><p>₹<?php echo $row['payment_amount']; ?>.00</p></td>
+                                                <td><p><?php echo $row['payment_ststus']; ?></p></td>
+                                                <td><p><?php echo $row['payment_date']; ?></p></td>
+                                                <td><p class="dark-text"><?php echo $row['user_id']; ?></p></td>
+                                                <td>
+                                                    <p>Successful</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    <?php 
+                                        }
+                                    ?>
+                            </table>
+                    <?php 
+                        }
+                    ?>
                 </div>
             </div>
         </div>

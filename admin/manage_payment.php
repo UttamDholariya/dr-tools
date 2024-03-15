@@ -15,31 +15,43 @@
                 <div class="card shadow">
                     <div class="card-body">
                         <h5 class="card-title">Manage Payment</h5><hr>
-                        <table id="myTable" class="display">
-                            <thead>
-                                <tr>
-                                    <th>Payment Id</th>
-                                    <th>Order Id</th>
-                                    <th>Payment Status</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>successful</td>
-                                    <td><a href="view_payment.php" class="me-3"><img src="../assets/images/images/view.svg" style="height: 16px;width: 16px;" alt="View"/></a>
-                                    <a href="javascript:" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>2</td>
-                                    <td>unsuccessful</td>
-                                    <td><a href="view_payment.php" class="me-3"><img src="../assets/images/images/view.svg"style="height: 16px;width: 16px;" alt="View"/></a>
-                                    <a href="javascript:" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
-                                </tr>
-                        </table>
+                        <?php 
+                           // $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
+                            include "confing.php";
+                            $sql = "SELECT p.payment_id, p.payment_method, p.order_id, p.payment_amount, p.payment_ststus, p.payment_date, p.user_id, o.order_id FROM payment as p inner JOIN `order` as o ON p.order_id = o.order_id";
+                            $result = mysqli_query($conn,$sql) or die("Query Feiled");
+                            if(mysqli_num_rows($result) > 0)
+                            {
+                        ?>
+                                <table id="myTable" class="display">
+                                    <thead>
+                                        <tr>
+                                            <th>Payment Id</th>
+                                            <th>Order Id</th>
+                                            <th>Payment Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php 
+                                            while($row = mysqli_fetch_assoc($result))
+                                            {
+                                        ?>
+                                                <tr>
+                                                    <td><?php echo $row['payment_id']; ?></td>
+                                                    <td><?php echo $row['order_id']; ?></td>
+                                                    <td><?php echo $row['payment_ststus']; ?></td>
+                                                    <td><a href="view_payment.php?id=<?php echo $row['payment_id']; ?>" class="me-3"><img src="../assets/images/images/view.svg" style="height: 16px;width: 16px;" alt="View"/></a>
+                                                    <a href="javascript:" class=""><img src="../assets/images/deletecon.svg" alt="Delete" /></a></td>
+                                                </tr>
+                                        <?php
+                                            }
+                                        ?>
+                                    </tbody>
+                                </table>
+                        <?php 
+                            }
+                        ?>
                     </div>
                 </div>
             </div>

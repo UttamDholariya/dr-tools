@@ -22,7 +22,7 @@
 
         while($row1 = mysqli_fetch_assoc($result2))
         {
-            $sql3 = "INSERT INTO order_detail (pro_id, order_id) VALUES ('{$row1['pro_id']}', '{$order_id}')";
+            $sql3 = "INSERT INTO order_detail (pro_id, order_qty, order_id) VALUES ('{$row1['pro_id']}', '{$row1['c_quantity']}', '{$order_id}')";
             $result3 = mysqli_query($conn, $sql3);
         }
 
