@@ -294,35 +294,66 @@
                             </div>
                         </div>
                          -->
+                        <?php
+                            if(isset($_POST['update_password']))
+                            {
+                                $current_password = $_POST['current_password'];
+                                $check_password = md5($current_password);
+
+                                $new_password = $_POST['new_password'];
+                                $password = md5($new_password);
+                                $email = $_SESSION['email'];
+                                
+                                include "confing.php";
+
+                                $check_password_sql = "SELECT * FROM users WHERE email = '$email'";
+                                $check_password_sql_result =  mysqli_query($conn, $check_password_sql);
+
+                                if(mysqli_num_rows($check_password_sql_result) > 0){
+                                    while($check_password_row = mysqli_fetch_assoc($check_password_sql_result))
+                                    {
+                                        if($check_password_row['password'] == $check_password)
+                                        {
+                                            $update_password = "UPDATE users SET password = '$password' WHERE email = '$email'";
+                                            $update_password_query =  mysqli_query($conn, $update_password);
+                                        }
+                                        else
+                                        {
+                                            echo 'Your Current Password Not Match...';
+                                        }
+                                    }
+                                }
+                            }
+                        ?>
                         <div class="tab-pane fade help-wrap" id="nav-help" role="tabpanel" aria-labelledby="nav-help-tab">
                             <h2 class="ps-3">Change Password</h2>
                             <div class="common-form-section cmn-bg-tab change-pass-wrap">
-                                <form>
+                                <form action="my-account.php" method="POST">
                                     <div class="row justify-content-center">
                                         <div class="col-lg-7">
                                             <div class="form-group password-group">
                                                 <i class="toggle-password fa fa-fw fa-eye-slash"></i>
                                                 <label for="">Current Password</label>
-                                                <input type="password" placeholder="Password" class="form-control" />
+                                                <input type="password" name="current_password" placeholder="Password" class="form-control" />
                                             </div>
                                         </div>
                                         <div class="col-lg-7">
                                             <div class="form-group password-group">
                                                 <i class="toggle-password fa fa-fw fa-eye-slash"></i>
                                                 <label for="">Create New Password</label>
-                                                <input type="password" placeholder="Password" class="form-control" />
+                                                <input type="password" name="new_password" placeholder="Password" class="form-control" />
                                             </div>
                                         </div>
                                         <div class="col-lg-7">
                                             <div class="form-group password-group">
                                                 <i class="toggle-password fa fa-fw fa-eye-slash"></i>
                                                 <label for="">Confirm New Password</label>
-                                                <input type="password" placeholder="Password" class="form-control" />
+                                                <input type="password" name="confirm_new_password" placeholder="Password" class="form-control" />
                                             </div>
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" class="g-btn f-btn mb-0">Update</button>
+                                        <button type="submit" name="update_password" class="g-btn f-btn mb-0">Update</button>
                                     </div>
                                 </form>
                             </div>
