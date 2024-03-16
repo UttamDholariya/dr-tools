@@ -100,10 +100,17 @@
                             <a href="./product-detail.php?id=<?php echo $row['id'] ?>">
                                 <img src="admin/Uplode/<?php echo $row['pro_img'] ?>" alt="Product" />
                             </a>
+                            <?php 
+                                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) 
+                                {
+                            ?>
                             <div class="product-like-cart">
                                 <!-- <a href="#" class="product-btn"><img src="./assets/images/like-white.svg" alt="Like" /></a> -->
                                 <a href="./add-to-cart-home.php?id=<?php echo $row['id']; ?>" class="product-btn"><img src="./assets/images/cart-white.svg" alt="Cart" /></a>
                             </div>
+                            <?php 
+                                }
+                            ?>
                         </div>  
                         <div class="products-detail">
                             <a href="./product-detail.php?id=<?php echo $row['id'] ?>">
