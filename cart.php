@@ -26,32 +26,12 @@
                     $result = mysqli_query($conn, $sql);
                     $row = mysqli_fetch_assoc($result);
 
-                    $sql1 = "SELECT * FROM cart_detail WHERE cart_id = '{$row['cart_id']}' ";
-                    $result1 = mysqli_query($conn, $sql1);
-                    // $sql2 = "SELECT user_id , pro_id FROM cart WHERE user_id = '$user_id' AND pro_id = '$product_id';";
-                    // $result2 = mysqli_query($conn,$sql2) or die("Query Feiled");
-                    
-                    // $row1 = null;
-                    // if ($result2) {
-                    //     $row1 = mysqli_fetch_assoc($result2);
-                    // }
-                    
-                    // if($row1 && $row1['user_id'] == $user_id && $row1['pro_id'] == $product_id)
-                    // {   
-                        
-                    // }
-                    // else
-                    // {
-                    //     $sql1 = "INSERT INTO cart (pro_id,user_id,c_quantity,total) VALUES('$product_id','$user_id','1',{$pro_row['pro_price']})";
-                    //     $result1 = mysqli_query($conn,$sql1) or die("Query Feiled");
-                    // }
-                    
-                    // $sql = "SELECT * FROM cart WHERE user_id = '$user_id';";
-                    // $result = mysqli_query($conn,$sql) or die("Query Feiled");
-
-                    // if(mysqli_num_rows($result) > 0){
-                    //     while($row = mysqli_fetch_assoc($result)){
-                    
+                    if (empty($row)) {
+                        $result1 = Null;
+                    } else {
+                        $sql1 = "SELECT * FROM cart_detail WHERE cart_id = '{$row['cart_id']}' AND user_id = $user_id ";
+                        $result1 = mysqli_query($conn, $sql1);
+                    }
                 ?>
                     <table class="table_cart product_detail_table">
                         <thead>
@@ -65,12 +45,16 @@
                         </thead>
                         <tbody>
                             <?php 
-                                while($row1 = mysqli_fetch_assoc($result1))
+                                if (isset($result1) && !is_null($result1)) 
                                 {
-                                    $product = "SELECT * FROM product WHERE id = {$row1['pro_id']}";
-                                    $pro_result = mysqli_query($conn,$product) or die("Query Feiled");
-                                    $pro_row = mysqli_fetch_assoc($pro_result);
-                                    $total = $row1["c_quantity"]*$pro_row['pro_price'];
+                                    if (mysqli_num_rows($result1) > 0) 
+                                    {
+                                        while($row1 = mysqli_fetch_assoc($result1))
+                                        {
+                                            $product = "SELECT * FROM product WHERE id = {$row1['pro_id']}";
+                                            $pro_result = mysqli_query($conn,$product) or die("Query Feiled");
+                                            $pro_row = mysqli_fetch_assoc($pro_result);
+                                            $total = $row1["c_quantity"]*$pro_row['pro_price'];
                             ?>
                                 <tr class="item-row">
                                     <td data-th="Products Details">
@@ -102,7 +86,9 @@
                                     <td data-th="Action"> <a href="cart-remove.php?id=<?php echo $row1['cart_detail_id'] ?>" class="js_remove_item"><img src="./assets/images/deletecon.svg" alt="Delete" /></a> </td>
                                 </tr>
                             <?php 
-                                } 
+                                        } 
+                                    }
+                                }
                             ?>
                         </tbody>
                     </table>
@@ -115,7 +101,7 @@
                             <ul>
                                 <li>
                                     <p>Sub Total :</p>
-                                    <p class="primary-med-18" id="sub_total" disabled><?php echo "₹". $row['cart_total'] .".00" ?></p>
+                                    <p class="primary-med-18" id="sub_total" disabled><?php if (!empty($row)) {?><?php echo "₹". $row['cart_total'] .".00" ?><?php } ?></p>
                                 </li>
                                 <!-- <li>
                                     <p>Discount :</p>
@@ -135,11 +121,18 @@
                                 </li> -->
                                 <li>
                                     <p>Grand Total :</p>
-                                    <p class="primary-med-18" id="g_total" disabled><?php echo "₹". $row['cart_total'] .".00" ?></p>
+                                    <p class="primary-med-18" id="g_total" disabled><?php if (!empty($row)) {?><?php echo "₹". $row['cart_total'] .".00" ?><?php } ?></p>
                                 </li>
                                 <li>
                                     <div class="proceed-to-checkout-btn-wrap w-100">
+                                    <?php 
+                                        if (isset($row) && $row['cart_total'] != '0.00') 
+                                        {
+                                    ?>
                                         <a href="./checkout.php" style="text-decoration-line:none; text-align:center" type="submit" class="g-btn f-btn mb-0 w-100">Proceed To Checkout</a>
+                                    <?php 
+                                        } 
+                                    ?>
                                     </div>
                                 </li>
                             </ul>

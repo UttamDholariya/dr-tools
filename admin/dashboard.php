@@ -1,5 +1,6 @@
 <?php include('../admin/include/header.php') ?>
 <?php include('../admin/include/sidebar.php') ?>
+<?php include "confing.php"; ?>
 <main id="main" class="main">
 
     <div class="pagetitle">
@@ -19,6 +20,100 @@
         <div class="col-lg-12">
           <div class="row">
 
+          <div class="col-xxl-4 col-md-6">
+            <div class="card info-card sales-card">
+              <div class="card-body">
+                <h5 class="card-title">Total User</h5>
+                <div class="d-flex align-items-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="fas fa-user"></i>
+                  </div>
+                  <div class="ps-3">
+                  <?php
+                    $sql = "SELECT COUNT(*) AS total FROM users";
+                    $result = mysqli_query($conn,$sql) or die("Query Feiled");
+                    $row = mysqli_fetch_assoc($result);
+                  ?>
+                    <h6><?php echo $row['total']; ?></h6>
+                  <?php
+                  ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Sales Card -->
+
+          <!-- Revenue Card -->
+          <div class="col-xxl-4 col-md-6">
+            <div class="card info-card revenue-card">
+              <div class="card-body">
+                <h5 class="card-title">Total Product</h5>
+                <div class="d-flex align-items-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="fas fa-light fa-cart-plus"></i>
+                  </div>
+                  <div class="ps-3">
+                  <?php
+                    $sql1 = "SELECT COUNT(*) AS pro_total FROM product";
+                    $result1 = mysqli_query($conn,$sql1) or die("Query Feiled");
+                    $row1 = mysqli_fetch_assoc($result1);
+                  ?>
+                    <h6><?php echo $row1['pro_total']; ?></h6>
+                  <?php
+                  ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Revenue Card -->
+
+          <!-- Customers Card -->
+          <div class="col-xxl-4 col-xl-12">
+            <div class="card info-card customers-card">
+              <div class="card-body">
+                <h5 class="card-title">Total Category</h5>
+                <div class="d-flex align-items-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="fas fa-light fa-layer-group"></i>
+                  </div>
+                  <div class="ps-3">
+                  <?php
+                    $sql2 = "SELECT COUNT(*) AS cat_total FROM category";
+                    $result2 = mysqli_query($conn,$sql2) or die("Query Feiled");
+                    $row2 = mysqli_fetch_assoc($result2);
+                  ?>
+                    <h6><?php echo $row2['cat_total']; ?></h6>
+                  <?php
+                  ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Customers Card -->
+          
+          <!-- Customers Card -->
+          <div class="col-xxl-4 col-xl-12">
+            <div class="card info-card customers-card">
+              <div class="card-body">
+                <h5 class="card-title">Total Orders</h5>
+                <div class="d-flex align-items-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="fas fa-light fa-layer-group"></i>
+                  </div>
+                  <div class="ps-3">
+                  <?php
+                    $sql3 = "SELECT COUNT(*) AS order_total FROM `order`";
+                    $result3 = mysqli_query($conn,$sql3) or die("Query Feiled");
+                    $row3 = mysqli_fetch_assoc($result3);
+                  ?>
+                    <h6><?php echo $row3['order_total']; ?></h6>
+                  <?php
+                  ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Customers Card -->
             <!-- Sales Card -->
             <!-- <div class="col-xxl-4 col-md-4">
               <div class="card info-card sales-card">
@@ -211,7 +306,7 @@
             <!-- End Reports -->
 
             <!-- Recent Sales -->
-            <div class="col-12">
+            <!-- <div class="col-12">
               <div class="card recent-sales overflow-auto">
 
                 <div class="filter">
@@ -282,16 +377,16 @@
                 </div>
 
               </div>
-            </div>
+            </div> -->
             <!-- End Recent Sales -->
 
             <!-- Top Selling -->
-            <div class="col-12">
+            <!-- <div class="col-12">
               <div class="card top-selling overflow-auto">
 
                 <div class="filter">
                   <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <!-- <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                     <li class="dropdown-header text-start">
                       <h6>Filter</h6>
                     </li>
@@ -299,12 +394,12 @@
                     <li><a class="dropdown-item" href="#">Today</a></li>
                     <li><a class="dropdown-item" href="#">This Month</a></li>
                     <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul> -->
+                  </ul>
                 </div>
 
                 <div class="card-body pb-0">
                   <h5 class="card-title">Top Selling </h5> 
-                  <!-- <span>| Today</span> -->
+                  <span>| Today</span>
                   <table class="table table-borderless">
                     <thead>
                       <tr>
@@ -357,7 +452,7 @@
                 </div>
 
               </div>
-            </div><!-- End Top Selling -->
+            </div> -->
 
           </div>
         </div><!-- End Left side columns -->

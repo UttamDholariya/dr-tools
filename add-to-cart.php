@@ -18,7 +18,7 @@
 
         if($row1['user_id'] == $user_id)
         {   
-            $sql5 = "SELECT * FROM cart_detail WHERE pro_id = $id ";
+            $sql5 = "SELECT * FROM cart_detail WHERE pro_id = $id AND user_id = $user_id";
             $result5 = mysqli_query($conn, $sql5);
             $row5 = mysqli_fetch_assoc($result5);
 
@@ -31,7 +31,7 @@
                 $sql4 = "UPDATE cart SET cart_total = $cart_total WHERE user_id = $user_id ";
                 $result4 = mysqli_query($conn, $sql4);
 
-                $sql6 = "UPDATE cart_detail SET c_quantity = $c_quantity WHERE pro_id = $id ";
+                $sql6 = "UPDATE cart_detail SET c_quantity = $c_quantity WHERE pro_id = $id AND user_id = $user_id";
                 $result6 = mysqli_query($conn, $sql6);
                 header("Location: product-detail.php?id=$id");
             }
@@ -43,7 +43,7 @@
                 $sql7 = "UPDATE cart SET cart_total = $cart_total WHERE user_id = $user_id ";
                 $result7 = mysqli_query($conn, $sql7);
 
-                $sql8 = "INSERT INTO cart_detail (pro_id, c_quantity, price, cart_id) VALUES ('{$row['id']}', '1', '{$row['pro_price']}', '{$row1['cart_id']}')";
+                $sql8 = "INSERT INTO cart_detail (pro_id, c_quantity, price, cart_id, user_id) VALUES ('{$row['id']}', '1', '{$row['pro_price']}', '{$row1['cart_id']}', $user_id)";
                 $result8 = mysqli_query($conn, $sql8);
                 header("Location: product-detail.php?id=$id");
             }
@@ -55,7 +55,7 @@
 
             $cart_id = mysqli_insert_id($conn);
 
-            $sql3 = "INSERT INTO cart_detail (pro_id, c_quantity, price, cart_id) VALUES ('{$row['id']}', '1', '{$row['pro_price']}', '{$cart_id}')";
+            $sql3 = "INSERT INTO cart_detail (pro_id, c_quantity, price, cart_id, user_id) VALUES ('{$row['id']}', '1', '{$row['pro_price']}', '{$cart_id}', $user_id)";
             $result3 = mysqli_query($conn, $sql3);
             header("Location: product-detail.php?id=$id");
         }

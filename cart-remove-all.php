@@ -17,7 +17,7 @@
             $sql4 = "UPDATE cart SET cart_total = '0' WHERE user_id = $user_id ";
             $result4 = mysqli_query($conn, $sql4);
 
-            $sql6 = "DELETE FROM cart_detail WHERE cart_id = {$row1['cart_id']} ";
+            $sql6 = "DELETE FROM cart_detail WHERE cart_id = {$row1['cart_id']} AND user_id = $user_id ";
             $result6 = mysqli_query($conn, $sql6);
             header("Location: cart.php");
         } 
