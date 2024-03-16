@@ -1,3 +1,15 @@
+   <style>
+    .search-results-wrap 
+    {
+        margin-top: 15px;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        height: 150px;
+        overflow-y: auto;
+    }
+   </style>
    <?php session_start(); ?>
     <header>
         <div class="container">
@@ -115,9 +127,48 @@
                         <div class="search-wrap">
                             
                             <form action="">
-                                <input type="search" class="form-control" placeholder="Search" />
-                                <input type="submit" value="search" />
+                                <div class="col">
+                                    <div class="row">
+                                        <input type="search" class="form-control" placeholder="Search" id="search_product"/>
+                                    </div>
+                                    <div class="row">
+                                    <div class="search-results-wrap mt-2 " id="product_list" style="display: none;"></div>
+                                    </div>
+                                </div>
+                                <!-- <input type="submit" value="search" /> -->
                             </form>
+                            <script>
+                                let savedList = [];
+                                $(document).ready(function(){
+                                    $('#search_product').keyup(function(){
+                                        var query = $(this).val();
+                                        if(query != '')
+                                        {
+                                            $.ajax({
+                                                url:"search.php",
+                                                method:"POST",
+                                                data:{query:query},
+                                                success:function(data)
+                                                {
+                                                    if (savedList.length == 0)
+                                                    {
+                                                        savedList.push(data);
+                                                    }
+                                                    $('#product_list').fadeIn();
+                                                    $('#product_list').html(data);
+                                                }
+                                            });
+                                        }
+                                        else 
+                                        {
+                                            // Clear savedList
+                                            savedList = [];
+                                            // Hide #product_list
+                                            $('#product_list').fadeOut();
+                                        }
+                                    })
+                                })
+                            </script>
                         </div>
                     </div>
                 </div>
