@@ -38,7 +38,7 @@
                         <div class="product-detail-wrapper">
                             <h2><?php echo $row['pro_name'] ?></h2>
                             <p class="p-reg-16"><?php echo $row['pro_desc'] ?></p>
-                            <div class="rating-wrapper-main rating-main-sec">
+                            <!-- <div class="rating-wrapper-main rating-main-sec">
                                 <div class="rating__stars">
                                     <input id="rating-1" class="rating__input rating__input-1" type="radio" name="rating" value="1">
                                     <input id="rating-2" class="rating__input rating__input-2" type="radio" name="rating" value="2">
@@ -91,7 +91,7 @@
                                         <span class="rating__sr">5 stars</span>
                                     </label>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="product-prices-wrapper">
                                 <p class="p-primary-24"><?php echo "₹". $row['pro_price'] .".00" ?></p>
                             </div>
@@ -174,7 +174,14 @@
                             </a>
                             <div class="product-like-cart">
                                 <!-- <a href="#" class="product-btn"><img src="./assets/images/like-white.svg" alt="Like" /></a> -->
-                                <a href="./add-to-cart.php?id=<?php echo $row2['id']; ?>" class="product-btn"><img src="./assets/images/cart-white.svg" alt="Cart" /></a>
+                                <?php 
+                                    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) 
+                                    {
+                                ?>
+                                    <a href="./add-to-cart.php?id=<?php echo $row2['id']; ?>" class="product-btn"><img src="./assets/images/cart-white.svg" alt="Cart" /></a>
+                                <?php
+                                    }
+                                ?>
                             </div>
                         </div>
                         <div class="products-detail">
@@ -183,7 +190,7 @@
                             </a>
                             <div class="products-price-rating">
                                 <p>₹688.00</p>
-                                <div class="rating-wrap">
+                                <!-- <div class="rating-wrap">
                                     <a href="#">
                                         <img src="./assets/images/star.svg" alt="Star" />
                                         <img src="./assets/images/star.svg" alt="Star" />
@@ -191,7 +198,7 @@
                                         <img src="./assets/images/star.svg" alt="Star" />
                                         <img src="./assets/images/star.svg" alt="Star" />
                                     </a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

@@ -198,7 +198,7 @@
                             </a>
                             <div class="products-price-rating">
                                 <p><?php echo "₹". $row['pro_price'] .".00" ?></p>
-                                <div class="rating-wrap">
+                                <!-- <div class="rating-wrap">
                                     <a href="#">
                                         <img src="./assets/images/star.svg" alt="Star" />
                                         <img src="./assets/images/star.svg" alt="Star" />
@@ -206,7 +206,7 @@
                                         <img src="./assets/images/star.svg" alt="Star" />
                                         <img src="./assets/images/star.svg" alt="Star" />
                                     </a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
