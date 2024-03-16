@@ -182,7 +182,14 @@
                             </a>
                             <div class="product-like-cart">
                                 <!-- <a href="#" class="product-btn"><img src="./assets/images/like-white.svg" alt="Like" /></a> -->
-                                <a href="./add-to-cart-listing-page.php?id=<?php echo $row['id']; ?>" class="product-btn"><img src="./assets/images/cart-white.svg" alt="Cart" /></a>
+                                <?php 
+                                    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) 
+                                    {
+                                ?>
+                                    <a href="./add-to-cart-listing-page.php?id=<?php echo $row['id']; ?>" class="product-btn"><img src="./assets/images/cart-white.svg" alt="Cart" /></a>
+                                <?php 
+                                    }
+                                ?>
                             </div>
                         </div>
                         <div class="products-detail">
