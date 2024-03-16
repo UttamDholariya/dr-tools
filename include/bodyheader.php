@@ -81,7 +81,7 @@
                                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) 
                                 {
                             ?>
-                                <div class="">
+                                <div class="ms-2">
                                     <a href="./exit1.php"><i class="fas fa-light fa-right-from-bracket"></i></a>
                                     <!-- <a href=""><img src="./assets/images/Like.svg" alt="Like" /></a> -->
                                 </div>
