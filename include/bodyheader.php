@@ -41,7 +41,12 @@
                                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) 
                                 {
                             ?>
-                                <div class="login-wrap">
+                                <div class="link-cart-wrap login-wrap me-2">
+                                    <a href="./cart.php"><img src="./assets/images/images/Cart.svg" alt="Cart" /></a>
+                                    <!-- <a href=""><img src="./assets/images/Like.svg" alt="Like" /></a> -->
+                                </div>
+
+                                <div class="login-wrap me-2">
                                     <a href="./my-account.php"><img src="./assets/images/profile.svg" alt="Profile" /> <?php echo $_SESSION['first_name']; ?> </a>
                                 </div>
 
@@ -71,14 +76,19 @@
                                 </div><?php
                                 }
                             ?>
-                                    
-                                
-
-                                <div class="link-cart-wrap">
-                                    <a href="./cart.php"><img src="./assets/images/images/Cart.svg" alt="Cart" /></a>
+  
+                            <?php 
+                                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) 
+                                {
+                            ?>
+                                <div class="">
+                                    <a href="./exit1.php"><i class="fas fa-light fa-right-from-bracket"></i></a>
                                     <!-- <a href=""><img src="./assets/images/Like.svg" alt="Like" /></a> -->
                                 </div>
                             
+                            <?php 
+                                }
+                            ?>
                         </div>       
                             <?php 
                         ?>
