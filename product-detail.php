@@ -97,8 +97,22 @@
                             </div>
                             </div>
                             <div class="text-center buttons-wrap submit-btn-wrap">
+                                <?php 
+                                    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) 
+                                    {
+                                ?>
                                 <a href="./add-to-cart.php?id=<?php echo $row['id']; ?>" style="text-decoration-line:none" type="submit" class="g-btn f-btn border-btn mb-0">Add To Cart</a>
                                 <a href="./checkout.php" style="text-decoration-line:none" type="submit" class="g-btn f-btn mb-0">Check Out</a>
+                                <?php 
+                                    }
+                                    else
+                                    {
+                                ?>
+                                <a href="./add-to-cart.php?id=<?php echo $row['id']; ?>" style="text-decoration-line:none" type="submit" class="g-btn f-btn border-btn mb-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Add To Cart</a>
+                                <a href="./checkout.php" style="text-decoration-line:none" type="submit" class="g-btn f-btn mb-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Check Out</a>
+                                <?php
+                                    }
+                                ?>
                             </div>
                             <div class="free-main-text">
                                 <p>Free delivery if you order today <span class="star">*</span></p>
@@ -190,7 +204,21 @@
                 }
             ?>
             </div>
-        
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">Do You Want To Login ?</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-mdb-ripple-init data-mdb-dismiss="modal">Close</button>
+                            <a href="./signin.php" type="button" class="btn btn-primary" data-mdb-ripple-init>Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- <div class="item">
                 <div class="products-wrap">
                         <div class="products-wrap-img position-relative">
