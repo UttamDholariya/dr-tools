@@ -209,9 +209,8 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Required Login</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">Do You Want To Login ?</div>
+                        <div class="modal-body">If you have not created account then create account</div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-mdb-ripple-init data-mdb-dismiss="modal">Close</button>
                             <a href="./signin.php" style="background-color:#2aa1a8" type="button" class="btn btn-primary" data-mdb-ripple-init>Login</a>
