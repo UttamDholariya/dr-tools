@@ -26,7 +26,7 @@
                 <h5 class="card-title">Total User</h5>
                 <div class="d-flex align-items-center">
                   <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                    <i class="fas fa-user"></i>
+                    <a href="manage_user.php"><i class="fas fa-user"></i></a>
                   </div>
                   <div class="ps-3">
                   <?php
@@ -50,7 +50,7 @@
                 <h5 class="card-title">Total Product</h5>
                 <div class="d-flex align-items-center">
                   <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                    <i class="fas fa-light fa-cart-plus"></i>
+                    <a href="manage_product.php"><i class="fas fa-light fa-cart-plus"></i></a>
                   </div>
                   <div class="ps-3">
                   <?php
@@ -68,13 +68,13 @@
           </div><!-- End Revenue Card -->
 
           <!-- Customers Card -->
-          <div class="col-xxl-4 col-xl-12">
+          <div class="col-xxl-4 col-xl-6">
             <div class="card info-card customers-card">
               <div class="card-body">
                 <h5 class="card-title">Total Category</h5>
                 <div class="d-flex align-items-center">
                   <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                    <i class="fas fa-light fa-layer-group"></i>
+                    <a href="manage_category.php"><i class="fas fa-light fa-layer-group"></i></a>
                   </div>
                   <div class="ps-3">
                   <?php
@@ -92,13 +92,13 @@
           </div><!-- End Customers Card -->
           
           <!-- Customers Card -->
-          <div class="col-xxl-4 col-xl-12">
+          <div class="col-xxl-4 col-xl-6">
             <div class="card info-card customers-card">
               <div class="card-body">
                 <h5 class="card-title">Total Orders</h5>
                 <div class="d-flex align-items-center">
                   <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                    <i class="fas fa-light fa-layer-group"></i>
+                    <a href="manage_order.php"><i class="fas fa-light fa-layer-group"></i></a>
                   </div>
                   <div class="ps-3">
                   <?php

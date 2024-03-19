@@ -14,7 +14,10 @@
 
             if(mysqli_num_rows($result) > 0)
             {
-                echo "<p style='color:red;text-align:center;margin: 10px 0;font-size: 30px;'>Email Already Exists. </p>";
+                session_start();
+                $_SESSION['status'] = "Email Already Exists.";
+                header("Location: signup.php");
+                // echo "<p style='color:red;text-align:center;margin: 10px 0;font-size: 30px;'>Email Already Exists. </p>";
             }
             else
             {

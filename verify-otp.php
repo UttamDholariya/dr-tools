@@ -21,11 +21,17 @@
                 header("Location: reset-password.php");
                 exit();
             }
+            else
+            {
+                $_SESSION['status'] = "Enter valid OTP";
+                header("Location: forgot-password.php");
+                exit(0);
+            }
         }
         else
         {
             $_SESSION['status'] = "No Eamil Found";
-            header("Location: forgot-passwoed.php");
+            header("Location: forgot-password.php");
             exit(0);
         }
     }

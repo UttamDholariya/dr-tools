@@ -1233,7 +1233,7 @@ footer h2 {
     display: flex;
     border-radius: 8px;
     border: 1px solid #DEE2E7;
-    overflow: hidden;
+    /* overflow: hidden; */
     background: #F7F8FA;
     width: 30%;
 }
@@ -1251,6 +1251,12 @@ footer h2 {
     justify-content: space-between;
     position: relative;
     margin-left: 5px;
+}
+.search-results-wrap {
+    position: absolute;
+    top: 32px;
+    z-index: 9;
+    right: 0;
 }
 .search-wrap form input {
     background: transparent;

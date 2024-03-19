@@ -364,11 +364,6 @@
                                 <div class="col-lg-12 accordion" id="accordionExample">
                                     <div class="order-wrapper">
                                         <h2 class="ps-3">My Orders</h2>
-                                        <div>
-                                            <form action="">
-                                                <input type="text" class="form-control" />
-                                            </form>
-                                        </div>
                                     </div>
                                     <?php 
                                         $user_id = isset($_SESSION['id']) ? $_SESSION['id'] : '';

@@ -102,14 +102,14 @@
                                     {
                                 ?>
                                 <a href="./add-to-cart.php?id=<?php echo $row['id']; ?>" style="text-decoration-line:none" type="submit" class="g-btn f-btn border-btn mb-0">Add To Cart</a>
-                                <a href="./checkout.php" style="text-decoration-line:none" type="submit" class="g-btn f-btn mb-0">Check Out</a>
+                                <a href="./product_checkout.php?id=<?php echo $row['id']; ?>" style="text-decoration-line:none" type="submit" class="g-btn f-btn mb-0">Check Out</a>
                                 <?php 
                                     }
                                     else
                                     {
                                 ?>
-                                <a href="" style="text-decoration-line:none" type="submit" class="g-btn f-btn border-btn mb-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Add To Cart</a>
-                                <a href="" style="text-decoration-line:none" type="submit" class="g-btn f-btn mb-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Check Out</a>
+                                        <a href="" style="text-decoration-line:none" type="submit" class="g-btn f-btn border-btn mb-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Add To Cart</a>
+                                        <a href="" style="text-decoration-line:none" type="submit" class="g-btn f-btn mb-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Check Out</a>
                                 <?php
                                     }
                                 ?>

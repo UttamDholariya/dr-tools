@@ -23,9 +23,10 @@
 
         }
         else{
-        
-
-            echo "<script> alert('Username and Password are not Matched '); </script>";
+            session_start();
+            $_SESSION['status'] = "Username and Password are not Matched";
+            header("Location: signin.php");
+            // echo "<script> alert('Username and Password are not Matched '); </script>";
         }
     }
 ?>
