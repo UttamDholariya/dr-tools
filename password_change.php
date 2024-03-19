@@ -68,22 +68,6 @@
 
             send_password_reset($name,$email);
 
-            // $update_token = "UPDATE users SET verify_token = '$token' WHERE email = '{$get_email}' LIMIT 1";
-            // $update_token_run = mysqli_query($conn,$update_token);
-
-            // if($update_token_run)
-            // {
-            //     send_password_reset($get_name,$get_email,$token);
-            //     $_SESSION['status'] = "We e-mailed you a password reset link";
-            //     header("Location: forgot-passwoed.php");
-            //     exit(0);
-            // }
-            // else
-            // {
-            //     $_SESSION['status'] = "Something went Wrong. #1";
-            //     header("Location: forgot-passwoed.php");
-            //     exit(0);
-            // }
         }
         else
         {

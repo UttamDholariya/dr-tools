@@ -105,7 +105,6 @@
                                 {
                             ?>
                             <div class="product-like-cart">
-                                <!-- <a href="#" class="product-btn"><img src="./assets/images/like-white.svg" alt="Like" /></a> -->
                                 <a href="./add-to-cart-home.php?id=<?php echo $row['id']; ?>" class="product-btn"><img src="./assets/images/cart-white.svg" alt="Cart" /></a>
                             </div>
                             <?php 
@@ -118,15 +117,6 @@
                             </a>
                             <div class="products-price-rating">
                                 <p><?php echo "₹". $row['pro_price'] .".00" ?></p>
-                                <!-- <div class="rating-wrap">
-                                    <a href="#">
-                                        <img src="./assets/images/star.svg" alt="Star" />
-                                        <img src="./assets/images/star.svg" alt="Star" />
-                                        <img src="./assets/images/star.svg" alt="Star" />
-                                        <img src="./assets/images/star.svg" alt="Star" />
-                                        <img src="./assets/images/star.svg" alt="Star" />
-                                    </a>
-                                </div> -->
                             </div>
                         </div>
                     </div>    

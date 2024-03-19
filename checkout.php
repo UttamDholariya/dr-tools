@@ -39,81 +39,6 @@
                                     }        
                                 ?>
                             </div>
-                                <!-- <div class="checkout-change-btn-wrap"> 
-                                    <a href="#" class="change-btn g-btn f-btn mb-0 d-inline-block">Change</a>
-                                </div> -->
-                            
-                            <!--  
-                            <div class="common-form-section cmn-bg-tab new-shipping-wrap">
-                                <h2>Add New Shipping Address</h2>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="">Name*</label>
-                                                <input type="text" class="form-control" placeholder="Mark Ruffalo" />
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="">Email Address*</label>
-                                                <input type="text" class="form-control" placeholder="markruffalo@gmail.com" />
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <label for="">Address (Street/Area)*</label>
-                                                <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="201-203, Rang Royal Residency,"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="">City/District/Town*</label>
-                                                <select name="" id="" class="form-control">
-                                                    <option value="Ahmedabad">Ahmedabad</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="">State*</label>
-                                                <select name="" id="" class="form-control">
-                                                    <option value="Gujarat">Gujarat</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="">Postal Code*</label>
-                                                <input type="number"  class="form-control" placeholder="380081" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==6) return false;" />
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="">Contact Number*</label>
-                                                <input type="number"  class="form-control" placeholder="98980 98009" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="checkbox-wrap text-center">
-                                        <div class="form-group">
-                                            <input type="checkbox" id="default1" name="default1" value="default1" checked>
-                                            <label for="default1">default</label>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="radio" id="home1" name="radio-group" checked>
-                                            <label for="home1">Home</label>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="radio" id="work1" name="radio-group">
-                                            <label for="work1">Work</label>
-                                        </div>
-                                    </div>
-                                    <div class="text-center buttons-wrap">
-                                        <button type="submit" class="g-btn f-btn mb-0 w-100">Save</button>
-                                    </div>
-                                </form>
-                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -182,14 +107,6 @@
                                         
                                         <tr>
                                             <td>
-                                                <!-- 
-                                                <div class="cards-main">
-                                                    <img src="./assets/images/payment.svg" alt="Payment" />
-                                                    <img src="./assets/images/payment-1.svg" alt="Payment" />
-                                                    <img src="./assets/images/payment-2.svg" alt="Payment" />
-                                                    <img src="./assets/images/payment-3.svg" alt="Payment" />
-                                                    <img src="./assets/images/payment-4.svg" alt="Payment" />
-                                                </div>  -->
                                                 <div class="payment-wrapper">
                                                     <h3>Payment Method</h3>
                                                     <!-- <p>All transactions are secure and encrypted.</p> -->
@@ -199,13 +116,6 @@
                                                             <label for="cod">Cash on delivery</label>
                                                             <p>Pay with cash on delivery.</p>
                                                         </div>
-                                                        <!-- 
-                                                        <div class="form-group">
-                                                            <input type="radio" id="c-card" name="radio-group">
-                                                            <label for="c-card">Credit Card</label>
-                                                            <p>We accept all major credit cards.</p>
-                                                        </div>
-                                                         -->
                                                         <div class="text-center buttons-wrap w-100">
                                                             <form action="place_order.php" method="POST">
                                                                 <input type="text" name="cart_id" value="<?php echo $cart_row['cart_id']?>" hidden>
