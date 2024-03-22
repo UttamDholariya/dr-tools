@@ -36,7 +36,7 @@
                                         <th>Payment Status</th>
                                         <th>Payment Date</th>
                                         <th>User Id</th>
-                                        <th>Payment Status</th>
+                                        <th>Update Status</th>
                                     </tr>
                                 </thead>
                                 <?php 
@@ -53,7 +53,11 @@
                                                 <td><p><?php echo $row['payment_date']; ?></p></td>
                                                 <td><p class="dark-text"><?php echo $row['user_id']; ?></p></td>
                                                 <td>
-                                                    <p>Successful</p>
+                                                    <div  class="btn" style="background-color:#7dc6ba;" >
+                                                        <a class="login-wrap ms-2" style="color:white;" href="./status-update.php?id=<?php echo $row['payment_id']; ?>" >
+                                                            <span>Update</span>
+                                                        </a>
+                                                    </div >
                                                 </td>
                                             </tr>
                                         </tbody>

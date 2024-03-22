@@ -101,14 +101,14 @@
                                     <p class="primary-med-18" id="sub_total" disabled><?php if (!empty($row)) {?><?php echo "₹". $row['cart_total'] .".00" ?><?php } ?></p>
                                 </li>
                                 
-                                <li>
+                                <!-- <li>
                                     <p>Tax :</p>
                                     <p class="red-med-18" id="tex" disabled>3.4</p>
                                 </li>
                                 <li>
                                     <p>GST :</p>
                                     <p class="red-med-18" id="gst" disabled>3.4</p>
-                                </li>
+                                </li> -->
                                
                                 <li>
                                     <p>Grand Total :</p>

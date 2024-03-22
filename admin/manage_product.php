@@ -15,7 +15,18 @@
             <div class="col-lg-12">
                 <div class="card shadow">
                     <div class="card-body">
-                        <h5 class="card-title">Manage Product</h5><hr>
+                        <div class="row">
+                            <div class="col">
+                                <h5 class="card-title">Manage Product</h5>
+                            </div>
+                            <div class="col text-end">
+                                <div  class="btn mt-3" style="background-color:#7dc6ba;" >
+                                    <a class="login-wrap ms-2" style="color:white;" href="./generate-report.php?ACTION=DOWNLOAD">
+                                        <span>Generate Report</span>
+                                    </a>
+                                </div >
+                            </div>
+                        </div><hr>
                         <table id="myTable" class="display">
                         <?php 
                             //$conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();

@@ -14,6 +14,17 @@
                         </ol>
                     </nav>
                 </div>
+                <?php 
+                    if(isset($_SESSION['status']))
+                    {
+                ?>
+                        <div class="alert alert-danger">
+                            <h5><?php echo $_SESSION['status']; ?></h5>
+                        </div>
+                <?php
+                        unset($_SESSION['status']);
+                    }
+                ?>
                 <div class="col-lg-3 col-md-4 col-sm-5">
                     <div class="title">
                         <h1>My Account</h1>
@@ -104,7 +115,7 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="">Contact Number*</label>
-                                                <input type="number" min="10" max="10" class="form-control" name="phone_no" id="phone_no" value="<?php echo $row['phone_no']; ?>" placeholder="98980 98009" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" />
+                                                <input type="number" class="form-control" name="phone_no" id="phone_no" value="<?php echo $row['phone_no']; ?>" placeholder="98980 98009" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" />
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
@@ -149,41 +160,10 @@
                             ?>
                             </div>
                         </div>
-                        <?php
-                            if(isset($_POST['update_password']))
-                            {
-                                $current_password = $_POST['current_password'];
-                                $check_password = md5($current_password);
-
-                                $new_password = $_POST['new_password'];
-                                $password = md5($new_password);
-                                $email = $_SESSION['email'];
-                                
-                                include "confing.php";
-
-                                $check_password_sql = "SELECT * FROM users WHERE email = '$email'";
-                                $check_password_sql_result =  mysqli_query($conn, $check_password_sql);
-
-                                if(mysqli_num_rows($check_password_sql_result) > 0){
-                                    while($check_password_row = mysqli_fetch_assoc($check_password_sql_result))
-                                    {
-                                        if($check_password_row['password'] == $check_password)
-                                        {
-                                            $update_password = "UPDATE users SET password = '$password' WHERE email = '$email'";
-                                            $update_password_query =  mysqli_query($conn, $update_password);
-                                        }
-                                        else
-                                        {
-                                            echo 'Your Current Password Not Match...';
-                                        }
-                                    }
-                                }
-                            }
-                        ?>
                         <div class="tab-pane fade help-wrap" id="nav-help" role="tabpanel" aria-labelledby="nav-help-tab">
                             <h2 class="ps-3">Change Password</h2>
                             <div class="common-form-section cmn-bg-tab change-pass-wrap">
-                                <form action="my-account.php" method="POST">
+                                <form action="update_password.php" method="POST">
                                     <div class="row justify-content-center">
                                         <div class="col-lg-7">
                                             <div class="form-group password-group">
