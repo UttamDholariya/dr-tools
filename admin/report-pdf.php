@@ -39,7 +39,7 @@
 								FROM product p
 								INNER JOIN order_detail od ON p.id = od.pro_id
 								GROUP BY p.pro_name
-								ORDER BY quantity_sold DESC";
+								ORDER BY quantity_sold DESC LIMIT 5";
 
                                 $result = mysqli_query($conn, $sql);
 
