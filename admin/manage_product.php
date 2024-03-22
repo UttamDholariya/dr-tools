@@ -21,8 +21,15 @@
                             </div>
                             <div class="col text-end">
                                 <div  class="btn mt-3" style="background-color:#7dc6ba;" >
-                                    <a class="login-wrap ms-2" style="color:white;" href="./generate-report.php?ACTION=DOWNLOAD">
-                                        <span>Generate Report</span>
+                                    <a class="login-wrap ms-2" style="color:white;" href="./generate-stock-report.php">
+                                        <span>Generate Stock Report</span>
+                                    </a>
+                                </div >
+                            </div>
+                            <div class="col text-end">
+                                <div  class="btn mt-3" style="background-color:#7dc6ba;" >
+                                    <a class="login-wrap ms-2" style="color:white;" href="./generate-report.php">
+                                        <span>Generate Top Selling Report</span>
                                     </a>
                                 </div >
                             </div>
