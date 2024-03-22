@@ -16,40 +16,53 @@
     </head>
     <body>
         <div class="container">
-	        <div class="row">
-		        <div class="col-lg-12" align="center">
-			        <br>
-			        <h5 align="center">Most Product Sell Report</h5>
-			        <br>
-			        <table class="table table-striped">
-			            <thead>
-			                <tr>
-				                <th>#</th>
-				                <th>Product Name</th>
-				                <th>Quantity Sold</th>
-				                <th>Product Price</th>
-				                <th>Total</th>
-			                </tr>
-			            </thead>
-			            <tbody>
-				            <tr>
-				 	            <td>1</td>
-				 	            <td>name</td>
-				 	            <td>2</td>
-				 	            <td>200</td>
-				 	            <td>400</td>
-				            </tr>
+            <div class="row">
+                <div class="col-lg-12" align="center">
+                    <br>
+                    <h5 align="center">Most Product Sell Report</h5>
+                    <br>
+                    <table class="table table-striped">
+                        <thead>
                             <tr>
-                                <td><b>Total</b></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>400</td>
-                            </tr>  
-			            </tbody>
-			        </table>
-		        </div>
-	        </div>
+                                <th>#</th>
+                                <th>Product Name</th>
+                                <th>Quantity Sold</th>
+                                <th>Product Price</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                                include "confing.php";
+
+                                $sql = "SELECT p.pro_name, p.id, SUM(od.order_qty) as quantity_sold, p.pro_price, SUM(od.order_qty * p.pro_price) as total
+								FROM product p
+								INNER JOIN order_detail od ON p.id = od.pro_id
+								GROUP BY p.pro_name
+								ORDER BY quantity_sold DESC";
+
+                                $result = mysqli_query($conn, $sql);
+
+                                if(mysqli_num_rows($result)>0)
+                                {
+                                    while($row = mysqli_fetch_assoc($result))
+                                    {
+							?>
+										<tr>
+											<td><?php echo $row['id']; ?></td>
+											<td><?php echo $row['pro_name']; ?></td>
+											<td><?php echo $row['quantity_sold']; ?></td>
+											<td><?php echo $row['pro_price']; ?></td>
+											<td><?php echo $row['total']; ?></td>
+										</tr>
+                            <?php
+                                    }
+                                }
+							?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
         <br>
     </body>
