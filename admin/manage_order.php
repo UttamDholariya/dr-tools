@@ -18,7 +18,7 @@
                         <?php 
                            // $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
                             include "confing.php";
-                            $sql = "SELECT o.order_id, o.cart_id, o.sub_total, o.order_status, o.created_at, o.user_id, cart.cart_id FROM `order` as o inner JOIN cart ON o.cart_id = cart.cart_id";
+                            $sql = "SELECT order_id, cart_id, sub_total, order_status, created_at, user_id FROM `order`";
                             $result = mysqli_query($conn,$sql) or die("Query Feiled");
                             if(mysqli_num_rows($result) > 0)
                             {
@@ -47,7 +47,20 @@
                                                     <tr>
                                                         <td><?php echo $row['order_id']; ?></td>
                                                         <td><?php echo $row1['first_name']; ?> <?php echo $row1['last_name']; ?></td>
-                                                        <td><?php echo $row['cart_id']; ?></td>
+                                        <?php
+                                                        if($row['cart_id'] == '0')
+                                                        {
+                                        ?>
+                                                            <td>-</td>
+                                        <?php
+                                                        }
+                                                        else
+                                                        {
+                                        ?>
+                                                            <td><?php echo $row['cart_id']; ?></td>
+                                        <?php
+                                                        }
+                                        ?>
                                                         <td><?php echo $row['sub_total']; ?></td>
                                                         <td><?php echo $row['order_status']; ?></td>
                                                         <td><?php echo $row['created_at']; ?></td>
