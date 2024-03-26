@@ -21,7 +21,12 @@
         $result3 = mysqli_query($conn, $sql3);
 
         $sql4 = "INSERT INTO payment (order_id, payment_amount, user_id) VALUES ('{$order_id}', '{$row['pro_price']}', '{$user_id}')";
-        $result3 = mysqli_query($conn, $sql4);
+        $result4 = mysqli_query($conn, $sql4);
+
+        $new_qty = $row['quantity'] - 1;
+
+        $sql5 = "UPDATE product SET quantity = $new_qty WHERE id = {$row['id']}";
+        $result5 = mysqli_query($conn, $sql5);
 
         header("Location: index.php");
 
