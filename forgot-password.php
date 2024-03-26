@@ -116,6 +116,17 @@
                 ?>
                             <div class="col-xl-5 col-lg-7">
                                 <form action="password_change.php" method="POST">
+                                <?php 
+                                    if(isset($_SESSION['status']))
+                                    {
+                                ?>
+                                        <div class="alert alert-danger">
+                                            <h5><?php echo $_SESSION['status']; ?></h5>
+                                        </div>
+                                <?php
+                                        unset($_SESSION['status']);
+                                    }
+                                ?>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="form-title">

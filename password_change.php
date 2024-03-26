@@ -73,7 +73,7 @@
         {
             $_SESSION['status'] = "No Eamil Found";
             header("Location: forgot-password.php");
-            exit(0);
+            exit();
         }
     }
 ?>
