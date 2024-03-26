@@ -19,13 +19,13 @@
                             <div class="col">
                                 <h5 class="card-title">Manage Product</h5>
                             </div>
-                            <!-- <div class="col text-end">
+                            <div class="col text-end">
                                 <div  class="btn mt-3" style="background-color:#7dc6ba;" >
                                     <a class="login-wrap ms-2" style="color:white;" href="./generate-stock-report.php">
                                         <span>Generate Stock Report</span>
                                     </a>
                                 </div >
-                            </div> -->
+                            </div>
                             <div class="col text-end">
                                 <div  class="btn mt-3" style="background-color:#7dc6ba;" >
                                     <a class="login-wrap ms-2" style="color:white;" href="./generate-report.php">
