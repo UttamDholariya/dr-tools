@@ -1,7 +1,7 @@
 <?php
     if(isset($_POST['add']))
     {
-        //$conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
+        
         include "confing.php";
         if(isset($_FILES['cat_icon'])){
             $errors = array();

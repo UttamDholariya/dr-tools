@@ -1,8 +1,8 @@
 <?php
     if(isset($_POST['pro_submit']))
     {
-        $conn = mysqli_connect('localhost', 'root', '', 'drtools') or die("Connection Faild") . mysqli_connect_error();
-        
+    
+        include "confing.php";
         if(isset($_FILES['pro_img'])){
             $errors = array();
 
